@@ -1,0 +1,5 @@
+set autoindent
+#set const
+set suspend
+set tabsize 4
+set tabstospaces

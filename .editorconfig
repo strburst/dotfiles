@@ -1,0 +1,71 @@
+root = true
+
+[*]
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+indent_size = 4
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- VIM STARTING ---
+000.161  000.153: Allocated generic buffers
+000.253  000.092: locale set
+000.288  000.035: GUI prepared
+000.292  000.004: clipboard setup
+000.303  000.011: window checked
+001.076  000.773: inits 1
+001.086  000.010: parsing arguments
+001.088  000.002: expanding arguments
+001.133  000.045: shell init
+002.736  001.603: xsmp init
+003.290  000.554: Termcap init
+003.361  000.071: inits 2
+003.572  000.211: init highlight
+004.158  000.388  000.388: sourcing /usr/share/vim/vim74/debian.vim
+004.836  000.364  000.364: sourcing /usr/share/vim/vim74/syntax/syncolor.vim
+005.046  000.675  000.311: sourcing /usr/share/vim/vim74/syntax/synload.vim
+023.081  017.934  017.934: sourcing /usr/share/vim/vim74/filetype.vim
+023.126  018.861  000.252: sourcing /usr/share/vim/vim74/syntax/syntax.vim
+023.151  019.498  000.249: sourcing $VIM/vimrc
+023.339  000.008  000.008: sourcing /usr/share/vim/vim74/filetype.vim
+023.420  000.034  000.034: sourcing /usr/share/vim/vim74/ftplugin.vim
+023.496  000.030  000.030: sourcing /usr/share/vim/vim74/indent.vim
+023.759  000.164  000.164: sourcing /usr/share/vim/vim74/syntax/nosyntax.vim
+024.013  000.151  000.151: sourcing /usr/share/vim/vim74/syntax/syncolor.vim
+024.102  000.290  000.139: sourcing /usr/share/vim/vim74/syntax/synload.vim
+024.130  000.572  000.118: sourcing /usr/share/vim/vim74/syntax/syntax.vim
+024.423  000.139  000.139: sourcing /usr/share/vim/vim74/syntax/syncolor.vim
+024.701  000.136  000.136: sourcing /usr/share/vim/vim74/syntax/syncolor.vim
+024.944  000.140  000.140: sourcing /usr/share/vim/vim74/syntax/syncolor.vim
+025.034  000.858  000.443: sourcing /usr/share/vim/vim74/colors/ron.vim
+025.098  001.909  000.407: sourcing $HOME/.vimrc
+025.103  000.124: sourcing vimrc file(s)
+025.374  000.061  000.061: sourcing /usr/share/vim/vim74/plugin/getscriptPlugin.vim
+025.588  000.189  000.189: sourcing /usr/share/vim/vim74/plugin/gzip.vim
+025.769  000.156  000.156: sourcing /usr/share/vim/vim74/plugin/matchparen.vim
+026.262  000.438  000.438: sourcing /usr/share/vim/vim74/plugin/netrwPlugin.vim
+026.339  000.038  000.038: sourcing /usr/share/vim/vim74/plugin/rrhelper.vim
+026.398  000.027  000.027: sourcing /usr/share/vim/vim74/plugin/spellfile.vim
+026.567  000.142  000.142: sourcing /usr/share/vim/vim74/plugin/tarPlugin.vim
+026.681  000.078  000.078: sourcing /usr/share/vim/vim74/plugin/tohtml.vim
+026.838  000.130  000.130: sourcing /usr/share/vim/vim74/plugin/vimballPlugin.vim
+027.045  000.169  000.169: sourcing /usr/share/vim/vim74/plugin/zipPlugin.vim
+027.082  000.551: loading plugins
+027.534  000.452: inits 3
+027.687  000.153: reading viminfo
+029.605  001.918: setup clipboard
+029.625  000.020: setting raw mode
+029.629  000.004: start termcap
+029.687  000.058: clearing screen
+030.166  000.479: opening buffers
+030.233  000.067: BufEnter autocommands
+030.237  000.004: editing files in windows
+030.294  000.057: VimEnter autocommands
+030.296  000.002: before starting main loop
+031.609  001.313: first screen update
+031.613  000.004: --- VIM STARTED ---
