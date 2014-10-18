@@ -1,5 +1,27 @@
+"VUNDLE SETUP
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle quick reference
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update
+"                     or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins;
+"                     append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+Plugin 'gmarik/Vundle.vim'
+Plugin 'editorconfig/editorconfig-vim'
+
+call vundle#end()
+filetype plugin indent on
+
 "BASICS
-set nocompatible   "Disable vi compatibility
 set mouse=a        "Enable the mouse
 set encoding=utf-8
 set spelllang=en_us
