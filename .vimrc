@@ -6,17 +6,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Vundle quick reference
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update
-"                     or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins;
-"                     append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+"Vundle commands:
+":PluginList, :PluginInstall, :PluginUpdate, :PluginSearch, :PluginClean
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
+
+"Plugins to install/learn: tcomment, surround, Ctrl-P, AG for Vim
 
 call vundle#end()
 filetype plugin indent on
@@ -27,8 +23,6 @@ set encoding=utf-8
 set spelllang=en_us
 
 "EDITOR BEHAVIOR
-filetype plugin indent on
-
 set errorbells   "Errors emit a bell character
 
 set backupdir=~/.vim/backup "Backup file location
@@ -49,7 +43,7 @@ set smartcase    "Case sensetive search if search has uppercase characters
 
 "VISUAL SETTINGS
 syntax on
-colorscheme evening
+colorscheme ron
 
 set number         "Show line numbers
 set relativenumber "Show distance from the current line
@@ -69,7 +63,7 @@ set laststatus=2 "Always show the status bar
 "KEYMAPS
 let mapleader=","
 inoremap jk <ESC>
-inoremap kj <ESC> 
+inoremap kj <ESC>
 
 nnoremap ; :
 nnoremap : ;
@@ -79,5 +73,3 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-"Plugins to install: vundle, editorconfig, tcomment, surround
-"Ctrl-P, NERDTree, AG for Vim
