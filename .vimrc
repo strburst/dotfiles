@@ -11,8 +11,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'tomtom/tcomment_vim'
 
-"Plugins to install/learn: tcomment, surround, Ctrl-P, AG for Vim
+"Plugins to install/learn: surround, Ctrl-P, AG for Vim, fugitive, Command-T
 
 call vundle#end()
 filetype plugin indent on
@@ -73,3 +74,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+inoremap <Tab> <C-P>
+inoremap <S-TAB> <C-N>
