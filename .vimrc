@@ -66,6 +66,7 @@ let mapleader=","
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+"Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
 
@@ -75,5 +76,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+"Tab/shift-tab for autocompletion
 inoremap <Tab> <C-P>
 inoremap <S-TAB> <C-N>
