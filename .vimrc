@@ -2,7 +2,6 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -12,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-surround'
 
 "Plugins to install/learn: surround, Ctrl-P, AG for Vim, fugitive, Command-T
 
@@ -42,6 +42,11 @@ set backspace=indent,eol,start "Backspace over newlines
 set ignorecase   "Searches ignore case by default
 set smartcase    "Case sensetive search if search has uppercase characters
 
+set wildmode=longest,list:longest
+
+set splitbelow "split below by default
+set splitright "vsplit right by default
+
 "VISUAL SETTINGS
 syntax on
 colorscheme ron
@@ -66,9 +71,20 @@ let mapleader=","
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+"Turn off highlights for current search
+nnoremap <F5> :nohl<CR>
+
+"Open my vimrc in a new window/tab
+nnoremap <F9> :vsplit $MYVIMRC<CR>
+nnoremap <F10> :tabnew $MYVIMRC<CR>
+
 "Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
+
+"Exclude indentation when going to beginning of line by default
+nnoremap ^ 0
+nnoremap 0 ^
 
 "Window navigation without CTRL-W
 nnoremap <C-J> <C-W><C-J>
@@ -79,3 +95,4 @@ nnoremap <C-H> <C-W><C-H>
 "Tab/shift-tab for autocompletion
 inoremap <Tab> <C-P>
 inoremap <S-TAB> <C-N>
+inoremap <C-\> <Tab>
