@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
+Plugin 'altercation/vim-colors-solarized'
 
 "Plugins to install/learn: surround, Ctrl-P, AG for Vim, fugitive, Command-T
 
@@ -49,7 +50,9 @@ set splitright "vsplit right by default
 
 "VISUAL SETTINGS
 syntax on
-colorscheme ron
+set t_Co=256
+set background=dark
+colorscheme solarized
 
 set number         "Show line numbers
 set relativenumber "Show distance from the current line
@@ -77,6 +80,9 @@ nnoremap <F5> :nohl<CR>
 "Open my vimrc in a new window/tab
 nnoremap <F9> :vsplit $MYVIMRC<CR>
 nnoremap <F10> :tabnew $MYVIMRC<CR>
+
+"Toggle dark/light colorscheme
+call togglebg#map("<F12>")
 
 "Enter Ex commands faster
 nnoremap ; :
