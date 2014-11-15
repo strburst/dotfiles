@@ -87,6 +87,8 @@ call togglebg#map("<F12>")
 "Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 "Exclude indentation when going to beginning of line by default
 nnoremap ^ 0
