@@ -81,6 +81,9 @@ nnoremap <F5> :nohl<CR>
 nnoremap <F9> :vsplit $MYVIMRC<CR>
 nnoremap <F10> :tabnew $MYVIMRC<CR>
 
+"Reload my vimrc without restarting
+nnoremap <F12> :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
+
 "Toggle dark/light colorscheme
 call togglebg#map("<F12>")
 
