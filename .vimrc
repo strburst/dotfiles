@@ -33,10 +33,6 @@ set undodir=~/.vim/undo     "Undo file location
 
 set autoread   "Reread when files are changed outside of Vim
 
-set autoindent
-set expandtab    "Spaces for tabs
-set shiftwidth=4
-set softtabstop=4
 set shiftround   "Round indents to multiples of shiftwidth
 set backspace=indent,eol,start "Backspace over newlines
 
@@ -47,6 +43,15 @@ set wildmode=longest,list:longest
 
 set splitbelow "split below by default
 set splitright "vsplit right by default
+
+set foldmethod=syntax   "Code folding by language
+set foldlevel=1         "Start with one fold opened
+
+"These settings are usually overriden by editorconfig
+set autoindent
+set expandtab    "Spaces for tabs
+set shiftwidth=4
+set softtabstop=4
 
 "VISUAL SETTINGS
 syntax on
@@ -77,12 +82,12 @@ inoremap kj <ESC>
 "Turn off highlights for current search
 nnoremap <F5> :nohl<CR>
 
+"Reload my vimrc without restarting
+nnoremap <F8> :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
+
 "Open my vimrc in a new window/tab
 nnoremap <F9> :vsplit $MYVIMRC<CR>
 nnoremap <F10> :tabnew $MYVIMRC<CR>
-
-"Reload my vimrc without restarting
-nnoremap <F12> :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
 
 "Toggle dark/light colorscheme
 call togglebg#map("<F12>")
