@@ -2,6 +2,8 @@
 set nocompatible
 filetype off
 
+let mapleader=","
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -13,18 +15,19 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'mtth/scratch.vim'
 
-"Plugins to install/learn: surround, Ctrl-P, AG for Vim, fugitive, Command-T
+"Plugins to install/learn: Ctrl-P, AG for Vim, fugitive, Command-T
 
 call vundle#end()
 filetype plugin indent on
 
-"BASICS
+" BASICS
 set mouse=a        "Enable the mouse
 set encoding=utf-8
 set spelllang=en_us
 
-"EDITOR BEHAVIOR
+" EDITOR BEHAVIOR
 set errorbells   "Errors emit a bell character
 
 set backupdir=~/.vim/backup "Backup file location
@@ -41,11 +44,13 @@ set smartcase    "Case sensetive search if search has uppercase characters
 
 set wildmode=longest,list:longest
 
-set splitbelow "split below by default
-set splitright "vsplit right by default
+set splitbelow   "split below by default
+set splitright   "vsplit right by default
 
 set foldmethod=syntax   "Code folding by language
 set foldlevel=1         "Start with one fold opened
+
+set scrolloff=8   "Scroll up/down if cursor is 8 lines from the top/bottom
 
 "These settings are usually overriden by editorconfig
 set autoindent
@@ -53,7 +58,7 @@ set expandtab    "Spaces for tabs
 set shiftwidth=4
 set softtabstop=4
 
-"VISUAL SETTINGS
+" VISUAL SETTINGS
 syntax on
 set t_Co=256
 set background=dark
@@ -66,7 +71,6 @@ set hlsearch     "Highlight search matches
 set incsearch    "Begin showing search matches while typing
 
 set colorcolumn=81
-"set hl-ColorColumn=
 
 set visualbell   "Visual, not auditory, alerts
 set showcmd      "Shows partially completed key combinations
@@ -74,8 +78,7 @@ set title        "Allow vim to set the title of the console
 set ruler        "Show line/col in the lower left
 set laststatus=2 "Always show the status bar
 
-"KEYMAPS
-let mapleader=","
+" KEYMAPS
 inoremap jk <ESC>
 inoremap kj <ESC>
 
@@ -112,3 +115,6 @@ nnoremap <C-H> <C-W><C-H>
 inoremap <Tab> <C-P>
 inoremap <S-TAB> <C-N>
 inoremap <C-\> <Tab>
+
+"Open/close folds
+nnoremap <space> za
