@@ -16,11 +16,15 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mtth/scratch.vim'
-
-"Plugins to install/learn: Ctrl-P, AG for Vim, fugitive, Command-T
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+Plugin 'sjl/gundo.vim'
+"Plugins to install/learn: AG for Vim, fugitive, Command-T, Gundo
 
 call vundle#end()
 filetype plugin indent on
+
+let g:airline_powerline_fonts=1   "Use patched fonts properly
 
 " BASICS
 set mouse=a        "Enable the mouse
@@ -29,6 +33,7 @@ set spelllang=en_us
 
 " EDITOR BEHAVIOR
 set errorbells   "Errors emit a bell character
+set ttimeoutlen=25
 
 set backupdir=~/.vim/backup "Backup file location
 set directory=~/.vim/swap   "Swap file location
@@ -77,6 +82,8 @@ set showcmd      "Shows partially completed key combinations
 set title        "Allow vim to set the title of the console
 set ruler        "Show line/col in the lower left
 set laststatus=2 "Always show the status bar
+
+set noshowmode   "Powerline plugin shows modes already
 
 " KEYMAPS
 inoremap jk <ESC>
