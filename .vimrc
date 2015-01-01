@@ -19,12 +19,14 @@ Plugin 'mtth/scratch.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
-"Plugins to install/learn: AG for Vim, fugitive, Command-T, Gundo
+"Plugins to install/learn: AG for Vim, fugitive, Command-T
 
 call vundle#end()
 filetype plugin indent on
 
+"Plugin options
 let g:airline_powerline_fonts=1   "Use patched fonts properly
+let g:gundo_playback_delay=500    "Playback changes slowly
 
 " BASICS
 set mouse=a        "Enable the mouse
@@ -75,7 +77,7 @@ set relativenumber "Show distance from the current line
 set hlsearch     "Highlight search matches
 set incsearch    "Begin showing search matches while typing
 
-set colorcolumn=81
+set colorcolumn=81   "Vertical line at 81 characters
 
 set visualbell   "Visual, not auditory, alerts
 set showcmd      "Shows partially completed key combinations
@@ -88,6 +90,9 @@ set noshowmode   "Powerline plugin shows modes already
 " KEYMAPS
 inoremap jk <ESC>
 inoremap kj <ESC>
+
+"Bring up the undo tree
+nnoremap <F4> :GundoToggle<CR>
 
 "Turn off highlights for current search
 nnoremap <F5> :nohl<CR>
