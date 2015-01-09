@@ -19,6 +19,7 @@ Plugin 'mtth/scratch.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 "Plugins to install/learn: AG for Vim, fugitive, Command-T
 
 call vundle#end()
@@ -26,7 +27,7 @@ filetype plugin indent on
 
 "Plugin options
 let g:airline_powerline_fonts=1   "Use patched fonts properly
-let g:gundo_playback_delay=500    "Playback changes slowly
+let g:gundo_playback_delay=500    "Play back changes slowly
 
 " BASICS
 set mouse=a        "Enable the mouse
@@ -85,7 +86,7 @@ set title        "Allow vim to set the title of the console
 set ruler        "Show line/col in the lower left
 set laststatus=2 "Always show the status bar
 
-set noshowmode   "Powerline plugin shows modes already
+set noshowmode   "Powerline plugin indicates modes already
 
 " KEYMAPS
 inoremap jk <ESC>
@@ -116,12 +117,6 @@ vnoremap : ;
 "Exclude indentation when going to beginning of line by default
 nnoremap ^ 0
 nnoremap 0 ^
-
-"Window navigation without CTRL-W
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 "Tab/shift-tab for autocompletion
 inoremap <Tab> <C-P>
