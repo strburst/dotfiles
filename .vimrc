@@ -52,12 +52,14 @@ set shiftround   "Round indents to multiples of shiftwidth
 set backspace=indent,eol,start "Backspace over newlines
 
 set ignorecase   "Searches ignore case by default
-set smartcase    "Case sensetive search if search has uppercase characters
+set smartcase    "Case sensitive search if search has uppercase characters
 
-set wildmode=longest,list:longest
+set wildmode=longest,list:longest   "Autocomplete by longest match first
 
 set splitbelow   "split below by default
 set splitright   "vsplit right by default
+
+set undofile     "Save undo tree between sessions
 
 set foldmethod=syntax   "Code folding by language
 set foldlevel=1         "Start with one fold opened
@@ -67,7 +69,7 @@ autocmd BufWinEnter *.* silent loadview
 
 set scrolloff=8   "Scroll up/down if cursor is 8 lines from the top/bottom
 
-"These settings are usually overriden by editorconfig
+"Usually overriden by editorconfig
 set autoindent
 set expandtab    "Spaces for tabs
 set shiftwidth=4
@@ -131,8 +133,11 @@ nnoremap 0 ^
 
 "Tab/shift-tab for autocompletion
 inoremap <Tab> <C-P>
-inoremap <S-TAB> <C-N>
+inoremap <S-Tab> <C-N>
 inoremap <C-\> <Tab>
 
 "Open/close folds
-nnoremap <space> za
+nnoremap <Space> za
+
+"Enter makes a line below the cursor in normal mode
+nnoremap <CR> o<Esc>
