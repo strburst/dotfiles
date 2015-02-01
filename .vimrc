@@ -139,5 +139,8 @@ inoremap <C-\> <Tab>
 "Open/close folds
 nnoremap <Space> za
 
+"Reset foldlevel
+nnoremap z1 :set foldlevel=1
+
 "Enter makes a line below the cursor in normal mode
 nnoremap <CR> o<Esc>
