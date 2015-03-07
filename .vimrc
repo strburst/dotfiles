@@ -15,6 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mtth/scratch.vim'
 Plugin 'kien/ctrlp.vim'
@@ -22,6 +23,7 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'lervag/vim-latex'
+" Plugin 'r0nk/slow-vim'
 " Plugin 'jaxbot/semantic-highlight.vim'
 "Plugins to install/learn: AG for Vim, fugitive, Command-T
 
@@ -30,7 +32,6 @@ filetype plugin indent on
 
 "Plugin options
 let g:airline_powerline_fonts=1   "Use patched fonts properly
-let g:gundo_playback_delay=500    "Play back changes slowly
 
 " BASICS
 set mouse=a        "Enable the mouse
@@ -59,7 +60,8 @@ set wildmode=longest,list:longest   "Autocomplete by longest match first
 set splitbelow   "split below by default
 set splitright   "vsplit right by default
 
-set undofile     "Save undo tree between sessions
+set undofile           "Save undo tree between sessions
+set undolevels=10000   "Keep more undo history (for Gundo playback timelapses)
 
 set foldmethod=syntax   "Code folding by language
 set foldlevel=1         "Start with one fold opened
@@ -99,17 +101,14 @@ set laststatus=2 "Always show the status bar
 set noshowmode   "Powerline plugin indicates modes already
 
 " KEYMAPS
-inoremap jk <ESC>
-inoremap kj <ESC>
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 "Bring up the undo tree
 nnoremap <F4> :GundoToggle<CR>
 
 "Turn off highlights for current search
 nnoremap <F5> :nohl<CR>
-
-"Reload my vimrc without restarting
-nnoremap <F8> :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
 
 "Open my vimrc in a new window/tab
 nnoremap <F9> :vsplit $MYVIMRC<CR>
@@ -118,11 +117,20 @@ nnoremap <F10> :tabnew $MYVIMRC<CR>
 "Toggle dark/light colorscheme
 call togglebg#map("<F12>")
 
+"Reload my vimrc without restarting
+nnoremap <leader>r :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
+
+"Reset foldlevel
+nnoremap <leader>z :set foldlevel=1<CR>
+
 "Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+
+"K joins previous line
+nnoremap K kJ
 
 "More consistent with C and D
 nnoremap Y y$
@@ -138,9 +146,6 @@ inoremap <C-\> <Tab>
 
 "Open/close folds
 nnoremap <Space> za
-
-"Reset foldlevel
-nnoremap z1 :set foldlevel=1
 
 "Enter makes a line below the cursor in normal mode
 nnoremap <CR> o<Esc>
