@@ -23,6 +23,8 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'lervag/vim-latex'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-unimpaired'
 " Plugin 'r0nk/slow-vim'
 " Plugin 'jaxbot/semantic-highlight.vim'
 "Plugins to install/learn: AG for Vim, fugitive, Command-T
@@ -30,8 +32,34 @@ Plugin 'lervag/vim-latex'
 call vundle#end()
 filetype plugin indent on
 
-"Plugin options
+"PLUGIN SETTINGS
 let g:airline_powerline_fonts=1   "Use patched fonts properly
+let g:gundo_help=0                "Hide help message in Gundo window
+
+"Syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+
+let g:syntastic_mode_map = {
+            \ "mode": "passive",
+            \ "active_filetypes": [],
+            \ "passive_filetypes": [] }
+
+let g:syntastic_java_checkers = ["javac", "checkstyle"]
+let g:syntastic_java_checkstyle_classpath="~/cs1332/checkstyle-6.2,jar"
+let g:syntastic_java_checkstyle_conf_file="~/cs1332/CS1332-checkstyle.xml"
+
+nnoremap <leader>s :SyntasticCheck<Cr>
+nnoremap <leader>d :lnext<Cr>
+nnoremap <leader>f :lprevious<Cr>
+nnoremap <leader>g :lfirst<Cr>
+nnoremap <leader>G :llast<Cr>
 
 " BASICS
 set mouse=a        "Enable the mouse
@@ -120,9 +148,6 @@ call togglebg#map("<F12>")
 "Reload my vimrc without restarting
 nnoremap <leader>r :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
 
-"Reset foldlevel
-nnoremap <leader>z :set foldlevel=1<CR>
-
 "Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
@@ -147,5 +172,8 @@ inoremap <C-\> <Tab>
 "Open/close folds
 nnoremap <Space> za
 
+"Since comma is the leader key
+nnoremap \ ,
+
 "Enter makes a line below the cursor in normal mode
-nnoremap <CR> o<Esc>
+nnoremap <Cr> o<Esc>
