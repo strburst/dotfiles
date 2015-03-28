@@ -7,3 +7,9 @@
 	default = simple
 [diff]
 	tool = vimdiff
+[credential]
+	helper = cache --timeout=1800
+[alias]
+	co = checkout
+    logt = log --oneline --abbrev --graph
+	st = status
