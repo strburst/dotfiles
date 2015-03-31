@@ -13,3 +13,5 @@
 	co = checkout
     logt = log --oneline --abbrev --graph
 	st = status
+[merge]
+	tool = vimdiff
