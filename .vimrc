@@ -25,9 +25,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'lervag/vim-latex'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-fugitive'
 " Plugin 'r0nk/slow-vim'
 " Plugin 'jaxbot/semantic-highlight.vim'
-"Plugins to install/learn: AG for Vim, fugitive, Command-T
 
 call vundle#end()
 filetype plugin indent on
@@ -147,6 +147,9 @@ call togglebg#map("<F12>")
 
 "Reload my vimrc without restarting
 nnoremap <leader>r :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
+
+"Open the current file with the default program
+nnoremap <leader>o :!xdg-open <C-r>%<Cr>
 
 "Enter Ex commands faster
 nnoremap ; :
