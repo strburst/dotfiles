@@ -14,7 +14,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH+=":/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin"
 PATH+=":/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin"
-PATH+="/usr/local/heroku/bin"
+PATH+=":/usr/local/heroku/bin"
 
 export CLASSPATH=".:/usr/local/bin/junit-4.12.jar:/usr/local/bin/hamcrest-core"
 CLASSPATH+="-1.3.jar:/usr/local/bin/checkstyle-6.2.jar"
