@@ -61,6 +61,14 @@ nnoremap <leader>f :lprevious<Cr>
 nnoremap <leader>g :lfirst<Cr>
 nnoremap <leader>G :llast<Cr>
 
+"Single line comments in java, c; stolen from jgkamat's dotfiles
+let g:tcommentLineC = {
+			\ 'commentstring': '// %s',
+			\ 'replacements': g:tcomment#replacements_c
+			\ }
+call tcomment#DefineType('c', g:tcommentLineC)
+call tcomment#DefineType('java', g:tcommentLineC)
+
 " BASICS
 set mouse=a        "Enable the mouse
 set encoding=utf-8
@@ -98,6 +106,9 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 set scrolloff=8   "Scroll up/down if cursor is 8 lines from the top/bottom
+
+set formatoptions+=j    "When joining comments, remove the comment part
+set formatoptions-=o    "Don't continue comments when creating a new line
 
 "Usually overriden by editorconfig
 set autoindent
