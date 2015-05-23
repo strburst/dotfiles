@@ -61,11 +61,11 @@ nnoremap <leader>f :lprevious<Cr>
 nnoremap <leader>g :lfirst<Cr>
 nnoremap <leader>G :llast<Cr>
 
-"Single line comments in java, c; stolen from jgkamat's dotfiles
+"Single line comments in java, c; stolen from jgkamat/dotfiles
 let g:tcommentLineC = {
-			\ 'commentstring': '// %s',
-			\ 'replacements': g:tcomment#replacements_c
-			\ }
+            \ 'commentstring': '// %s',
+            \ 'replacements': g:tcomment#replacements_c
+            \ }
 call tcomment#DefineType('c', g:tcommentLineC)
 call tcomment#DefineType('java', g:tcommentLineC)
 
@@ -101,14 +101,17 @@ set undolevels=10000   "Keep more undo history (for Gundo playback timelapses)
 
 set foldmethod=syntax   "Code folding by language
 set foldlevel=1         "Start with one fold opened
+
 "Automatically save and restore folds
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 set scrolloff=8   "Scroll up/down if cursor is 8 lines from the top/bottom
 
-set formatoptions+=j    "When joining comments, remove the comment part
-set formatoptions-=o    "Don't continue comments when creating a new line
+"When joining comments, remove the comment part
+autocmd BufWinEnter,BufRead * setlocal formatoptions+=j
+"Don't continue comments when creating a new line
+autocmd BufWinEnter,BufRead * setlocal formatoptions-=o
 
 "Usually overriden by editorconfig
 set autoindent
@@ -156,7 +159,7 @@ nnoremap <F10> :tabnew $MYVIMRC<CR>
 "Toggle dark/light colorscheme
 call togglebg#map("<F12>")
 
-"Reload my vimrc without restarting
+"Reload vimrc without restarting
 nnoremap <leader>r :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
 
 "Open the current file with the default program
