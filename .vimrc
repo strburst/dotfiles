@@ -26,6 +26,8 @@ Plugin 'lervag/vimtex'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
+Plugin 'chikamichi/mediawiki.vim'
+Plugin 'wakatime/vim-wakatime'
 " Plugin 'r0nk/slow-vim'
 " Plugin 'jaxbot/semantic-highlight.vim'
 
