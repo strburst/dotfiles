@@ -28,8 +28,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chikamichi/mediawiki.vim'
 Plugin 'wakatime/vim-wakatime'
-" Plugin 'r0nk/slow-vim'
-" Plugin 'jaxbot/semantic-highlight.vim'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 filetype plugin indent on
@@ -180,8 +179,8 @@ nnoremap K kJ
 nnoremap Y y$
 
 "Exclude indentation when going to beginning of line by default
-nnoremap ^ 0
-nnoremap 0 ^
+noremap ^ 0
+noremap 0 ^
 
 "Tab/shift-tab for autocompletion
 inoremap <Tab> <C-P>
