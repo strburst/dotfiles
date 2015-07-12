@@ -34,7 +34,7 @@ call vundle#end()
 filetype plugin indent on
 
 "PLUGIN SETTINGS
-let g:airline_powerline_fonts=1   "Use patched fonts properly
+" let g:airline_powerline_fonts=1   "Use patched fonts properly
 let g:gundo_help=0                "Hide help message in Gundo window
 
 "Syntastic recommended settings
@@ -56,7 +56,7 @@ let g:syntastic_java_checkers = ["javac", "checkstyle"]
 let g:syntastic_java_checkstyle_classpath="~/cs1332/checkstyle-6.2,jar"
 let g:syntastic_java_checkstyle_conf_file="~/cs1332/CS1332-checkstyle.xml"
 
-nnoremap <leader>s :SyntasticCheck<Cr>
+nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
 nnoremap <leader>d :lnext<Cr>
 nnoremap <leader>f :lprevious<Cr>
 nnoremap <leader>g :lfirst<Cr>
@@ -70,19 +70,19 @@ let g:tcommentLineC = {
 call tcomment#DefineType('c', g:tcommentLineC)
 call tcomment#DefineType('java', g:tcommentLineC)
 
-" BASICS
+" EDITOR BEHAVIOR
 set mouse=a        "Enable the mouse
 set encoding=utf-8
 set spelllang=en_us
 
-" EDITOR BEHAVIOR
-set errorbells   "Errors emit a bell character
 set ttimeoutlen=25
 
 set backupdir=~/.vim/backup "Backup file location
 set directory=~/.vim/swap   "Swap file location
 set undodir=~/.vim/undo     "Undo file location
 set viewdir=~/.vim/view     "Code folding file location
+
+" set path+=system("echo $PATH | sed 's/:/,/g'")
 
 set autoread   "Reread when files are changed outside of Vim
 
@@ -109,12 +109,14 @@ autocmd BufWinEnter *.* silent loadview
 
 set scrolloff=8   "Scroll up/down if cursor is 8 lines from the top/bottom
 
+set tabpagemax=25 "Commands can auto-open up to 25 tabs
+
 "When joining comments, remove the comment part
 autocmd BufWinEnter,BufRead * setlocal formatoptions+=j
 "Don't continue comments when creating a new line
 autocmd BufWinEnter,BufRead * setlocal formatoptions-=o
 
-"Usually overriden by editorconfig
+" Usually set/overriden by editorconfig
 set autoindent
 set expandtab    "Spaces for tabs
 set shiftwidth=4
@@ -135,7 +137,7 @@ set incsearch    "Begin showing search matches while typing
 set colorcolumn=81   "Vertical line at 81 characters
 set cursorline       "Highlight the line the cursor is on
 
-set visualbell   "Visual, not auditory, alerts
+set visualbell t_vb=""   "Disable bells
 set showcmd      "Shows partially completed key combinations
 set title        "Allow vim to set the title of the console
 set ruler        "Show line/col in the lower left
@@ -166,6 +168,9 @@ nnoremap <leader>r :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
 "Open the current file with the default program
 nnoremap <leader>o :!xdg-open <C-r>%<Cr>
 
+"Sort the current paragraph by line
+nnoremap <leader>a !ipsort<Cr>
+
 "Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
@@ -195,3 +200,12 @@ nnoremap \ ,
 
 "Enter makes a line below the cursor in normal mode
 nnoremap <Cr> o<Esc>
+
+"Repeat the last macro
+nnoremap - @@
+
+"Switch between/move tabs
+nnoremap _ gT
+nnoremap + gt
+nnoremap <C-_> :-tabmove<Cr>
+nnoremap <C-+> :+tabmove<Cr>
