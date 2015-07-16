@@ -126,7 +126,7 @@ set softtabstop=4
 syntax on
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme base16-ocean
 
 set number         "Show line numbers
 set relativenumber "Show distance from the current line
