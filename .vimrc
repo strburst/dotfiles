@@ -8,27 +8,46 @@ let maplocalleader="\\"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Vundle commands:
-":PluginList, :PluginInstall, :PluginUpdate, :PluginSearch, :PluginClean
-
+" Vim plugin package manager
 Plugin 'gmarik/Vundle.vim'
+" Configure indentation, other editor settings on a per-project basis
 Plugin 'editorconfig/editorconfig-vim'
+" Comment/uncomment lines in nearly every language easily
 Plugin 'tomtom/tcomment_vim'
+" Change delimiters like ( and [ easily
 Plugin 'tpope/vim-surround'
+" Use the . command to repeat vim-surround mappings
 Plugin 'tpope/vim-repeat'
+" Solarized colorscheme in vim
 Plugin 'altercation/vim-colors-solarized'
+" Scratch area
 Plugin 'mtth/scratch.vim'
+" Intelligent file opener
 Plugin 'kien/ctrlp.vim'
+" Pretty statusline display
 Plugin 'bling/vim-airline'
+" Visualize the undo tree
 Plugin 'sjl/gundo.vim'
+" Navigate between vim/tmux splits easily
 Plugin 'christoomey/vim-tmux-navigator'
+" Better LaTeX support, e.g. comtinuous compilation mode
 Plugin 'lervag/vimtex'
+" Syntax-checker support using the location list
 Plugin 'scrooloose/syntastic'
+" Convenient paired mappings for [ and ] for navigation
 Plugin 'tpope/vim-unimpaired'
+" Awesome git integration
 Plugin 'tpope/vim-fugitive'
+" Mediawiki syntax support
 Plugin 'chikamichi/mediawiki.vim'
+" Track editor statistics via wakatime
 Plugin 'wakatime/vim-wakatime'
+" Elixir language support
 Plugin 'elixir-lang/vim-elixir'
+" Dependency for vim-notes
+Plugin 'xolox/vim-misc'
+" Convenient notes plugin
+Plugin 'xolox/vim-notes'
 
 call vundle#end()
 filetype plugin indent on
@@ -52,10 +71,6 @@ let g:syntastic_mode_map = {
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
 
-let g:syntastic_java_checkers = ["javac", "checkstyle"]
-let g:syntastic_java_checkstyle_classpath="~/cs1332/checkstyle-6.2,jar"
-let g:syntastic_java_checkstyle_conf_file="~/cs1332/CS1332-checkstyle.xml"
-
 nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
 nnoremap <leader>d :lnext<Cr>
 nnoremap <leader>f :lprevious<Cr>
@@ -69,6 +84,9 @@ let g:tcommentLineC = {
             \ }
 call tcomment#DefineType('c', g:tcommentLineC)
 call tcomment#DefineType('java', g:tcommentLineC)
+
+" Directory to store vim-notes
+let g:notes_directories = ['~/.vim/notes']
 
 " EDITOR BEHAVIOR
 set mouse=a        " Enable the mouse
@@ -146,9 +164,6 @@ set laststatus=2 " Always show the status bar
 set noshowmode   " Powerline plugin indicates modes already
 
 " KEYMAPS
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 " Bring up the undo tree
 nnoremap <F4> :GundoToggle<CR>
 
@@ -170,6 +185,10 @@ nnoremap <leader>o :!xdg-open <C-r>%<Cr>
 
 " Sort the current paragraph by line
 nnoremap <leader>a !ipsort<Cr>
+
+" Alternative to esc
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Enter Ex commands faster
 nnoremap ; :
