@@ -52,10 +52,7 @@ Plugin 'xolox/vim-notes'
 call vundle#end()
 filetype plugin indent on
 
-" PLUGIN SETTINGS
-" let g:airline_powerline_fonts=1   " Use patched fonts properly
-let g:gundo_help=0                " Hide help message in Gundo window
-
+" PLUGIN SETTINGS/MAPS
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -66,24 +63,26 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 
+" Only check a file if :SyntasticCheck used
 let g:syntastic_mode_map = {
             \ "mode": "passive",
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
 
 nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
-nnoremap <leader>d :lnext<Cr>
-nnoremap <leader>f :lprevious<Cr>
-nnoremap <leader>g :lfirst<Cr>
-nnoremap <leader>G :llast<Cr>
 
 " Single line comments in java, c; stolen from jgkamat/dotfiles
-let g:tcommentLineC = {
+let g:tcommentLineSlashes = {
             \ 'commentstring': '// %s',
             \ 'replacements': g:tcomment#replacements_c
             \ }
-call tcomment#DefineType('c', g:tcommentLineC)
-call tcomment#DefineType('java', g:tcommentLineC)
+call tcomment#DefineType('c', g:tcommentLineSlashes)
+call tcomment#DefineType('java', g:tcommentLineSlashes)
+
+let g:gundo_help=0   " Hide help message in Gundo window
+
+" Bring up the undo tree
+nnoremap <F4> :GundoToggle<Cr>
 
 " Directory to store vim-notes
 let g:notes_directories = ['~/.vim/notes']
@@ -163,22 +162,19 @@ set laststatus=2 " Always show the status bar
 
 set noshowmode   " Powerline plugin indicates modes already
 
-" KEYMAPS
-" Bring up the undo tree
-nnoremap <F4> :GundoToggle<CR>
-
+" ASSORTED KEYMAPS
 " Turn off highlights for current search
-nnoremap <F5> :nohl<CR>
+nnoremap <F5> :nohl<Cr>
 
 " Open my vimrc in a new window/tab
-nnoremap <F9> :vsplit $MYVIMRC<CR>
-nnoremap <F10> :tabnew $MYVIMRC<CR>
+nnoremap <F9> :vsplit $MYVIMRC<Cr>
+nnoremap <F10> :tabnew $MYVIMRC<Cr>
 
 " Toggle dark/light colorscheme
 call togglebg#map("<F12>")
 
 " Reload vimrc without restarting
-nnoremap <leader>r :source $MYVIMRC<CR>:echo "vimrc reloaded"<CR>
+nnoremap <leader>r :source $MYVIMRC<Cr>:echo "vimrc reloaded"<Cr>
 
 " Open the current file with the default program
 nnoremap <leader>o :!xdg-open <C-r>%<Cr>
