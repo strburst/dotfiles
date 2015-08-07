@@ -7,7 +7,7 @@ trim_trailing_whitespace = true
 
 indent_size = 4
 
-[*.{js,html,css,json}]
+[*.{js,html,css,json,ex,exs}]
 indent_size = 2
 
 [{.gitconfig}]
