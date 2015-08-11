@@ -1,0 +1,23 @@
+# Check ~ for dead symlinks
+- clean: ['~']
+
+# Create the following symlinks
+- link:
+    ~/.config/bspwm/bspwmrc:
+        create: true
+        path: bspwmrc
+    ~/.config/sxhkd/sxhkdrc:
+        create: true
+        path: sxhkdrc
+    ~/.editorconfig: .editorconfig
+    ~/.gitconfig: .editorconfig
+    ~/.tmux.conf: .tmux.conf
+    ~/.vimrc: .vimrc
+    ~/.weechat/: .weechat/
+    ~/.xinitrc: .xinitrc
+    ~/.Xresources: .Xresources
+    ~/.zshrc: .zshrc
+
+# Create the following symlinks
+- shell:
+  - [pushd ~/.vim && mkdir -p backup notes swap undo view && popd, Initializing .vim directory]
