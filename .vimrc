@@ -44,10 +44,12 @@ Plugin 'chikamichi/mediawiki.vim'
 Plugin 'wakatime/vim-wakatime'
 " Elixir language support
 Plugin 'elixir-lang/vim-elixir'
-" Dependency for vim-notes
+" Convenient notes plugin, dependency
 Plugin 'xolox/vim-misc'
-" Convenient notes plugin
 Plugin 'xolox/vim-notes'
+" Snippets/autocompletion plugin, default snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -80,6 +82,9 @@ call tcomment#DefineType('c', g:tcommentLineSlashes)
 call tcomment#DefineType('java', g:tcommentLineSlashes)
 
 let g:gundo_help=0   " Hide help message in Gundo window
+
+" <C-p> expands snippets, rather than <Tab>
+let g:UltiSnipsExpandTrigger="<C-p>"
 
 " Bring up the undo tree
 nnoremap <F4> :GundoToggle<Cr>
@@ -181,6 +186,11 @@ nnoremap <leader>o :!xdg-open <C-r>%<Cr>
 
 " Sort the current paragraph by line
 nnoremap <leader>a !ipsort<Cr>
+vnoremap <leader>a !sort<Cr>
+
+" Insert the current, ISO-formatted date
+nnoremap <leader>; a<C-r>=system("date --iso-8601")<Cr><Bs><Esc>
+inoremap <leader>; <C-r>=system("date --iso-8601")<Cr><Bs>
 
 " Alternative to esc
 inoremap jk <Esc>
@@ -212,9 +222,6 @@ nnoremap <Space> za
 
 " Since comma is the leader key
 nnoremap \ ,
-
-" Enter makes a line below the cursor in normal mode
-nnoremap <Cr> o<Esc>
 
 " Repeat the last macro
 nnoremap - @@
