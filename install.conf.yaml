@@ -13,7 +13,7 @@
     ~/.gitconfig: .editorconfig
     ~/.tmux.conf: .tmux.conf
     ~/.vimrc: .vimrc
-    ~/.weechat/: .weechat/
+    ~/.weechat: .weechat/
     ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
     ~/.zshrc: .zshrc
