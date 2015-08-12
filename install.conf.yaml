@@ -9,8 +9,9 @@
     ~/.config/sxhkd/sxhkdrc:
         create: true
         path: sxhkdrc
+
     ~/.editorconfig: .editorconfig
-    ~/.gitconfig: .editorconfig
+    ~/.gitconfig: .gitconfig
     ~/.tmux.conf: .tmux.conf
     ~/.vimrc: .vimrc
     ~/.weechat: .weechat/
@@ -18,6 +19,9 @@
     ~/.Xresources: .Xresources
     ~/.zshrc: .zshrc
 
-# Create the following symlinks
+    ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
+    ~/.Xresources.dark: xresources/Xresources.dark
+
+# Execute the following shell commands
 - shell:
   - [pushd ~/.vim && mkdir -p backup notes swap undo view && popd, Initializing .vim directory]

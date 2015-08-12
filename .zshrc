@@ -23,7 +23,7 @@ CLASSPATH+="-1.3.jar:/usr/local/bin/checkstyle-6.2.jar"
 export EDITOR='vim'
 
 # Solarized ls colors; see https://github.com/seebi/dircolors-solarized
-eval `dircolors ~/dircolors.ansi-universal`
+eval `dircolors ~/.dircolors.ansi-universal`
 
 # Search repos for a command if not installed
 source /usr/share/doc/pkgfile/command-not-found.zsh
