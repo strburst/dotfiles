@@ -14,6 +14,7 @@ set -o vi   # vi keyboard shortcuts
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATH+=":/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin"
 PATH+=":/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin"
+PATH+=":$HOME/.gem/ruby/2.2.0/bin:/root/.gem/2.2.0/bin"
 
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 
@@ -27,3 +28,5 @@ eval `dircolors ~/.dircolors.ansi-universal`
 
 # Search repos for a command if not installed
 source /usr/share/doc/pkgfile/command-not-found.zsh
+
+alias vima='vim -p *'
