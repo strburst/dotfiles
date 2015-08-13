@@ -20,7 +20,6 @@
     ~/.zshrc: .zshrc
 
     ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
-    ~/.Xresources.dark: xresources/Xresources.dark
 
 # Execute the following shell commands
 - shell:
