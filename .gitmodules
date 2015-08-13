@@ -7,3 +7,6 @@
 [submodule "xresources"]
 	path = xresources
 	url = https://github.com/solarized/xresources.git
+[submodule "tmux-colors-solarized"]
+	path = tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized.git

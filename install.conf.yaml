@@ -20,6 +20,7 @@
     ~/.zshrc: .zshrc
 
     ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
+    ~/.tmuxcolors-256.conf: tmux-colors-solarized/tmuxcolors-256.conf
 
 # Execute the following shell commands
 - shell:
