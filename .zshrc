@@ -19,7 +19,7 @@ PATH+=":$HOME/.gem/ruby/2.2.0/bin:/root/.gem/2.2.0/bin"
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
 
 export CLASSPATH=".:/usr/local/bin/junit-4.12.jar:/usr/local/bin/hamcrest-core"
-CLASSPATH+="-1.3.jar:/usr/local/bin/checkstyle-6.2.jar"
+CLASSPATH+="-1.3.jar:/usr/local/bin/checkstyle-6.9.jar"
 
 export EDITOR='vim'
 

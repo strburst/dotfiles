@@ -60,10 +60,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_aggregate_errors=1
 
 " Only check a file if :SyntasticCheck used
 let g:syntastic_mode_map = {
@@ -71,7 +71,13 @@ let g:syntastic_mode_map = {
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
 
+let g:syntastic_java_checkstyle_classpath="/usr/local/bin/checkstyle-6.9.jar"
+let g:syntastic_java_checkstyle_conf_file="~/cs1332-ta/CS1332-checkstyle.xml"
+
+let g:syntastic_java_checkers=["javac", "checkstyle"]
+
 nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
+nnoremap <leader>w :SyntasticReset<Cr>
 
 " Single line comments in java, c; stolen from jgkamat/dotfiles
 let g:tcommentLineSlashes = {
