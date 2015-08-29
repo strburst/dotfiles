@@ -11,7 +11,7 @@
 	helper = cache --timeout=1800
 [alias]
 	co = checkout
-	logit = log --oneline --abbrev --graph
+	lg = log --oneline --abbrev --graph
 	st = status
 [merge]
 	tool = vimdiff
