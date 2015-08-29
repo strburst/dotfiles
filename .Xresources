@@ -1,6 +1,16 @@
 ! No scrollbar
 URxvt.scrollBar: false
 
+! Scroll in pagers properly with the scrollwheel
+URxct.secondaryScreen: 1
+URxct.secondaryScroll: 0
+
+! Don't scroll to the bottom if we're looking at previous output
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
+! Unless a key is pressed
+URxvt*scrollTtyKeypress: true
+
 ! Fonts and fallback fonts. By the way, this UTF-8 demo is pretty useful:
 ! https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
 URxvt.font: xft:Terminus:size=10:antialias=true:hinting=true, \
@@ -10,5 +20,5 @@ URxvt.font: xft:Terminus:size=10:antialias=true:hinting=true, \
 ! Disable keycap picture insert mode
 URxvt.iso14755: false
 
-! Source the colorscheme
+! Source the colorscheme (relative to dotfiles repo, since this is a symlink)
 #include "xresources/Xresources.dark"
