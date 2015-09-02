@@ -12,3 +12,6 @@ bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
 bspc monitor -d I II III IV V VI VII VIII IX X
+
+# Make Java Swing applications spawn windows properly
+wmname LG3D
