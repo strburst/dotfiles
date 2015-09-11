@@ -74,18 +74,10 @@ let g:syntastic_mode_map = {
 let g:syntastic_java_checkstyle_classpath="/usr/local/bin/checkstyle-6.9.jar"
 let g:syntastic_java_checkstyle_conf_file="~/cs1332-ta/CS1332-checkstyle.xml"
 
-let g:syntastic_java_checkers=["javac", "checkstyle"]
+let g:syntastic_java_checkers=["javac"]
 
 nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
 nnoremap <leader>w :SyntasticReset<Cr>
-
-" Single line comments in java, c; stolen from jgkamat/dotfiles
-let g:tcommentLineSlashes = {
-            \ 'commentstring': '// %s',
-            \ 'replacements': g:tcomment#replacements_c
-            \ }
-call tcomment#DefineType('c', g:tcommentLineSlashes)
-call tcomment#DefineType('java', g:tcommentLineSlashes)
 
 let g:gundo_help=0   " Hide help message in Gundo window
 

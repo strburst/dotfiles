@@ -100,10 +100,10 @@ super + z
 	google-chrome-stable
 
 XF86MonBrightnessDown
-    xbacklight -dec 2
+    xbacklight -dec 3
 
 XF86MonBrightnessUp
-    xbacklight -inc 2
+    xbacklight -inc 3
 
 XF86AudioLowerVolume
     amixer set Master 1.50db-
@@ -115,4 +115,4 @@ XF86AudioMute
     amixer set Master toggle
 
 Print
-    scrot 'Screenshots/Screenshot %F %H.%M.%S.png'
+    scrot 'Pictures/Screenshots/Screenshot %F %H.%M.%S.png'
