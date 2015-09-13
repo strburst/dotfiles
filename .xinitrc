@@ -2,7 +2,7 @@ xrdb ~/.Xresources
 
 # Caps Lock acts as Esc when pressed by itself, and Ctrl with another key
 setxkbmap -option 'ctrl:nocaps' &
-xcape -e '#66=Escape' &
+xcape -e 'Control_L=Escape' &
 
 dropbox &
 numlockx &
