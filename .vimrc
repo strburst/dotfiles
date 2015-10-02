@@ -50,6 +50,8 @@ Plugin 'xolox/vim-notes'
 " Snippets/autocompletion plugin, default snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin indent on
@@ -229,3 +231,5 @@ nnoremap _ gT
 nnoremap + gt
 nnoremap <C-_> :-tabmove<Cr>
 nnoremap <C-+> :+tabmove<Cr>
+
+nnoremap <leader>b :w<Cr>:!coffee -c <C-r>%<Cr>
