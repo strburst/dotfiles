@@ -12,6 +12,7 @@
 
     ~/.editorconfig: .editorconfig
     ~/.gitconfig: .gitconfig
+    ~/.ideavimrc: .ideavimrc
     ~/.tmux.conf: .tmux.conf
     ~/.vimrc: .vimrc
     ~/.weechat: .weechat/

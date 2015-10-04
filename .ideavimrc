@@ -1,0 +1,63 @@
+" VUNDLE SETUP
+let mapleader=","
+let maplocalleader="\\"
+
+set ignorecase   " Searches ignore case by default
+set smartcase    " Case sensitive search if search has uppercase characters
+
+set scrolloff=8   " Scroll up/down if cursor is 8 lines from the top/bottom
+
+set number         " Show line numbers
+set relativenumber " Show distance from the current line
+
+set hlsearch     " Highlight search matches
+
+" ASSORTED KEYMAPS
+" Toggle highlights for current search
+nnoremap <F5> :invhlsearch<Cr>
+
+" Open my vimrc in a new window/tab
+nnoremap <F9> :vsplit ~/.ideavimrc<Cr>
+nnoremap <F10> :edit ~/.ideavimrc<Cr>
+
+" Reload vimrc without restarting
+nnoremap <leader>r :source ~/.ideavimrc<Cr>:echo "ideavimrc reloaded"<Cr>
+
+" Open the current file with the default program
+nnoremap <leader>o :!xdg-open <C-r>%<Cr>
+
+" Sort the current paragraph by line
+nnoremap <leader>a !ipsort<Cr>
+vnoremap <leader>a !sort<Cr>
+
+" Enter Ex commands faster
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+" K joins previous line
+nnoremap K kJ
+
+" More consistent with C and D
+nnoremap Y y$
+
+" Exclude indentation when going to beginning of line by default
+noremap ^ 0
+noremap 0 ^
+
+" Open/close folds
+nnoremap <Space> za
+
+" Since comma is the leader key
+nnoremap \\ ,
+
+" Repeat the last macro
+nnoremap - @@
+
+" Switch between/move tabs
+nnoremap _ gT
+nnoremap + gt
+nnoremap <C-_> :-tabmove<Cr>
+nnoremap <C-+> :+tabmove<Cr>
+

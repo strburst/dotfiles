@@ -219,7 +219,7 @@ inoremap <C-\> <Tab>
 nnoremap <Space> za
 
 " Since comma is the leader key
-nnoremap \ ,
+nnoremap \\ ,
 
 " Repeat the last macro
 nnoremap - @@
