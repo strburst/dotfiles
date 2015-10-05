@@ -14,7 +14,7 @@ set hlsearch     " Highlight search matches
 
 " ASSORTED KEYMAPS
 " Toggle highlights for current search
-nnoremap <F5> :invhlsearch<Cr>
+nnoremap <F5> :set invhlsearch<Cr>
 
 " Open my vimrc in a new window/tab
 nnoremap <F9> :vsplit ~/.ideavimrc<Cr>
