@@ -1,4 +1,4 @@
-" VUNDLE SETUP
+" A stripped down vimrc for the IdeaVim Intellij/PyCharm vim emulation plugin
 let mapleader=","
 let maplocalleader="\\"
 
@@ -9,8 +9,6 @@ set scrolloff=8   " Scroll up/down if cursor is 8 lines from the top/bottom
 
 set number         " Show line numbers
 set relativenumber " Show distance from the current line
-
-set hlsearch     " Highlight search matches
 
 " ASSORTED KEYMAPS
 " Toggle highlights for current search
@@ -60,4 +58,3 @@ nnoremap _ gT
 nnoremap + gt
 nnoremap <C-_> :-tabmove<Cr>
 nnoremap <C-+> :+tabmove<Cr>
-
