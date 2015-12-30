@@ -100,6 +100,11 @@ nnoremap <F4> :GundoToggle<Cr>
 " Directory to store vim-notes
 let g:notes_directories = ['~/.vim/notes']
 
+" EditorConfig doesn't manage git commit messages, etc
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+" EditorConfig sets colorcolumn based on max_line_length
+let g:EditorConfig_max_line_indicator = 'fill'
+
 " EDITOR BEHAVIOR
 set mouse=a        " Enable the mouse
 set encoding=utf-8
@@ -164,7 +169,6 @@ set relativenumber " Show distance from the current line
 set hlsearch     " Highlight search matches
 set incsearch    " Begin showing search matches while typing
 
-set colorcolumn=81   " Vertical line at 81 characters
 set cursorline       " Highlight the line the cursor is on
 
 set visualbell t_vb=""   " Disable bells
