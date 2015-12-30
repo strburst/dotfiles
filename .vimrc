@@ -81,11 +81,6 @@ let g:syntastic_mode_map = {
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
 
-let g:syntastic_java_checkstyle_classpath="/usr/local/bin/checkstyle-6.9.jar"
-let g:syntastic_java_checkstyle_conf_file="~/cs1332-ta/CS1332-checkstyle.xml"
-
-let g:syntastic_java_checkers=["javac"]
-
 nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
 nnoremap <leader>w :SyntasticReset<Cr>
 
