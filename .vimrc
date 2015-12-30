@@ -100,6 +100,14 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " EditorConfig sets colorcolumn based on max_line_length
 let g:EditorConfig_max_line_indicator = 'fill'
 
+" Enable syntax highlighting for some languages within Markdown
+let g:markdown_fenced_languages = ['js=javascript']
+
+" Don't preview Markdown when it's opened
+let g:instant_markdown_autostart = 0
+" Don't automatically refresh the preview
+let g:instant_markdown_slow = 1
+
 " EDITOR BEHAVIOR
 set mouse=a        " Enable the mouse
 set encoding=utf-8
