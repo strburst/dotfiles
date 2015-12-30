@@ -63,6 +63,8 @@ call vundle#end()
 filetype plugin indent on
 
 " PLUGIN SETTINGS/MAPS
+let g:airline_powerline_fonts=1   " Use patched characters, not fallbacks
+
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
