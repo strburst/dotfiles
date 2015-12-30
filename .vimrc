@@ -10,7 +10,7 @@ call vundle#begin()
 
 " Vim plugin package manager
 Plugin 'gmarik/Vundle.vim'
-" Configure indentation, other editor settings on a per-project basis
+" Configure indentation and other editor settings on a per-project basis
 Plugin 'editorconfig/editorconfig-vim'
 " Comment/uncomment lines in nearly every language easily
 Plugin 'tomtom/tcomment_vim'
@@ -50,8 +50,14 @@ Plugin 'xolox/vim-notes'
 " Snippets/autocompletion plugin, default snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" Jade language support
 Plugin 'digitaltoad/vim-jade'
+" CoffeeScript language support
 Plugin 'kchmck/vim-coffee-script'
+" Markdown language support
+Plugin 'tpope/vim-markdown'
+" Markdown previewing
+Plugin 'suan/vim-instant-markdown'
 
 call vundle#end()
 filetype plugin indent on
