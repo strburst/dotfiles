@@ -254,7 +254,7 @@ nnoremap <leader>k K
 nnoremap <leader>u :set ff=unix<Cr>:%s/<C-v><C-m>//g<Cr>
 
 " Yank the whole buffer into the system clipboard
-nnoremap <leader>t :%y +
+nnoremap <leader>y :%y +<Cr>
 
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
 nnoremap <C-r> <C-r><C-p>
