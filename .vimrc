@@ -228,8 +228,8 @@ noremap ^ 0
 noremap 0 ^
 
 " Tab/shift-tab for autocompletion
-inoremap <Tab> <C-P>
-inoremap <S-Tab> <C-N>
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
 inoremap <C-\> <Tab>
 
 " Open/close folds
@@ -247,4 +247,15 @@ nnoremap + gt
 nnoremap <C-_> :-tabmove<Cr>
 nnoremap <C-+> :+tabmove<Cr>
 
-nnoremap <leader>b :w<Cr>:!coffee -c <C-r>%<Cr>
+" Show man pages for commands
+nnoremap <leader>k K
+
+" Convert to unix line endings
+nnoremap <leader>u :set ff=unix<Cr>:%s/<C-v><C-m>//g<Cr>
+
+" Yank the whole buffer into the system clipboard
+nnoremap <leader>t :%y +
+
+" Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
+nnoremap <C-r> <C-r><C-p>
+nnoremap <C-r><C-p> <C-r>
