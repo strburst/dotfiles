@@ -257,5 +257,5 @@ nnoremap <leader>u :set ff=unix<Cr>:%s/<C-v><C-m>//g<Cr>
 nnoremap <leader>y :%y +<Cr>
 
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
-nnoremap <C-r> <C-r><C-p>
-nnoremap <C-r><C-p> <C-r>
+inoremap <C-r> <C-r><C-p>
+inoremap <C-r><C-p> <C-r>
