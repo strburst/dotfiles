@@ -22,12 +22,12 @@
     ~/.config/bspwm/panelinit:
         create: true
         path: panel/panelinit
-    ~/.config/bspwm/panelopts: panel/panelopts
+    ~/.config/bspwm/panelopts:
         create: true
-        path: panel/panelinit
-    ~/.config/bspwm/panelupdate: panel/panelupdate
+        path: panel/panelopts
+    ~/.config/bspwm/panelout:
         create: true
-        path: panel/panelinit
+        path: panel/panelout
 
     ~/.config/sxhkd/sxhkdrc:
         create: true

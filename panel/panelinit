@@ -94,6 +94,6 @@ xtitle -sf 'T%s' > $PANEL_FIFO &
 # Make way for the panel!
 bspc config top_padding $PANEL_HEIGHT
 
-./panelupdate < $PANEL_FIFO | lemonbar -p -f "$PANEL_FONT" &
+./panelout < $PANEL_FIFO | lemonbar -p -f "$PANEL_FONT" &
 
 wait
