@@ -1,0 +1,67 @@
+#!/usr/bin/bash
+#
+# A minimal, entirely self-contained panel. Use in times of crisis.
+
+cleanup() {
+  bspc config top_padding 0
+  # The \r hides the ^C that appears
+  echo -e '\rCya!'
+
+  trap - EXIT
+  exit 0
+}
+
+# Get the battery percentage from acpi
+battery() {
+  acpi | cut -d, -f 2 | tr --delete --complement '[:digit:]'
+}
+
+# Get the date and time
+clock() {
+  date "+%a %H:%M"
+}
+
+# Get the name of the currently focused desktop
+curdesktop() {
+  bspc query -D -d focused
+}
+
+# Get the name of the currently focused window
+curwindow() {
+  xdotool getwindowfocus getwindowname
+}
+
+# If the string is longer than the given length, shorten and end it with ...
+truncate() {
+  maxlen=$1; shift
+
+  string=$@
+  len=${#string}
+
+  if [ $len -ge $maxlen ]; then
+    echo -n $(echo $string | head -c $(expr $maxlen - 3))
+    echo -n '...'
+  else
+    echo -n $string
+  fi
+}
+
+makebar() {
+  # Print statusline to STDOUT repeatedly
+  while true; do
+    echo -n "%{l}Desktop: $(curdesktop)"
+    echo -n "%{c}$(truncate 120 $(curwindow))"
+    echo -n "%{r}Battery: $(battery)% :: $(clock)"
+
+    echo
+    sleep 1
+  done
+}
+
+# Do cleanup before exiting
+trap cleanup INT TERM QUIT EXIT
+
+# Make way for the panel!
+bspc config top_padding 20
+
+makebar | lemonbar

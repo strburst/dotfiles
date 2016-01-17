@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# Build a statusline from $PANEL_FIFO; output should be piped to lemonbar
+
+# If the string is longer than the given length, shorten and end it with ...
+truncate() {
+  maxlen=$1; shift
+
+  string=$@
+  len=${#string}
+
+  if [ $len -ge $maxlen ]; then
+    echo -n $(echo $string | head -c $(expr $maxlen - 3))
+    echo -n '...'
+  else
+    echo -n $string
+  fi
+}
+
+while read -r line; do
+  case $line in
+    B*)
+      curbattery=${line#?}
+      ;;
+    C*)
+      curclock=${line#?}
+      ;;
+    D*)
+      curdesktop=${line#?}
+      ;;
+    T*)
+      curwindow=${line#?}
+      ;;
+  esac
+
+  echo -n "%{l}Desktop: $curdesktop"
+  echo -n "%{c}$(truncate 120 $curwindow)"
+  echo -n "%{r}Battery: $curbattery% :: $curclock"
+  echo
+done

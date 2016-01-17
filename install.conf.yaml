@@ -3,13 +3,6 @@
 
 # Create the following symlinks
 - link:
-    ~/.config/bspwm/bspwmrc:
-        create: true
-        path: bspwmrc
-    ~/.config/sxhkd/sxhkdrc:
-        create: true
-        path: sxhkdrc
-
     ~/.editorconfig: .editorconfig
     ~/.gitconfig: .gitconfig
     ~/.ideavimrc: .ideavimrc
@@ -22,6 +15,23 @@
 
     ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
     ~/.tmuxcolors-256.conf: tmux-colors-solarized/tmuxcolors-256.conf
+
+    ~/.config/bspwm/bspwmrc:
+        create: true
+        path: bspwmrc
+    ~/.config/bspwm/panelinit:
+        create: true
+        path: panel/panelinit
+    ~/.config/bspwm/panelopts: panel/panelopts
+        create: true
+        path: panel/panelinit
+    ~/.config/bspwm/panelupdate: panel/panelupdate
+        create: true
+        path: panel/panelinit
+
+    ~/.config/sxhkd/sxhkdrc:
+        create: true
+        path: sxhkdrc
 
 # Execute the following shell commands
 - shell:

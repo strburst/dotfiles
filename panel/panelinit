@@ -1,0 +1,84 @@
+#!/usr/bin/bash
+#
+# Start panelupdate, the forked processes feeding it, and lemonbar
+
+cleanup() {
+  # The \r hides the ^C that appears
+  echo -e '\rPerforming cleanup...'
+
+  bspc config top_padding 0
+  # Avoid executing cleanup() again when I send the signal to kill myself
+  trap - TERM
+  # Kill myself and all my children
+  kill 0
+}
+
+# Get the battery percentage from acpi
+battery() {
+  acpi | cut -d, -f 2 | tr --delete --complement '[:digit:]'
+}
+
+# Get the date and time
+clock() {
+  date "+%a %H:%M"
+}
+
+# Get the name of the currently focused desktop
+curdesktop() {
+  bspc query -D -d focused
+}
+
+# Get the name of the currently focused window
+curwindow() {
+  xdotool getwindowfocus getwindowname
+}
+
+# Repeatedly invoke the given command with the given frequency
+wraprepeat() {
+  # Number of seconds to wait between invocations
+  interval=$1; shift
+  # Format string to use
+  format=$1; shift
+
+  # The command to actually execute
+  docmd=$@
+
+  last='\n\n\n'
+
+  while true; do
+    result=$($docmd)
+
+    if [ "$last" != "$result" ]; then
+      printf "$format" "$result"
+      last=$result
+    fi
+
+    sleep $interval
+  done
+}
+
+# Do cleanup before exiting
+trap cleanup INT TERM QUIT EXIT
+
+. panelopts
+
+# Initialize the fifo, removing it first if it already exists
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+# Feed various pieces of information into panelupdate
+wraprepeat 1 'D%s\n' curdesktop > $PANEL_FIFO &
+wraprepeat 2 'C%s\n' clock > $PANEL_FIFO &
+wraprepeat 5 'B%s\n' battery > $PANEL_FIFO &
+
+xtitle -sf 'T%s' > $PANEL_FIFO &
+
+# TODO: Add more desktop status info by parsing bspc subscribe
+# bspc control --subscribe > "$PANEL_FIFO" &
+
+# Make way for the panel!
+bspc config top_padding $PANEL_HEIGHT
+
+./panelupdate < $PANEL_FIFO | lemonbar -p -f "$PANEL_FONT" &
+
+wait
