@@ -35,6 +35,6 @@ while read -r line; do
 
   echo -n "%{l}Desktop: $curdesktop"
   echo -n "%{c}$(truncate 120 $curwindow)"
-  echo -n "%{r}Battery: $curbattery% :: $curclock"
+  echo -n "%{r}Battery: $curbattery :: $curclock"
   echo
 done

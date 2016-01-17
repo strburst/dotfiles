@@ -15,7 +15,22 @@ cleanup() {
 
 # Get the battery percentage from acpi
 battery() {
-  acpi | cut -d, -f 2 | tr --delete --complement '[:digit:]'
+  # If an argument is given, cut it instead
+  echo ${1:-$(acpi -b)} | cut -d, -f 2 | tr --delete --complement '[:digit:]'
+}
+
+# Get the battery percentage and charging status at the same time
+batterypretty() {
+  rawinfo=$(acpi -b)
+  percent=$(battery "$rawinfo")
+
+  case "$(echo $rawinfo | cut -d' ' -f 3)" in
+    'Discharging,') state='-' ;;
+    'Charging,') state='+' ;;
+    # Otherwise 'Full' or 'Unknown'; let state evaluate to the empty string
+  esac
+
+  echo $state$percent%
 }
 
 # Get the date and time
@@ -69,7 +84,7 @@ mkfifo "$PANEL_FIFO"
 # Feed various pieces of information into panelupdate
 wraprepeat 1 'D%s\n' curdesktop > $PANEL_FIFO &
 wraprepeat 2 'C%s\n' clock > $PANEL_FIFO &
-wraprepeat 5 'B%s\n' battery > $PANEL_FIFO &
+wraprepeat 3 'B%s\n' batterypretty > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
 
