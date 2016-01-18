@@ -13,5 +13,11 @@
 	co = checkout
 	lg = log --oneline --abbrev --graph
 	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
 [merge]
 	tool = vimdiff
+[fetch]
+	prune = true
+[pull]
+	rebase = true
