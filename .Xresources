@@ -13,12 +13,13 @@ URxvt*scrollTtyKeypress: true
 
 ! Fonts and fallback fonts. By the way, this UTF-8 demo is pretty useful:
 ! https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
-URxvt.font: xft:Terminus:size=10:antialias=true:hinting=true, \
-            xft:Bistream Vera Sans Mono:size=10:antialias=true:hinting=true, \
-            xft:Anonymous Pro:size=10:antialias=true:hinting=true
+URxvt.font: xft:Terminess Powerline:size=12:antialias=true:hinting=true, \
+            xft:Bistream Vera Sans Mono:size=12:antialias=true:hinting=true, \
+            xft:Hack:size=12:antialias=true:hinting=true, \
+            xft:Anonymice Powerline:size=12:antialias=true:hinting=true
 
 ! Disable keycap picture insert mode
 URxvt.iso14755: false
 
-! Source the colorscheme (relative to dotfiles repo, since this is a symlink)
-#include "xresources/Xresources.dark"
+! Source the colorscheme
+#include ".Xresources.dark"

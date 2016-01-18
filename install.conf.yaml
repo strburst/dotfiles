@@ -11,6 +11,7 @@
     ~/.weechat: .weechat/
     ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
+    ~/.Xresources.dark: xresources/Xresources.dark
     ~/.zshrc: .zshrc
 
     ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
