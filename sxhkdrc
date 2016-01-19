@@ -92,16 +92,26 @@ super + Return
 super + space
 	dmenu_run
 
-# make sxhkd reload its configuration files:
+# Terminate this X session
 super + Escape
-	pkill -USR1 -x sxhkd
+	bspc quit
 
-# terminate this X session
+# Make sxhkd reload its configuration files:
 super + shift + Escape
-	pkill X
+	pkill -USR1 -x sxhkd
 
 super + z
 	google-chrome-stable
+
+# Toggle the panel
+super + quotedbl
+	cd ~/.config/bspwm; \
+	. panelopts; \
+	if [ -e /tmp/panel_pid ]; then; \
+		kill $(cat /tmp/panel_pid); \
+	else; \
+		./panelinit; \
+	fi;
 
 XF86MonBrightnessDown
     xbacklight -dec 3
