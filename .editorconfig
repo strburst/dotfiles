@@ -10,8 +10,11 @@ indent_style = space
 
 tab_width = 4
 
+max_line_length = 80
+
 [*.{c,c++,java}]
 indent_size = 4
 
 [{.gitconfig,sxhkdrc,Makefile}]
 indent_style = tab
+indent_size = 4
