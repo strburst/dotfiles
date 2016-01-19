@@ -58,6 +58,10 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-markdown'
 " Markdown previewing
 Plugin 'suan/vim-instant-markdown'
+" Mappings/text objects for C-style argument lists
+Plugin 'PeterRincker/vim-argumentative'
+" Better JSON syntax highlighting
+Plugin 'elzr/vim-json'
 
 call vundle#end()
 filetype plugin indent on
@@ -80,6 +84,9 @@ let g:syntastic_mode_map = {
             \ "mode": "passive",
             \ "active_filetypes": [],
             \ "passive_filetypes": [] }
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
 nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
 nnoremap <leader>w :SyntasticReset<Cr>
@@ -105,8 +112,6 @@ let g:markdown_fenced_languages = ['js=javascript']
 
 " Don't preview Markdown when it's opened
 let g:instant_markdown_autostart = 0
-" Don't automatically refresh the preview
-let g:instant_markdown_slow = 1
 
 " EDITOR BEHAVIOR
 set mouse=a        " Enable the mouse
@@ -151,8 +156,6 @@ set tabpagemax=25 " Commands can auto-open up to 25 tabs
 
 " When joining comments, remove the comment part
 autocmd BufWinEnter,BufRead * setlocal formatoptions+=j
-" Don't continue comments when creating a new line
-autocmd BufWinEnter,BufRead * setlocal formatoptions-=o
 
 "  Usually set/overriden by editorconfig
 set autoindent
