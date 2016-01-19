@@ -6,10 +6,12 @@ cleanup() {
   # The \r hides the ^C that appears
   echo -e '\rPerforming cleanup...'
 
+  rm $PANEL_PID_LOC
   bspc config top_padding 0
-  # Avoid executing cleanup() again when I send the signal to kill myself
+
+  # Avoid executing cleanup() again when this process kills itself
   trap - TERM
-  # Kill myself and all my children
+  # Kill this process and all its child processes
   kill 0
 }
 
@@ -27,7 +29,8 @@ batterypretty() {
   case "$(echo $rawinfo | cut -d' ' -f 3)" in
     'Discharging,') state='-' ;;
     'Charging,') state='+' ;;
-    # Otherwise 'Full' or 'Unknown'; let state evaluate to the empty string
+    'Unknown,') state='?' ;;
+    'Full,') state='' ;;
   esac
 
   echo $state$percent%
@@ -58,7 +61,7 @@ wraprepeat() {
   # The command to actually execute
   docmd=$@
 
-  last='\n\n\n'
+  last=''
 
   while true; do
     result=$($docmd)
@@ -72,14 +75,21 @@ wraprepeat() {
   done
 }
 
-# Do cleanup before exiting
-trap cleanup INT TERM QUIT EXIT
+# Error immediately when something bad happens; disallow undefined variables
+set -euo pipefail
+
+# Do cleanup before exiting; also exit as soon as an error occurs
+# This will let us exit when the X session closes without needing to be killed
+trap cleanup INT TERM QUIT EXIT ERR PIPE
 
 . panelopts
 
 # Initialize the fifo, removing it first if it already exists
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
+
+# Write the pid somewhere so other processes can kill this process
+echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
 wraprepeat 1 'D%s\n' curdesktop > $PANEL_FIFO &

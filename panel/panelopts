@@ -3,5 +3,7 @@
 # Various options read by panelinit and panelupdate
 
 PANEL_FIFO=/tmp/panel_fifo
+PANEL_PID_LOC=/tmp/panel_pid
+
 PANEL_FONT=-*-terminesspowerline-medium-r-normal-*-12-*-*-*-c-*-*-1
 PANEL_HEIGHT=18
