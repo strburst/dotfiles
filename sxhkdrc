@@ -71,7 +71,7 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
 
 super + r
-    bspc desktop -R 90
+	bspc desktop -R 90
 
 ~button1
 	bspc pointer -g focus
@@ -114,19 +114,19 @@ super + quotedbl
 	fi;
 
 XF86MonBrightnessDown
-    xbacklight -dec 3
+	xbacklight -dec 3
 
 XF86MonBrightnessUp
-    xbacklight -inc 3
+	xbacklight -inc 3
 
 XF86AudioLowerVolume
-    amixer set Master 1.50db-
+	amixer set Master 1.50db-
 
 XF86AudioRaiseVolume
-    amixer set Master 1.50db+
+	amixer set Master 1.50db+
 
 XF86AudioMute
-    amixer set Master toggle
+	amixer set Master toggle
 
 Print
-    scrot 'Pictures/Screenshots/Screenshot %F %H.%M.%S.png'
+	scrot 'Pictures/Screenshots/Screenshot %F %H.%M.%S.png'
