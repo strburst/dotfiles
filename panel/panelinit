@@ -92,14 +92,11 @@ mkfifo "$PANEL_FIFO"
 echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
-wraprepeat 1 'D%s\n' curdesktop > $PANEL_FIFO &
 wraprepeat 2 'C%s\n' clock > $PANEL_FIFO &
 wraprepeat 3 'B%s\n' batterypretty > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
-
-# TODO: Add more desktop status info by parsing bspc subscribe
-# bspc control --subscribe > "$PANEL_FIFO" &
+bspc control --subscribe > $PANEL_FIFO &
 
 # Make way for the panel!
 bspc config top_padding $PANEL_HEIGHT

@@ -7,3 +7,5 @@ PANEL_PID_LOC=/tmp/panel_pid
 
 PANEL_FONT=-*-terminesspowerline-medium-r-normal-*-12-*-*-*-c-*-*-1
 PANEL_HEIGHT=18
+
+DESKTOP_FREE_COLOR=#AAAAAA
