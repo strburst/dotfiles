@@ -51,6 +51,10 @@ curwindow() {
   xdotool getwindowfocus getwindowname
 }
 
+netstate() {
+  nmcli --terse --fields state g
+}
+
 # Repeatedly invoke the given command with the given frequency
 wraprepeat() {
   # Number of seconds to wait between invocations
@@ -94,6 +98,7 @@ echo $$ > $PANEL_PID_LOC
 # Feed various pieces of information into panelupdate
 wraprepeat 2 'C%s\n' clock > $PANEL_FIFO &
 wraprepeat 3 'B%s\n' batterypretty > $PANEL_FIFO &
+wraprepeat 4 'N%s\n' netstate > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
 bspc control --subscribe > $PANEL_FIFO &
