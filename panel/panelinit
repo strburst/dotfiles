@@ -96,9 +96,9 @@ mkfifo "$PANEL_FIFO"
 echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
-wraprepeat 2 'C%s\n' clock > $PANEL_FIFO &
-wraprepeat 3 'B%s\n' batterypretty > $PANEL_FIFO &
+wraprepeat 3 'C%s\n' clock > $PANEL_FIFO &
 wraprepeat 4 'N%s\n' netstate > $PANEL_FIFO &
+wraprepeat 5 'B%s\n' batterypretty > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
 bspc control --subscribe > $PANEL_FIFO &
