@@ -41,16 +41,6 @@ clock() {
   date "+%a %H:%M"
 }
 
-# Get the name of the currently focused desktop
-curdesktop() {
-  bspc query -D -d focused
-}
-
-# Get the name of the currently focused window
-curwindow() {
-  xdotool getwindowfocus getwindowname
-}
-
 netstate() {
   nmcli --terse --fields state g
 }
