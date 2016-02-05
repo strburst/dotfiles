@@ -1,5 +1,6 @@
 # Ignore weechat logs, plugin directories
 .weechat/logs
 .weechat/perl
+.weechat/python
 .weechat/script
 .weechat/weechat.log
