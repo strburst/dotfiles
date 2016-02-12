@@ -13,17 +13,15 @@ Plugin 'gmarik/Vundle.vim'
 " Configure indentation and other editor settings on a per-project basis
 Plugin 'editorconfig/editorconfig-vim'
 " Comment/uncomment lines in nearly every language easily
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary'
 " Change delimiters like ( and [ easily
 Plugin 'tpope/vim-surround'
 " Use the . command to repeat vim-surround mappings
 Plugin 'tpope/vim-repeat'
 " Solarized colorscheme in vim
 Plugin 'altercation/vim-colors-solarized'
-" Scratch area
-Plugin 'mtth/scratch.vim'
 " Intelligent file opener
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Pretty statusline display
 Plugin 'bling/vim-airline'
 " Visualize the undo tree
@@ -44,16 +42,9 @@ Plugin 'chikamichi/mediawiki.vim'
 Plugin 'wakatime/vim-wakatime'
 " Elixir language support
 Plugin 'elixir-lang/vim-elixir'
-" Convenient notes plugin, dependency
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
 " Snippets/autocompletion plugin, default snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Jade language support
-Plugin 'digitaltoad/vim-jade'
-" CoffeeScript language support
-Plugin 'kchmck/vim-coffee-script'
 " Markdown language support
 Plugin 'tpope/vim-markdown'
 " Markdown previewing
