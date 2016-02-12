@@ -122,6 +122,11 @@ let g:markdown_fenced_languages = ['js=javascript']
 " Don't preview Markdown when it's opened
 let g:instant_markdown_autostart = 0
 
+" CtrlP indexes hidden files; ignores VCS/dependency directories
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$' }
+
 " }}} EDITOR BEHAVIOR {{{
 set mouse=a        " Enable the mouse
 set encoding=utf-8
@@ -143,6 +148,8 @@ set backspace=indent,eol,start " Backspace over newlines
 
 set ignorecase   " Searches ignore case by default
 set smartcase    " Case sensitive search if search has uppercase characters
+
+set showmatch   " Briefly jump back to the ( when a ) is typed
 
 set wildmode=longest,list:longest   " Autocomplete by longest match first
 
