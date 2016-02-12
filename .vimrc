@@ -1,4 +1,4 @@
-" VUNDLE SETUP
+" PLUGIN SETUP {{{
 set nocompatible
 filetype off
 
@@ -8,56 +8,74 @@ let maplocalleader="\\"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Core functionality {{{
+
 " Vim plugin package manager
 Plugin 'gmarik/Vundle.vim'
 " Configure indentation and other editor settings on a per-project basis
 Plugin 'editorconfig/editorconfig-vim'
+" Syntax-checker support using the location list
+Plugin 'scrooloose/syntastic'
+" Track editor statistics via wakatime
+Plugin 'wakatime/vim-wakatime'
+" Awesome git integration
+Plugin 'tpope/vim-fugitive'
+
+" }}} Keymaps and text objects {{{
+
 " Comment/uncomment lines in nearly every language easily
 Plugin 'tpope/vim-commentary'
 " Change delimiters like ( and [ easily
 Plugin 'tpope/vim-surround'
 " Use the . command to repeat vim-surround mappings
 Plugin 'tpope/vim-repeat'
-" Solarized colorscheme in vim
-Plugin 'altercation/vim-colors-solarized'
-" Intelligent file opener
-Plugin 'ctrlpvim/ctrlp.vim'
-" Pretty statusline display
-Plugin 'bling/vim-airline'
-" Visualize the undo tree
-Plugin 'sjl/gundo.vim'
-" Navigate between vim/tmux splits easily
-Plugin 'christoomey/vim-tmux-navigator'
-" Better LaTeX support, e.g. comtinuous compilation mode
-Plugin 'lervag/vimtex'
-" Syntax-checker support using the location list
-Plugin 'scrooloose/syntastic'
-" Convenient paired mappings for [ and ] for navigation
-Plugin 'tpope/vim-unimpaired'
-" Awesome git integration
-Plugin 'tpope/vim-fugitive'
-" Mediawiki syntax support
-Plugin 'chikamichi/mediawiki.vim'
-" Track editor statistics via wakatime
-Plugin 'wakatime/vim-wakatime'
-" Elixir language support
-Plugin 'elixir-lang/vim-elixir'
 " Snippets/autocompletion plugin, default snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" Mappings/text objects for C-style argument lists
+Plugin 'PeterRincker/vim-argumentative'
+" Convenient paired mappings for [ and ] for navigation
+Plugin 'tpope/vim-unimpaired'
+
+" }}} Navigation {{{
+
+" Intelligent file opener
+Plugin 'ctrlpvim/ctrlp.vim'
+" Navigate between vim/tmux splits easily
+Plugin 'christoomey/vim-tmux-navigator'
+
+" }}} Visual {{{
+
+" Solarized colorscheme in vim
+Plugin 'altercation/vim-colors-solarized'
+" Pretty statusline
+Plugin 'bling/vim-airline'
+" Visualize the undo tree
+Plugin 'sjl/gundo.vim'
+" Yet another color scheme
+Plugin 'baskerville/bubblegum'
+
+" Language support {{{
+
+" Better LaTeX support, e.g. comtinuous compilation mode
+Plugin 'lervag/vimtex'
+" Mediawiki syntax support
+Plugin 'chikamichi/mediawiki.vim'
+" Elixir language support
+Plugin 'elixir-lang/vim-elixir'
 " Markdown language support
 Plugin 'tpope/vim-markdown'
 " Markdown previewing
 Plugin 'suan/vim-instant-markdown'
-" Mappings/text objects for C-style argument lists
-Plugin 'PeterRincker/vim-argumentative'
-" Better JSON syntax highlighting
+" Better JSON language support
 Plugin 'elzr/vim-json'
+
+" }}} }}}
 
 call vundle#end()
 filetype plugin indent on
 
-" PLUGIN SETTINGS/MAPS
+" }}} PLUGIN SETTINGS/MAPS {{{
 let g:airline_powerline_fonts=1   " Use patched characters, not fallbacks
 
 " Syntastic recommended settings
@@ -104,7 +122,7 @@ let g:markdown_fenced_languages = ['js=javascript']
 " Don't preview Markdown when it's opened
 let g:instant_markdown_autostart = 0
 
-" EDITOR BEHAVIOR
+" }}} EDITOR BEHAVIOR {{{
 set mouse=a        " Enable the mouse
 set encoding=utf-8
 set spelllang=en_us
@@ -154,7 +172,7 @@ set expandtab    " Spaces for tabs
 set shiftwidth=4
 set softtabstop=4
 
-"  VISUAL SETTINGS
+" }}} VISUAL SETTINGS {{{
 syntax on
 set t_Co=256
 set background=dark
@@ -176,7 +194,7 @@ set laststatus=2 " Always show the status bar
 
 set noshowmode   " Powerline plugin indicates modes already
 
-" ASSORTED KEYMAPS
+" }}} ASSORTED KEYMAPS {{{
 " Turn off highlights for current search
 nnoremap <F5> :nohl<Cr>
 
@@ -256,3 +274,5 @@ nnoremap <leader>t ggdG"+pkdd
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
 inoremap <C-r> <C-r><C-p>
 inoremap <C-r><C-p> <C-r>
+
+" }}}
