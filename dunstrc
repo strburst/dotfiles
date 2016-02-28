@@ -53,7 +53,7 @@
 
     # Don't remove messages if the user is idle for longer than idle_threshold
     # seconds. Set to 0 to disable.
-    idle_threshold = 60
+    idle_threshold = 20
 
     # Which monitor should the notifications be displayed on.
     monitor = 0
