@@ -6,6 +6,7 @@ PANEL_FIFO=/tmp/panel_fifo
 PANEL_PID_LOC=/tmp/panel_pid
 
 PANEL_FONT=-*-terminesspowerline-medium-r-normal-*-12-*-*-*-c-*-*-1
+PANEL_GEOMETRY=+48  # 16x3
 PANEL_HEIGHT=18
 
 DESKTOP_FREE_COLOR=#AAAAAA

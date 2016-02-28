@@ -24,7 +24,6 @@ set -euo pipefail
 curbattery=?
 curclock=?
 curdesktop=?
-curnetstate=?
 curwindow=?
 
 while read -r line; do
@@ -34,9 +33,6 @@ while read -r line; do
       ;;
     C*)
       curclock=${line#?}
-      ;;
-    N*)
-      curnetstate=${line#?}
       ;;
     T*)
       curwindow=${line#?}
@@ -60,8 +56,8 @@ while read -r line; do
       ;;
   esac
 
-  echo -n "%{l}Desktop:$curdesktop"
+  echo -n "%{l}$curdesktop"
   echo -n "%{c}$(dottruncate 120 $curwindow)"
-  echo -n "%{r}Network: $curnetstate :: Battery: $curbattery :: $curclock"
+  echo -n "%{r}Battery: $curbattery :: $curclock"
   echo
 done

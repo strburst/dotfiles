@@ -1,0 +1,13 @@
+background black
+
+# Bar is exactly 3 icons across
+geometry 3
+
+# Force icons to be 16x16
+icon_size 16
+kludges force_icons_size
+
+# No border
+decorations none
+
+# vim: ft=conf:

@@ -41,10 +41,6 @@ clock() {
   date "+%a %H:%M"
 }
 
-netstate() {
-  nmcli --terse --fields state g
-}
-
 # Repeatedly invoke the given command with the given frequency
 wraprepeat() {
   # Number of seconds to wait between invocations
@@ -60,6 +56,7 @@ wraprepeat() {
   while true; do
     result=$($docmd)
 
+    # Only send output if the output changed from the last invocation
     if [ "$last" != "$result" ]; then
       printf "$format" "$result"
       last=$result
@@ -87,7 +84,6 @@ echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
 wraprepeat 3 'C%s\n' clock > $PANEL_FIFO &
-wraprepeat 4 'N%s\n' netstate > $PANEL_FIFO &
 wraprepeat 5 'B%s\n' batterypretty > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
@@ -96,6 +92,6 @@ bspc control --subscribe > $PANEL_FIFO &
 # Make way for the panel!
 bspc config top_padding $PANEL_HEIGHT
 
-./panelout < $PANEL_FIFO | lemonbar -p -f "$PANEL_FONT" &
+./panelout < $PANEL_FIFO | lemonbar -p -g "$PANEL_GEOMETRY" -f "$PANEL_FONT" &
 
 wait
