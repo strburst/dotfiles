@@ -11,6 +11,7 @@
 	helper = cache --timeout=1800
 [alias]
 	co = checkout
+	cp = cherry-pick
 	lg = log --oneline --abbrev --graph
 	st = status
 	unstage = reset HEAD --
