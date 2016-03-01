@@ -36,6 +36,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'PeterRincker/vim-argumentative'
 " Convenient paired mappings for [ and ] for navigation
 Plugin 'tpope/vim-unimpaired'
+" Move selections around in visual block mode
+Plugin 'zirrostig/vim-schlepp'
 
 " }}} Navigation {{{
 
@@ -126,6 +128,17 @@ let g:instant_markdown_autostart = 0
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$' }
+
+" Schlep mappings
+vmap <silent> <Up>    <Plug>SchleppUp
+vmap <silent> <Down>  <Plug>SchleppDown
+vmap <silent> <Left>  <Plug>SchleppLeft
+vmap <silent> <Right> <Plug>SchleppRight
+
+vmap Dk <Plug>SchleppDupUp
+vmap Dj <Plug>SchleppDupDown
+vmap Dh <Plug>SchleppDupLeft
+vmap Dl <Plug>SchleppDupRight
 
 " }}} EDITOR BEHAVIOR {{{
 set mouse=a        " Enable the mouse
