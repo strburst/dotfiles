@@ -15,27 +15,6 @@ cleanup() {
   kill 0
 }
 
-# Get the battery percentage from acpi
-battery() {
-  # If an argument is given, cut it instead
-  echo ${1:-$(acpi -b)} | cut -d, -f 2 | tr --delete --complement '[:digit:]'
-}
-
-# Get the battery percentage and charging status at the same time
-batterypretty() {
-  rawinfo=$(acpi -b)
-  percent=$(battery "$rawinfo")
-
-  case "$(echo $rawinfo | cut -d' ' -f 3)" in
-    'Discharging,') state='-' ;;
-    'Charging,') state='+' ;;
-    'Unknown,') state='?' ;;
-    'Full,') state='' ;;
-  esac
-
-  echo $state$percent%
-}
-
 # Get the date and time
 clock() {
   date "+%a %H:%M"
@@ -84,7 +63,8 @@ echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
 wraprepeat 3 'C%s\n' clock > $PANEL_FIFO &
-wraprepeat 5 'B%s\n' batterypretty > $PANEL_FIFO &
+wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > $PANEL_FIFO &
+wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
 bspc control --subscribe > $PANEL_FIFO &

@@ -21,43 +21,52 @@ set -euo pipefail
 
 . ./panelopts
 
-curbattery=?
-curclock=?
-curdesktop=?
+batpercent=?
+batstatus=?
+clock=?
+desktopinfo=?
 curwindow=?
 
 while read -r line; do
   case $line in
-    B*)
-      curbattery=${line#?}
+    BS*)
+      case "${line#??}" in
+        'Discharging') batstatus='-' ;;
+        'Charging') batstatus='+' ;;
+        'Unknown') batstatus='?' ;;
+        'Full') batstatus='' ;;
+      esac
+      ;;
+    BP*)
+      batpercent=${line#??}
       ;;
     C*)
-      curclock=${line#?}
+      clock=${line#?}
       ;;
     T*)
       curwindow=${line#?}
       ;;
     WM*)
       IFS=:
-      curdesktop=""
+      desktopinfo=""
       for desktop in {$line#??}; do
         case $desktop in
           f*) # Unoccupied desktop, unfocused
-            curdesktop+=" %{F$DESKTOP_FREE_COLOR}${desktop#?}%{F-}" ;;
+            desktopinfo+=" %{F$DESKTOP_FREE_COLOR}${desktop#?}%{F-}" ;;
           F*) # Unoccupied desktop, focused
-            curdesktop+=" [%{F$DESKTOP_FREE_COLOR}${desktop#?}%{F-}]" ;;
+            desktopinfo+=" [%{F$DESKTOP_FREE_COLOR}${desktop#?}%{F-}]" ;;
           o*) # Occupied desktop, unfocused
-            curdesktop+=" ${desktop#?}" ;;
+            desktopinfo+=" ${desktop#?}" ;;
           O*) # Occupied desktop, focused
-            curdesktop+=" [${desktop#?}]" ;;
+            desktopinfo+=" [${desktop#?}]" ;;
         esac
       done
       unset IFS
       ;;
   esac
 
-  echo -n "%{l}$curdesktop"
+  echo -n "%{l}$desktopinfo"
   echo -n "%{c}$(dottruncate 120 $curwindow)"
-  echo -n "%{r}Battery: $curbattery :: $curclock"
+  echo -n "%{r}Battery: $batstatus$batpercent% :: $clock"
   echo
 done
