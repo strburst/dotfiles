@@ -56,6 +56,8 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
 " Yet another color scheme
 Plugin 'baskerville/bubblegum'
+" Display open buffers in the statusline
+Plugin 'bling/vim-bufferline'
 
 " Language support {{{
 
@@ -166,6 +168,8 @@ set showmatch   " Briefly jump back to the ( when a ) is typed
 
 set wildmode=longest,list:longest   " Autocomplete by longest match first
 
+set hidden   " Can switch out of buffers that have unsaved changes
+
 set splitbelow   " split below by default
 set splitright   " vsplit right by default
 
@@ -272,12 +276,6 @@ nnoremap \\ ,
 
 " Repeat the last macro
 nnoremap - @@
-
-" Switch between/move tabs
-nnoremap _ gT
-nnoremap + gt
-nnoremap <C-_> :-tabmove<Cr>
-nnoremap <C-+> :+tabmove<Cr>
 
 " Show man pages for commands
 nnoremap <leader>k K
