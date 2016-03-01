@@ -1,4 +1,5 @@
 " PLUGIN SETUP {{{
+
 set nocompatible
 filetype off
 
@@ -56,6 +57,8 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/gundo.vim'
 " Yet another color scheme
 Plugin 'baskerville/bubblegum'
+" Solarized theme
+Plugin 'vim-airline/vim-airline-themes'
 " Display open buffers in the statusline
 Plugin 'bling/vim-bufferline'
 
@@ -73,6 +76,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'suan/vim-instant-markdown'
 " Better JSON language support
 Plugin 'elzr/vim-json'
+" Alda language support
+Plugin 'daveyarwood/vim-alda'
 
 " }}} }}}
 
@@ -80,6 +85,7 @@ call vundle#end()
 filetype plugin indent on
 
 " }}} PLUGIN SETTINGS/MAPS {{{
+
 let g:airline_powerline_fonts=1   " Use patched characters, not fallbacks
 
 " Syntastic recommended settings
@@ -131,6 +137,8 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$' }
 
+nnoremap <leader>m :CtrlPMRUFiles<Cr>
+
 " Schlep mappings
 vmap <silent> <Up>    <Plug>SchleppUp
 vmap <silent> <Down>  <Plug>SchleppDown
@@ -143,10 +151,12 @@ vmap Dh <Plug>SchleppDupLeft
 vmap Dl <Plug>SchleppDupRight
 
 " }}} EDITOR BEHAVIOR {{{
+
 set mouse=a        " Enable the mouse
 set encoding=utf-8
 set spelllang=en_us
 
+set ttimeout
 set ttimeoutlen=25
 
 set backupdir=~/.vim/backup " Backup file location
@@ -191,12 +201,13 @@ set tabpagemax=25 " Commands can auto-open up to 25 tabs
 autocmd BufWinEnter,BufRead * setlocal formatoptions+=j
 
 "  Usually set/overriden by editorconfig
-set autoindent
-set expandtab    " Spaces for tabs
-set shiftwidth=4
-set softtabstop=4
+set autoindent     " Copy indent from previous line when making a new line
+set expandtab      " Use spaces instead of tabs
+set shiftwidth=4   " Four spaces is one unit of indentation
+set softtabstop=4  " Backspace at BOL in insert mode deletes four spaces
 
 " }}} VISUAL SETTINGS {{{
+
 syntax on
 set t_Co=256
 set background=dark
@@ -219,6 +230,7 @@ set laststatus=2 " Always show the status bar
 set noshowmode   " Powerline plugin indicates modes already
 
 " }}} ASSORTED KEYMAPS {{{
+
 " Turn off highlights for current search
 nnoremap <F5> :nohl<Cr>
 
