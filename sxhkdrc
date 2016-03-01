@@ -101,7 +101,10 @@ super + shift + Escape
 	pkill -USR1 -x sxhkd
 
 super + z
-	google-chrome-stable
+	chromium
+
+super + p
+	dmenu -l 999 < ~/noninteractives | sh
 
 # Toggle the panel
 super + quotedbl
@@ -114,10 +117,10 @@ super + quotedbl
 	fi;
 
 XF86MonBrightnessDown
-	xbacklight -dec 3
+	xbacklight -dec 1
 
 XF86MonBrightnessUp
-	xbacklight -inc 3
+	xbacklight -inc 1
 
 XF86AudioLowerVolume
 	amixer set Master 1.50db-
