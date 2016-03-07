@@ -17,6 +17,10 @@ dottruncate() {
   fi
 }
 
+sep() {
+  echo -n " %{F$SEPARATOR_COLOR}|%{F-} "
+}
+
 set -euo pipefail
 
 . ./panelopts
@@ -76,6 +80,8 @@ while read -r line; do
 
   echo -n "%{l}$desktopinfo"
   echo -n "%{c}$(dottruncate 120 $curwindow)"
-  echo -n "%{r}Load: $loadavg :: Battery: $batstatus$batpercent% :: $clock"
+  echo -n "%{r}Load: $loadavg" && sep
+  echo -n "Batt: $batstatus$batpercent%" && sep
+  echo -n "$clock"
   echo
 done
