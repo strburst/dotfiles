@@ -139,6 +139,11 @@ let g:ctrlp_custom_ignore = {
 
 nnoremap <leader>m :CtrlPMRUFiles<Cr>
 
+" Don't echo buffers automatically; airline already displays them
+let g:bufferline_echo = 0
+
+command Gc Gcommit
+
 " Schlep mappings
 vmap <silent> <Up>    <Plug>SchleppUp
 vmap <silent> <Down>  <Plug>SchleppDown
@@ -236,7 +241,7 @@ nnoremap <F5> :nohl<Cr>
 
 " Open my vimrc in a new window/tab
 nnoremap <F9> :vsplit $MYVIMRC<Cr>
-nnoremap <F10> :tabnew $MYVIMRC<Cr>
+nnoremap <F10> :edit $MYVIMRC<Cr>
 
 " Toggle dark/light colorscheme
 call togglebg#map("<F12>")
@@ -300,6 +305,9 @@ nnoremap <leader>y :%y +<Cr>
 
 " Replace the entire file with the contents of the system clipboard
 nnoremap <leader>t ggdG"+pkdd
+
+" Switch to previously edited file
+nnoremap <leader>f <C-^>
 
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
 inoremap <C-r> <C-r><C-p>
