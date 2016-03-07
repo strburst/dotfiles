@@ -17,7 +17,12 @@ cleanup() {
 
 # Get the date and time
 clock() {
-  date "+%a %H:%M"
+  date "+%a-%d %H:%M"
+}
+
+# Get the load average
+loadavg() {
+  cat /proc/loadavg | cut -d' ' -f -3
 }
 
 # Repeatedly invoke the given command with the given frequency
@@ -64,6 +69,7 @@ echo $$ > $PANEL_PID_LOC
 # Feed various pieces of information into panelupdate
 wraprepeat 3 'C%s\n' clock > $PANEL_FIFO &
 wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > $PANEL_FIFO &
+wraprepeat 5 'L%s\n' loadavg > $PANEL_FIFO &
 wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
