@@ -92,13 +92,13 @@ super + Return
 super + space
 	dmenu_run
 
-# Terminate this X session
-super + Escape
-	bspc quit
-
 # Make sxhkd reload its configuration files:
-super + shift + Escape
+super + Escape
 	pkill -USR1 -x sxhkd
+
+# Terminate this X session
+super + shift + Escape
+	bspc quit
 
 super + z
 	chromium
