@@ -142,7 +142,8 @@ nnoremap <leader>m :CtrlPMRUFiles<Cr>
 " Don't echo buffers automatically; airline already displays them
 let g:bufferline_echo = 0
 
-command Gc Gcommit
+" Alias Gc to Gcommit
+command! Gc Gcommit
 
 " Schlep mappings
 vmap <silent> <Up>    <Plug>SchleppUp
