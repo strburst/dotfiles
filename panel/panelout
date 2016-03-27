@@ -30,6 +30,7 @@ batstatus=?
 clock=?
 curwindow=?
 desktopinfo=?
+date=?
 loadavg=?
 
 while read -r line; do
@@ -48,6 +49,9 @@ while read -r line; do
     C*)
       clock=${line#?}
       ;;
+    D*)
+      date=${line#?}
+      ;;
     L*)
       loadavg=${line#?}
       ;;
@@ -59,7 +63,7 @@ while read -r line; do
       desktopinfo=""
       for desktop in {$line#??}; do
         case $desktop in
-          f*|F*|o*|O*)
+          f*|F*|o*|O*|u*|U*)
             desktopinfo+="%{A:bspc desktop -f ${desktop#?}:} "
             case $desktop in
               f*) # Unoccupied desktop, unfocused
@@ -70,6 +74,10 @@ while read -r line; do
                 desktopinfo+="${desktop#?}" ;;
               O*) # Occupied desktop, focused
                 desktopinfo+="[${desktop#?}]" ;;
+              u*) # Urgent desktop, unfocused
+                desktopinfo+="%{F$DESKTOP_URGENT_COLOR}${desktop#?}%{F-}" ;;
+              U*) # Urgent desktop, focused
+                desktopinfo+="[%{F$DESKTOP_URGENT_COLOR}${desktop#?}%{F-}]" ;;
             esac
             desktopinfo+="%{A}" ;;
         esac
@@ -82,6 +90,7 @@ while read -r line; do
   echo -n "%{c}$(dottruncate 120 $curwindow)"
   echo -n "%{r}Load: $loadavg" && sep
   echo -n "Batt: $batstatus$batpercent%" && sep
+  echo -n "$date" && sep
   echo -n "$clock"
   echo
 done

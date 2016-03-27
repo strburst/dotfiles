@@ -6,10 +6,11 @@ PANEL_FIFO=/tmp/panel_fifo
 PANEL_PID_LOC=/tmp/panel_pid
 
 PANEL_FONT=-*-terminesspowerline-medium-r-normal-*-12-*-*-*-c-*-*-1
-PANEL_GEOMETRY=+48  # 16x3
+PANEL_GEOMETRY=+64  # 16x3
 PANEL_HEIGHT=18
 
 DESKTOP_FREE_COLOR=#AAAAAA
+DESKTOP_URGENT_COLOR=#00AAAA
 SEPARATOR_COLOR=$DESKTOP_FREE_COLOR
 
 BAT_SYS_PATH=/sys/class/power_supply/BAT1/

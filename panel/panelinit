@@ -15,9 +15,14 @@ cleanup() {
   kill 0
 }
 
-# Get the date and time
-clock() {
-  date "+%a-%d %H:%M"
+# Get the time
+myclock() {
+  date "+%H:%M"
+}
+
+# Get the date
+mydate() {
+  date "+%a %d"
 }
 
 # Get the load average
@@ -67,13 +72,14 @@ mkfifo "$PANEL_FIFO"
 echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
-wraprepeat 3 'C%s\n' clock > $PANEL_FIFO &
+wraprepeat 3 'C%s\n' myclock > $PANEL_FIFO &
 wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > $PANEL_FIFO &
 wraprepeat 5 'L%s\n' loadavg > $PANEL_FIFO &
 wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
+wraprepeat 1800 'D%s\n' mydate > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &
-bspc control --subscribe > $PANEL_FIFO &
+bspc subscribe > $PANEL_FIFO &
 
 # Make way for the panel!
 bspc config top_padding $PANEL_HEIGHT
