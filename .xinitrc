@@ -14,6 +14,7 @@ feh --bg-center ~/Pictures/wallpaper.png
 # Start startup applications
 dropbox &
 dunst &
+gajim &
 nm-applet &
 numlockx &
 redshift &

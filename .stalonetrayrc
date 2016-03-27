@@ -1,7 +1,7 @@
 background black
 
 # Bar is exactly 3 icons across
-geometry 3
+geometry 4
 
 # Force icons to be 16x16
 icon_size 16
