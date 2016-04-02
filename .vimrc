@@ -124,7 +124,7 @@ let g:notes_directories = ['~/.vim/notes']
 " EditorConfig doesn't manage git commit messages, etc
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " EditorConfig sets colorcolumn based on max_line_length
-let g:EditorConfig_max_line_indicator = 'fill'
+let g:EditorConfig_max_line_indicator = 'line'
 
 " Enable syntax highlighting for some languages within Markdown
 let g:markdown_fenced_languages = ['js=javascript']
