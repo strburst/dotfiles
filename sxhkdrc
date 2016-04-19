@@ -77,7 +77,7 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+	bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
@@ -139,6 +139,7 @@ super + Escape
 super + z
 	chromium
 
+# Get dmenu to pull up a list of frequently used commands
 super + semicolon
 	dmenu -l 999 < ~/noninteractives | sh
 
