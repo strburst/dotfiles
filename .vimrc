@@ -165,12 +165,26 @@ set spelllang=en_us
 set ttimeout
 set ttimeoutlen=25
 
-set backupdir=~/.vim/backup " Backup file location
-set directory=~/.vim/swap   " Swap file location
-set undodir=~/.vim/undo     " Undo file location
-set viewdir=~/.vim/view     " Code folding file location
+set backupdir=/tmp/vim/backup  " Backup file location
+set directory=~/.vim/swap      " Swap file location
+set undodir=~/.vim/undo        " Undo file location
+set viewdir=/tmp/vim/view      " Code folding file location
 
-" set path+=system("echo $PATH | sed 's/:/,/g'")
+" Create the proper directories if they don't exist
+if !isdirectory("/tmp/vim/backup")
+    call mkdir("/tmp/vim/backup", "p")
+endif
+if !isdirectory($HOME."/.vim/swap")
+    call mkdir($HOME."/.vim/swap", "p")
+endif
+if !isdirectory($HOME."/.vim/undo")
+    call mkdir($HOME."/.vim/undo", "p")
+endif
+if !isdirectory($HOME."/tmp/vim/view")
+    call mkdir($HOME."/tmp/vim/view", "p")
+endif
+
+set dictionary+=/usr/share/dict/words
 
 set autoread   " Reread when files are changed outside of Vim
 
@@ -190,7 +204,6 @@ set splitbelow   " split below by default
 set splitright   " vsplit right by default
 
 set undofile           " Save undo tree between sessions
-set undolevels=10000   " Keep more undo history (for Gundo playback timelapses)
 
 set foldmethod=syntax   " Code folding by language
 set foldlevel=1         " Start with one fold opened
