@@ -40,4 +40,5 @@ eval `dircolors ~/.dircolors.ansi-universal`
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
 alias hist='history | less'
-alias vima='vim -p *'
+alias sl='ls'
+alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
