@@ -9,7 +9,6 @@
     ~/.tmux.conf: .tmux.conf
     ~/.vimrc: .vimrc
     ~/.weechat: .weechat/
-    ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
     ~/.Xresources.dark: xresources/Xresources.dark
     ~/.zshrc: .zshrc
@@ -29,6 +28,9 @@
     ~/.config/bspwm/panelout:
         create: true
         path: panel/panelout
+    ~/.config/bspwm/startup:
+        create: true
+        path: startup
 
     ~/.config/dunst/dunstrc:
         create: true

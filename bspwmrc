@@ -1,5 +1,5 @@
 #! /bin/sh
-
+#
 # Based on example:
 # https://github.com/baskerville/bspwm/blob/master/examples/bspwmrc
 
@@ -17,5 +17,10 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # Make Java Swing applications spawn windows properly
 wmname LG3D
 
+sxhkd -f 100 &
+
 # Start the panel!
 (cd ~/.config/bspwm && exec ./panelinit) &
+
+# Launch startup applications
+(cd ~/.config/bspwm && exec ./startup) &
