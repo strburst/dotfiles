@@ -42,4 +42,4 @@
 
 # Execute the following shell commands
 - shell:
-    - [pushd ~/.vim && mkdir -p backup notes swap undo view && popd, Initializing .vim directory]
+    - [mkdir -p ~/.vim/notes ~/.vim/swap ~/.vim/undo, Initializing .vim directory]

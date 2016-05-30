@@ -180,8 +180,8 @@ endif
 if !isdirectory($HOME."/.vim/undo")
     call mkdir($HOME."/.vim/undo", "p")
 endif
-if !isdirectory($HOME."/tmp/vim/view")
-    call mkdir($HOME."/tmp/vim/view", "p")
+if !isdirectory("/tmp/vim/view")
+    call mkdir("/tmp/vim/view", "p")
 endif
 
 set dictionary+=/usr/share/dict/words
