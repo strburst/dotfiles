@@ -78,6 +78,8 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'elzr/vim-json'
 " Alda language support
 Plugin 'daveyarwood/vim-alda'
+" Rust language support
+Plugin 'rust-lang/rust.vim'
 
 " }}} }}}
 
