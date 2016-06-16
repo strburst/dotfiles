@@ -136,8 +136,11 @@ super + space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + backslash
+	systemctl suspend || gksudo pm-suspend
+
 super + z
-	chromium
+	chromium || chromium-browser
 
 # Get dmenu to pull up a list of frequently used commands
 super + semicolon
