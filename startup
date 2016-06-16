@@ -12,8 +12,8 @@ export SSH_AUTH_SOCK
 setxkbmap -option 'ctrl:nocaps' &
 xcape -e 'Control_L=Escape' &
 
-# Place the wallpaper
-feh --bg-center ~/Pictures/wallpaper.png
+# Place the wallpaper on a black background
+xsetroot && feh --bg-center ~/Pictures/wallpaper.png
 
 # Start startup applications
 dropbox &
