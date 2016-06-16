@@ -20,3 +20,5 @@
 	tool = vimdiff
 [fetch]
 	prune = true
+[commit]
+	verbose = true
