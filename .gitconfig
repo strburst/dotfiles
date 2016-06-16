@@ -1,24 +1,24 @@
-[user]
-	name = Allen Zheng
-	email = strburst@users.noreply.github.com
-[color]
-	ui = auto
-[push]
-	default = simple
-[diff]
-	tool = vimdiff
-[credential]
-	helper = cache --timeout=1800
 [alias]
 	co = checkout
 	cp = cherry-pick
+	last = log -1 HEAD
 	lg = log --oneline --abbrev --graph
 	st = status
 	unstage = reset HEAD --
-	last = log -1 HEAD
-[merge]
+[color]
+	ui = auto
+[commit]
+	verbose = true
+[credential]
+	helper = cache --timeout=1800
+[diff]
 	tool = vimdiff
 [fetch]
 	prune = true
-[commit]
-	verbose = true
+[merge]
+	tool = vimdiff
+[push]
+	default = simple
+[user]
+	email = strburst@users.noreply.github.com
+	name = Allen Zheng
