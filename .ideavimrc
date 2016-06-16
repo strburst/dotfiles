@@ -52,9 +52,3 @@ nnoremap \\ ,
 
 " Repeat the last macro
 nnoremap - @@
-
-" Switch between/move tabs
-nnoremap _ gT
-nnoremap + gt
-nnoremap <C-_> :-tabmove<Cr>
-nnoremap <C-+> :+tabmove<Cr>
