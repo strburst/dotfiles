@@ -4,6 +4,7 @@
 # Create the following symlinks
 - link:
     ~/.editorconfig: .editorconfig
+    ~/.emacs.d: .emacs.d
     ~/.gitconfig: .gitconfig
     ~/.ideavimrc: .ideavimrc
     ~/.tmux.conf: .tmux.conf
