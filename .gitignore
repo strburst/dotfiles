@@ -1,6 +1,11 @@
-# Ignore weechat logs, plugin directories
-.weechat/logs
-.weechat/perl
-.weechat/python
-.weechat/script
-.weechat/weechat.log
+# Ignore emacs plugins and backups
+/.emacs.d/auto-save-list/
+/.emacs.d/backup/
+/.emacs.d/elpa/
+
+# Ignore weechat logs and plugin directories
+/.weechat/logs
+/.weechat/perl
+/.weechat/python
+/.weechat/script
+/.weechat/weechat.log
