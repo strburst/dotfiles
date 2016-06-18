@@ -53,14 +53,14 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'altercation/vim-colors-solarized'
 " Pretty statusline
 Plugin 'bling/vim-airline'
-" Visualize the undo tree
-Plugin 'sjl/gundo.vim'
 " Yet another color scheme
 Plugin 'baskerville/bubblegum'
 " Solarized theme
 Plugin 'vim-airline/vim-airline-themes'
 " Display open buffers in the statusline
 Plugin 'bling/vim-bufferline'
+" Visualize the undo tree
+Plugin 'mbbill/undotree'
 
 " Language support {{{
 
@@ -118,7 +118,7 @@ let g:gundo_help=0   " Hide help message in Gundo window
 let g:UltiSnipsExpandTrigger="<C-p>"
 
 " Bring up the undo tree
-nnoremap <F4> :GundoToggle<Cr>
+nnoremap <F4> :UndotreeToggle<Cr>
 
 " Directory to store vim-notes
 let g:notes_directories = ['~/.vim/notes']
