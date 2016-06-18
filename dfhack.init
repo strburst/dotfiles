@@ -1,0 +1,120 @@
+# Configuration for dfhack, based on example dfhack.init
+
+# PLUGINS {{{
+
+# Display DFHack version on title screen
+enable title-version
+
+# Dwarf Manipulator (simple in-game Dwarf Therapist replacement)
+enable manipulator
+
+# Search tool in various screens
+enable search
+
+# Improved build material selection interface
+enable automaterial
+
+# Other interface improvement tools
+enable dwarfmonitor
+enable mousequery
+enable autogems
+enable automelt
+enable autotrade
+enable buildingplan
+enable resume
+enable trackstop
+enable zone
+enable stocks
+enable autochop
+enable stockflow
+enable stockpiles
+
+# enable mouse controls and sand indicator in embark screen
+embark-tools enable sand mouse
+
+# Confirmation before certain actions
+enable confirm
+confirm disable note-delete
+
+# }}}
+
+# SCRIPTS {{{
+
+# write the correct season to gamelog on world load
+soundsense-season
+
+# write identifying information about the fort to gamelog on world load
+log-region
+
+# add information to item viewscreens
+view-item-info enable
+
+gui/load-screen enable
+
+# }}}
+
+# TWEAKS {{{
+
+tweak stable-cursor
+
+# support Shift-Enter in Trade and Move Goods to Depot screens for faster
+# selection; it selects the current item or stack and scrolls down one line
+tweak fast-trade
+
+# stop the right list in military->positions from resetting to top all the time
+tweak military-stable-assign
+# in same list, color units already assigned to squads in brown & green
+tweak military-color-assigned
+
+# remove inverse dependency of squad training speed on unit list size and use more sparring
+# tweak military-training
+
+# make crafted cloth items wear out with time like in old versions (bug 6003)
+tweak craft-age-wear
+
+# stop adamantine clothing from wearing out (bug 6481)
+tweak adamantine-cloth-wear
+
+# Add "Select all" and "Deselect all" options to farm plot menus
+tweak farm-plot-select
+
+# Add Shift-Left/Right controls to import agreement screen
+tweak import-priority-category
+
+# Misc. UI tweaks
+tweak block-labors              # Prevents labors that can't be used from being toggled
+tweak civ-view-agreement
+tweak fps-min
+tweak hide-priority
+tweak kitchen-keys
+tweak kitchen-prefs-empty
+tweak max-wheelbarrow
+tweak shift-8-scroll
+tweak title-start-rename
+tweak tradereq-pet-gender
+
+# }}}
+
+# Show an in-game dfhack prompt
+keybinding add Ctrl-Shift-P command-prompt
+
+# Toggle displaying exact waterlevel
+keybinding add Ctrl-W twaterlvl
+
+# show information collected by dwarfmonitor
+keybinding add Alt-M@dwarfmode/Default "dwarfmonitor prefs"
+keybinding add Ctrl-F@dwarfmode/Default "dwarfmonitor stats"
+
+# Stocks plugin
+keybinding add Ctrl-Shift-Z@dwarfmode/Default "stocks show"
+
+# browse linked mechanisms
+keybinding add Ctrl-M@dwarfmode/QueryBuilding/Some gui/mechanisms
+
+# sort units and items in the on-screen list
+keybinding add Alt-Shift-N "sort-units name" "sort-items description"
+keybinding add Alt-Shift-R "sort-units arrival"
+keybinding add Alt-Shift-T "sort-units profession" "sort-items type material"
+keybinding add Alt-Shift-Q "sort-units squad_position" "sort-items quality"
+
+# vim: set ft=conf:
