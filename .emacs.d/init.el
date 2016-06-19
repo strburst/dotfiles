@@ -4,6 +4,8 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
+(require 'editorconfig)
+
 ;; Allow evil to override more Emacs keybindings
 (setq evil-search-module 'evil-search
       evil-want-C-u-scroll t
@@ -31,6 +33,7 @@
 
 (require 'evil-tabs)
 (global-evil-tabs-mode)
+
 (elscreen-toggle-display-tab)
 
 (require 'flycheck)
@@ -53,9 +56,6 @@
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message "allen")
 
-;; Enable line numbers
-(global-linum-mode 1)
-
 ;; Don't clutter init.el with settings from custom
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
@@ -72,6 +72,15 @@
       kept-old-versions 0
       delete-old-versions t   ;; Don't prompt to delete old versions
       vc-make-backup-files t) ;; Backup files in version control too
+
+(set-face-font 'default "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*")
+(load-theme 'solarized-dark t)
+
+;; Enable line numbers
+(global-linum-mode 1)
+
+;; Subtly highlight the line the cursor is on
+(hl-line-mode 1)
 
 ;; Replace yes/no prompts with simpler y/n ones
 (defalias 'yes-or-no-p 'y-or-n-p)
