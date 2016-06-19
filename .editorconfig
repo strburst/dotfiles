@@ -5,19 +5,18 @@ charset = utf-8
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-indent_size = 2
+indent_size = 4
 indent_style = space
 
 tab_width = 4
 
 max_line_length = 80
 
-[*.{c,c++,java,rs}]
-indent_size = 4
+[*.{coffee,css,ex,exs,html,js,json}]
+indent_size = 2
 
 [{.gitconfig,sxhkdrc,Makefile}]
 indent_style = tab
-indent_size = 4
 
 [*.md]
 max_line_length = 0
