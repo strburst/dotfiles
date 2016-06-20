@@ -14,6 +14,20 @@
 (require 'evil)
 (evil-mode)
 
+;; Swap ; and : to enter ex commands faster
+(define-key evil-normal-state-map (kbd ";") 'evil-ex)
+(define-key evil-visual-state-map (kbd ";") 'evil-ex)
+(define-key evil-normal-state-map (kbd ":") 'evil-repeat-find-char)
+(define-key evil-visual-state-map (kbd ":") 'evil-repeat-find-char)
+
+;; Swap ^ and 0 (^ is more useful)
+(evil-redirect-digit-argument evil-motion-state-map "0" 'evil-first-non-blank)
+(define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line)
+
+;; Must come after requiring evil
+(require 'alda-mode)
+(define-key evil-motion-state-map "gp" 'alda-evil-play-region)
+
 (require 'evil-commentary)
 (evil-commentary-mode)
 
@@ -34,7 +48,10 @@
 (require 'evil-tabs)
 (global-evil-tabs-mode)
 
-(elscreen-toggle-display-tab)
+(unless (boundp 'init-complete)
+    (elscreen-toggle-display-tab))
+(define-key evil-motion-state-map (kbd "C-f") nil)
+(setq elscreen-prefix-key (kbd "C-f"))
 
 (require 'flycheck)
 (require 'magit)
@@ -99,3 +116,5 @@
   (load "~/.emacs.d/init.el"))
 
 (global-set-key (kbd "<f10>") 'source-emacs-config)
+
+(setq init-complete t)
