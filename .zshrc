@@ -41,5 +41,6 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 alias hist='history | less'
 alias packeru='packer -Syu --auronly --noconfirm'
+alias pp='ping 8.8.8.8'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
