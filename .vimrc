@@ -21,6 +21,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'wakatime/vim-wakatime'
 " Awesome git integration
 Plugin 'tpope/vim-fugitive'
+" Github integration for vim-fugitive
+Plugin 'tpope/vim-rhubarb'
 
 " }}} Keymaps and text objects {{{
 
