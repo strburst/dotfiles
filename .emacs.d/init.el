@@ -1,6 +1,6 @@
 ;; Package configuration
 (require 'package)
-(setq package-archives `(("gnu" . "https://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
@@ -116,5 +116,7 @@
   (load "~/.emacs.d/init.el"))
 
 (global-set-key (kbd "<f10>") 'source-emacs-config)
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
 
 (setq init-complete t)

@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck evil-tabs evil-surround evil-org evil-magit evil-commentary))))
+    (solarized-theme flycheck evil-tabs evil-surround evil-org evil-magit evil-commentary))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
