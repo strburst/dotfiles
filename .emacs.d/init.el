@@ -1,5 +1,5 @@
-;; Garbage collection occurs every 10 MB
-(setq gc-cons-threshold 10000000)
+;; Garbage collection occurs every 20 MB
+(setq gc-cons-threshold 20000000)
 
 ;; Disable unecessary gui toolbars (must come early to avoid momentary display)
 (menu-bar-mode -1)
@@ -29,25 +29,40 @@
 
 (set-face-font 'default "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*")
 
+;; Keep lines at 80 characters when autoformatting
+(setq fill-column 80)
+
+;; Only check for version control systems I have a reasonable chance of seeing
+(setq vc-handled-backends '(Git Hg SVN))
+
+;; Show partially completed key sequences sooner
+(setq echo-keystrokes 0.1)
+
+;; Allow copy/paste with the X clipboard
+(setq select-enable-clipboard t)
+
 ;; Enable line numbers
 (global-linum-mode 1)
 
 ;; Subtly highlight the line the cursor is on
 (hl-line-mode 1)
 
+;; Make mousewheel scrolling less jumpy
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
+
 ;; Replace yes/no prompts with simpler y/n ones
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Keymaps to open/source init.el
 (defun open-emacs-config ()
-  "Open ~/.emacs.d/init.el"
+  "Open ~/.emacs.d/init.el."
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
 (global-set-key (kbd "<f9>") 'open-emacs-config)
 
 (defun source-emacs-config ()
-  "Loads ~/.emacs.d/init.el"
+  "Load ~/.emacs.d/init.el."
   (interactive)
   (load "~/.emacs.d/init.el"))
 
@@ -58,7 +73,10 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
+
 (load-theme 'solarized-dark t)
+
+(require 'alda-mode)
 (require 'editorconfig)
 
 ;; Allow evil to override more Emacs keybindings
@@ -79,8 +97,6 @@
 (evil-redirect-digit-argument evil-motion-state-map "0" 'evil-first-non-blank)
 (define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line)
 
-;; Must come after requiring evil
-(require 'alda-mode)
 (define-key evil-motion-state-map "gp" 'alda-evil-play-region)
 
 (require 'evil-commentary)
@@ -113,9 +129,5 @@
 
 (require 'undo-tree)
 (global-undo-tree-mode)
-
-(evil-set-initial-state 'dired-mode 'normal)
-
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
 
 (setq init-complete t)
