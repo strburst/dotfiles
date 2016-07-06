@@ -278,10 +278,6 @@ vnoremap <leader>a !sort<Cr>
 nnoremap <leader>; a<C-r>=system("date --iso-8601")<Cr><Bs><Esc>
 inoremap <leader>; <C-r>=system("date --iso-8601")<Cr><Bs>
 
-" Alternative to esc
-inoremap jk <Esc>
-inoremap kj <Esc>
-
 " Enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
