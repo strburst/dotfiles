@@ -2,6 +2,7 @@
 /.emacs.d/auto-save-list/
 /.emacs.d/backup/
 /.emacs.d/elpa/
+/.emacs.d/games/
 
 # Ignore weechat logs and plugin directories
 /.weechat/logs
