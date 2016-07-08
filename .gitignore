@@ -1,8 +1,7 @@
 # Ignore emacs plugins and backups
-/.emacs.d/auto-save-list/
-/.emacs.d/backup/
-/.emacs.d/elpa/
-/.emacs.d/games/
+/.emacs.d/*
+!/.emacs.d/custom.el
+!/.emacs.d/init.el
 
 # Ignore weechat logs and plugin directories
 /.weechat/logs
