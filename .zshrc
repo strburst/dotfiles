@@ -37,10 +37,17 @@ export EDITOR='vim'
 eval `dircolors ~/.dircolors.ansi-universal`
 
 # Search repos for a command if not installed
-source /usr/share/doc/pkgfile/command-not-found.zsh
+if [ -f "/usr/share/doc/pkgfile/command-not-found.zsh" ]; then
+    source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
 
 alias hist='history | less'
 alias packeru='packer -Syu --auronly --noconfirm'
-alias pp='ping 8.8.8.8'
+alias ppp='ping 8.8.8.8'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
+
+# Also include ~/bin in path if it exists
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
