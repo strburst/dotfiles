@@ -21,11 +21,12 @@
 ;; Configure backup settings
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
       backup-by-copying t     ;; Use copying (doesn't clobber symlinks)
-      version-control t       ;; Keep multiple numbered backups
       kept-new-versions 5
       kept-old-versions 0
       delete-old-versions t   ;; Don't prompt to delete old versions
-      vc-make-backup-files t) ;; Backup files in version control too
+      version-control t       ;; Keep multiple numbered backups
+      vc-make-backup-files t  ;; Backup files in version control too
+      vc-follow-symlinks t)   ;; Don't prompt to follow symlinks to vc'd files
 
 (set-face-font 'default "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*")
 
@@ -45,7 +46,7 @@
 (global-linum-mode 1)
 
 ;; Subtly highlight the line the cursor is on
-(hl-line-mode 1)
+(global-hl-line-mode 1)
 
 ;; Make mousewheel scrolling less jumpy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
@@ -76,7 +77,6 @@
 
 (load-theme 'solarized-dark t)
 
-(require 'alda-mode)
 (require 'editorconfig)
 
 ;; Allow evil to override more Emacs keybindings
@@ -97,6 +97,7 @@
 (evil-redirect-digit-argument evil-motion-state-map "0" 'evil-first-non-blank)
 (define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line)
 
+(require 'alda-mode)
 (define-key evil-motion-state-map "gp" 'alda-evil-play-region)
 
 (require 'evil-commentary)
@@ -115,14 +116,6 @@
 
 (require 'evil-surround)
 (global-evil-surround-mode)
-
-(require 'evil-tabs)
-(global-evil-tabs-mode)
-
-(unless (boundp 'init-complete)
-    (elscreen-toggle-display-tab))
-(define-key evil-motion-state-map (kbd "C-f") nil)
-(setq elscreen-prefix-key (kbd "C-f"))
 
 (require 'flycheck)
 (require 'magit)
@@ -145,6 +138,22 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 
+(require 'vimrc-mode)
+
+(require 'xkcd)
+(evil-set-initial-state 'xkcd 'emacs)
+
+;; Add some xkcd keybindings
+(add-hook 'xkcd-mode-hook
+	  (lambda ()
+	    (linum-mode -1)
+	    (setq cursor-type nil)))
+
+(define-key xkcd-mode-map (kbd "h") 'xkcd-prev)
+(define-key xkcd-mode-map (kbd "j") 'xkcd-next)
+(define-key xkcd-mode-map (kbd "k") 'xkcd-prev)
+(define-key xkcd-mode-map (kbd "l") 'xkcd-next)
+
 ;; Ergonomic tetris is important
 (add-hook 'tetris-mode-hook
 	  (lambda ()
@@ -152,5 +161,3 @@
 	     (define-key tetris-mode-map (kbd "j") 'tetris-rotate-next)
 	     (define-key tetris-mode-map (kbd "k") 'tetris-rotate-prev)
 	     (define-key tetris-mode-map (kbd "l") 'tetris-move-right)))
-
-(setq init-complete t)
