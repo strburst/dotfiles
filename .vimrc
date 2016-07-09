@@ -3,7 +3,7 @@
 set nocompatible
 filetype off
 
-let mapleader=","
+let mapleader=" "
 let maplocalleader="\\"
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -255,17 +255,14 @@ set noshowmode   " Powerline plugin indicates modes already
 " }}} ASSORTED KEYMAPS {{{
 
 " Turn off highlights for current search
-nnoremap <F5> :nohl<Cr>
+nnoremap <leader>h :nohl<Cr>
 
-" Open my vimrc in a new window/tab
-nnoremap <F9> :vsplit $MYVIMRC<Cr>
-nnoremap <F10> :edit $MYVIMRC<Cr>
+" Edit/source my vimrc
+nnoremap <F9> :edit $MYVIMRC<Cr>
+nnoremap <F10> :source $MYVIMRC<Cr>:echo "vimrc reloaded"<Cr>
 
 " Toggle dark/light colorscheme
 call togglebg#map("<F12>")
-
-" Reload vimrc without restarting
-nnoremap <leader>r :source $MYVIMRC<Cr>:echo "vimrc reloaded"<Cr>
 
 " Open the current file with the default program
 nnoremap <leader>o :!xdg-open <C-r>%<Cr>
@@ -300,10 +297,7 @@ inoremap <S-Tab> <C-p>
 inoremap <C-\> <Tab>
 
 " Open/close folds
-nnoremap <Space> za
-
-" Since comma is the leader key
-nnoremap \\ ,
+nnoremap \\ za
 
 " Repeat the last macro
 nnoremap - @@
