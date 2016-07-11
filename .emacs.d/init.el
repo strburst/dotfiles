@@ -20,21 +20,21 @@
 
 ;; Configure backup settings
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-      backup-by-copying t     ;; Use copying (doesn't clobber symlinks)
+      backup-by-copying t    ;; Use copying (doesn't clobber symlinks)
+      delete-old-versions t  ;; Don't prompt to delete old versions
       kept-new-versions 5
       kept-old-versions 0
-      delete-old-versions t   ;; Don't prompt to delete old versions
-      version-control t       ;; Keep multiple numbered backups
-      vc-make-backup-files t  ;; Backup files in version control too
-      vc-follow-symlinks t)   ;; Don't prompt to follow symlinks to vc'd files
+      version-control t)     ;; Keep multiple numbered backups
 
 (set-face-font 'default "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*")
 
 ;; Keep lines at 80 characters when autoformatting
 (setq fill-column 80)
 
-;; Only check for version control systems I have a reasonable chance of seeing
-(setq vc-handled-backends '(Git Hg SVN))
+;; Configure version control settings
+(setq vc-follow-symlinks t     ;; Don't prompt to follow symlinks to vc'd files
+      vc-handled-backends '(Git Hg SVN) ;; Only check for modern vcs's
+      vc-make-backup-files t)  ;; Backup files in version control too
 
 ;; Show partially completed key sequences sooner
 (setq echo-keystrokes 0.1)
@@ -50,6 +50,10 @@
 
 ;; Make mousewheel scrolling less jumpy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
+
+;; Highlight tabs, trailing spaces, and long lines
+(setq whitespace-style '(face tabs trailing lines-tail tab-mark))
+(global-whitespace-mode 1)
 
 ;; Replace yes/no prompts with simpler y/n ones
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -78,6 +82,7 @@
 (load-theme 'solarized-dark t)
 
 (require 'editorconfig)
+(editorconfig-mode)
 
 ;; Allow evil to override more Emacs keybindings
 (setq evil-search-module 'evil-search
@@ -136,19 +141,22 @@
 (global-set-key (kbd "<f12>") 'toggle-max-nyan)
 
 (require 'undo-tree)
-(global-undo-tree-mode)
+;; Persist undo history between sessions
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))
+      undo-tree-auto-save-history t)
+(global-undo-tree-mode 1)
 
 (require 'vimrc-mode)
 
 (require 'xkcd)
 (evil-set-initial-state 'xkcd 'emacs)
 
-;; Add some xkcd keybindings
 (add-hook 'xkcd-mode-hook
 	  (lambda ()
 	    (linum-mode -1)
 	    (setq cursor-type nil)))
 
+;; Add some xkcd keybindings
 (define-key xkcd-mode-map (kbd "h") 'xkcd-prev)
 (define-key xkcd-mode-map (kbd "j") 'xkcd-next)
 (define-key xkcd-mode-map (kbd "k") 'xkcd-prev)
