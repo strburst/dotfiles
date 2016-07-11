@@ -36,9 +36,7 @@ embark-tools enable sand mouse
 enable confirm
 confirm disable note-delete
 
-# }}}
-
-# SCRIPTS {{{
+# }}} SCRIPTS {{{
 
 # write the correct season to gamelog on world load
 soundsense-season
@@ -51,9 +49,7 @@ view-item-info enable
 
 gui/load-screen enable
 
-# }}}
-
-# TWEAKS {{{
+# }}} TWEAKS {{{
 
 tweak stable-cursor
 
@@ -93,7 +89,7 @@ tweak shift-8-scroll
 tweak title-start-rename
 tweak tradereq-pet-gender
 
-# }}}
+# }}} KEYMAPS {{{
 
 # Show an in-game dfhack prompt
 keybinding add Ctrl-Shift-P command-prompt
@@ -117,4 +113,5 @@ keybinding add Alt-Shift-R "sort-units arrival"
 keybinding add Alt-Shift-T "sort-units profession" "sort-items type material"
 keybinding add Alt-Shift-Q "sort-units squad_position" "sort-items quality"
 
+# }}}
 # vim: set ft=conf:
