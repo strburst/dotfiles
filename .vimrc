@@ -271,11 +271,10 @@ nnoremap <leader>o :!xdg-open <C-r>%<Cr>
 nnoremap <leader>a !ipsort<Cr>
 vnoremap <leader>a !sort<Cr>
 
-" Insert the current, ISO-formatted date
-nnoremap <leader>; a<C-r>=system("date --iso-8601")<Cr><Bs><Esc>
-inoremap <leader>; <C-r>=system("date --iso-8601")<Cr><Bs>
+" Insert the current ISO-formatted date on a new line
+nnoremap <leader>; "=system("date --iso-8601")<Cr>p
 
-" Enter Ex commands faster
+" Swap : and ; to enter Ex commands faster
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
@@ -284,7 +283,7 @@ vnoremap : ;
 " K joins previous line
 nnoremap K kJ
 
-" More consistent with C and D
+" Make Y more consistent with C and D
 nnoremap Y y$
 
 " Exclude indentation when going to beginning of line by default
