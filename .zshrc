@@ -39,6 +39,11 @@ eval `dircolors ~/.dircolors.ansi-universal`
 # Search repos for a command if not installed
 if [ -f "/usr/share/doc/pkgfile/command-not-found.zsh" ]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
+elif [ -x /usr/lib/command-not-found ]; then
+    function command_not_found_handler {
+        /usr/lib/command-not-found -- "$1"
+        return $?
+    }
 fi
 
 alias hist='history | less'
