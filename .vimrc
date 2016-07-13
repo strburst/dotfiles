@@ -241,6 +241,7 @@ set relativenumber " Show distance from the current line
 
 set hlsearch     " Highlight search matches
 set incsearch    " Begin showing search matches while typing
+nohls            " Don't highlight everything again when sourcing vimrc
 
 set cursorline       " Highlight the line the cursor is on
 
@@ -255,7 +256,7 @@ set noshowmode   " Powerline plugin indicates modes already
 " }}} ASSORTED KEYMAPS {{{
 
 " Turn off highlights for current search
-nnoremap <leader>h :nohl<Cr>
+nnoremap <leader>h :nohls<Cr>
 
 " Edit/source my vimrc
 nnoremap <F9> :edit $MYVIMRC<Cr>
