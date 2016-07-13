@@ -73,6 +73,8 @@
 
 (global-set-key (kbd "<f10>") 'source-emacs-config)
 
+(global-set-key (kbd "<f12>") 'list-packages)
+
 ;; Package configuration
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -82,7 +84,8 @@
 (load-theme 'solarized-dark t)
 
 (require 'editorconfig)
-(editorconfig-mode)
+(setq editorconfig-exclude-modes '('emacs-lisp-mode))
+(editorconfig-mode 1)
 
 ;; Allow evil to override more Emacs keybindings
 (setq evil-search-module 'evil-search
@@ -90,7 +93,7 @@
       evil-want-C-w-in-emacs-state t
       evil-want-C-i-jump t)
 (require 'evil)
-(evil-mode)
+(evil-mode 1)
 
 ;; Swap ; and : to enter ex commands faster
 (define-key evil-normal-state-map (kbd ";") 'evil-ex)
@@ -137,8 +140,6 @@
 	(nyan-stop-music))
       (nyan-start-animation)
       (nyan-start-music)))
-
-(global-set-key (kbd "<f12>") 'toggle-max-nyan)
 
 (require 'undo-tree)
 ;; Persist undo history between sessions
