@@ -58,6 +58,13 @@
 ;; Replace yes/no prompts with simpler y/n ones
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(defun print-major-mode ()
+  "Print the name of the current major mode to the minibuffer."
+  (interactive)
+  (message "Current major mode is: %s" mode-name))
+
+(global-set-key (kbd "<f2>") 'print-major-mode)
+
 ;; Keymaps to open/source init.el
 (defun open-emacs-config ()
   "Open ~/.emacs.d/init.el."
@@ -78,14 +85,18 @@
 ;; Package configuration
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
+                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
 (load-theme 'solarized-dark t)
 
 (require 'editorconfig)
-(setq editorconfig-exclude-modes '('emacs-lisp-mode))
+(setq editorconfig-exclude-modes '('Emacs-Lisp))
 (editorconfig-mode 1)
+
+(add-hook 'emacs-lisp-mode-hook
+  (lambda ()
+    (setq lisp-indent-offset nil)))
 
 ;; Allow evil to override more Emacs keybindings
 (setq evil-search-module 'evil-search
@@ -135,11 +146,11 @@
   "Toggle the music and animation in nyan mode."
   (interactive)
   (if nyan-animate-nyancat
-      (progn
-	(nyan-stop-animation)
-	(nyan-stop-music))
-      (nyan-start-animation)
-      (nyan-start-music)))
+    (progn
+      (nyan-stop-animation)
+      (nyan-stop-music))
+    (nyan-start-animation)
+    (nyan-start-music)))
 
 (require 'undo-tree)
 ;; Persist undo history between sessions
@@ -150,14 +161,15 @@
 (require 'vimrc-mode)
 
 (require 'xkcd)
-(evil-set-initial-state 'xkcd 'emacs)
+(evil-set-initial-state 'xkcd-mode 'emacs)
 
-(add-hook 'xkcd-mode-hook
-	  (lambda ()
-	    (linum-mode -1)
-	    (setq cursor-type nil)))
+(add-hook 'xkcd-mode-hook  ;; Clear visual distractions in xkcd mode
+  (lambda ()
+    (linum-mode -1)
+    (blink-cursor-mode -1)
+    (setq cursor-type nil)))
 
-;; Add some xkcd keybindings
+;; Add more xkcd keybindings
 (define-key xkcd-mode-map (kbd "h") 'xkcd-prev)
 (define-key xkcd-mode-map (kbd "j") 'xkcd-next)
 (define-key xkcd-mode-map (kbd "k") 'xkcd-prev)
@@ -165,8 +177,17 @@
 
 ;; Ergonomic tetris is important
 (add-hook 'tetris-mode-hook
-	  (lambda ()
-	     (define-key tetris-mode-map (kbd "h") 'tetris-move-left)
-	     (define-key tetris-mode-map (kbd "j") 'tetris-rotate-next)
-	     (define-key tetris-mode-map (kbd "k") 'tetris-rotate-prev)
-	     (define-key tetris-mode-map (kbd "l") 'tetris-move-right)))
+  (lambda ()
+    (define-key tetris-mode-map (kbd "h") 'tetris-move-left)
+    (define-key tetris-mode-map (kbd "j") 'tetris-rotate-next)
+    (define-key tetris-mode-map (kbd "k") 'tetris-rotate-prev)
+    (define-key tetris-mode-map (kbd "l") 'tetris-move-right)))
+
+(evil-set-initial-state 'snake-mode 'emacs)
+
+(add-hook 'org-mode
+  (lambda ()
+    (whitespace-mode -1)))  ;; Don't visualize long lines
+
+(setq org-startup-indented t      ;; Display sections/outlines indented
+      org-startup-truncated nil)  ;; Wrap long lines instead of truncating
