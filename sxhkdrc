@@ -147,7 +147,7 @@ super + semicolon
 	dmenu -l 999 < ~/noninteractives | sh
 
 super + apostrophe
-	chromium --show-app-list
+	thunar || xdg-open ~
 
 # Toggle the panel
 super + quotedbl
