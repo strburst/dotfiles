@@ -1,42 +1,85 @@
-# OH-MY-ZSH CONFIGURATION
-export ZSH=$HOME/.oh-my-zsh
+## ZPLUG CONFIGURATION {{{
 
-# Other cool themes: agnoster, blinks, jonathan, nanotech
-ZSH_THEME="bira"
+if [[ ! -d ~/.zplug ]]; then
+    git clone https://github.com/zplug/zplug ~/.zplug
+    source ~/.zplug/init.zsh && zplug update --self
+fi
 
-plugins=(git)
+source ~/.zplug/init.zsh
 
-source $ZSH/oh-my-zsh.sh
+zplug "Peeja/ctrl-zsh"               # ^Z switches between current job and shell
+zplug "themes/bira", from:oh-my-zsh  # Fancy shell prompt
 
-# Don't share history between terminals
-unsetopt SHARE_HISTORY
-# Get rid of duplicate history entries first
-setopt HIST_EXPIRE_DUPS_FIRST
+autoload colors && colors
 
-# Save only the past 1000 or so lines of history
+# Install plugins if there are plugins that have not been installed
+zplug check --verbose || zplug install
+
+zplug load
+
+## }}} ZSH_OPTIONS {{{
+
+# Headers are based on zshoptions(1)
+
+## Changind directories {{{
+setopt auto_pushd         # cd pushes onto directory stack
+setopt pushd_ignore_dups  # Don't add duplicates to the directory stack
+setopt pushd_minus        # Invert pushd's understanding of +/-
+
+## }}} Completion {{{
+setopt always_to_end     # Move to end when completion finishes
+setopt auto_menu         # Show zsh's trademark completion menu on tab
+setopt complete_in_word  # Don't move the cursor when completing
+
+## }}} Historu {{{
+setopt append_history          # Append to (not overwrite) history when exiting
+setopt extended_history        # Also save timestamp and execution time
+setopt hist_expire_dups_first  # Get rid of duplicate history entries first
+setopt hist_ignore_all_dups    # Remove older instances of a new command
+setopt hist_ignore_space       # Don't record commands starting with space
+setopt hist_no_store           # Don't store the history command in history
+setopt hist_verify             # Show result first when expanding history
+setopt inc_append_history      # Write to history continuously
+
+## }}} Input/output {{{
+setopt interactivecomments  # Allow comments in interactive shells
+
+## }}} Job control {{{
+setopt long_list_jobs  # Always list jobs in long format
+
+## }}} Prompting {{{
+setopt prompt_subst  # Fill out variables in the prompt
+
+unsetopt menu_complete  # Don't autoselect the first menu entry
+
+## }}} Flow control {{{
+unsetopt flow_control  # Don't output flow control characters
+
+## }}}
+
+## }}} OTHER STUFF {{{
+
+# Save 1000 lines of history
+export HISTSIZE=1000
 export SAVEHIST=1000
 
-# OTHER STUFF
-set -o vi   # vi keyboard shortcuts
+export HISTFILE=~/.zsh_history
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-PATH+=":/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin"
-PATH+=":/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin"
-PATH+=":/usr/bin/core_perl:$HOME/.gem/ruby/2.2.0/bin:$HOME/.gem/ruby/2.3.0/bin"
+bindkey -v           # vi keybindings
+export KEYTIMEOUT=1  # Only wait 0.1 seconds when switching modes
 
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+bindkey '^p' up-history
+bindkey '^n' down-history
+bindkey '^r' history-incremental-search-backward
 
-export CLASSPATH=".:/usr/local/bin/junit-4.12.jar:/usr/local/bin/hamcrest-core"
-CLASSPATH+="-1.3.jar:/usr/local/bin/checkstyle-6.9.jar"
-
-export NODE_PATH="/usr/lib/node_modules"
-
-export EDITOR='vim'
+# Make home/end keys work like they're supposed to
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
 
 # Solarized ls colors; see https://github.com/seebi/dircolors-solarized
 eval `dircolors ~/.dircolors.ansi-universal`
 
-# Search repos for a command if not installed
+# Search repos for a command if not installed (both Arch and Ubuntu)
 if [ -f "/usr/share/doc/pkgfile/command-not-found.zsh" ]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
 elif [ -x /usr/lib/command-not-found ]; then
@@ -46,13 +89,14 @@ elif [ -x /usr/lib/command-not-found ]; then
     }
 fi
 
+## }}} ALIASES {{{
+
 alias hist='history | less'
+alias ll='ls -l'
+alias ls='ls --color=auto'
 alias packeru='packer -Syu --auronly --noconfirm'
 alias ppp='ping 8.8.8.8'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 
-# Also include ~/bin in path if it exists
-if [ -d "$HOME/bin" ]; then
-    PATH="$HOME/bin:$PATH"
-fi
+## }}}
