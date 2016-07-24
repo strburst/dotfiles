@@ -12,7 +12,7 @@ tab_width = 4
 
 max_line_length = 80
 
-[*.{alda,coffee,css,ex,exs,html,js,json}]
+[*.{alda,coffee,css,el,ex,exs,html,js,json,lisp}]
 # Filetypes that should use 2-space indentation
 indent_size = 2
 
@@ -20,5 +20,5 @@ indent_size = 2
 # Filetypes that should use tab indentation
 indent_style = tab
 
-[*.md]
+[*.{md,org}]
 max_line_length = 0
