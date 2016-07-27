@@ -1,4 +1,4 @@
-" PLUGIN SETUP {{{
+"" PLUGIN SETUP {{{
 
 set nocompatible
 filetype off
@@ -9,7 +9,7 @@ let maplocalleader="\\"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Core functionality {{{
+"" Core functionality {{{
 
 " Vim plugin package manager
 Plugin 'gmarik/Vundle.vim'
@@ -24,7 +24,7 @@ Plugin 'tpope/vim-fugitive'
 " Github integration for vim-fugitive
 Plugin 'tpope/vim-rhubarb'
 
-" }}} Keymaps and text objects {{{
+"" }}} Keymaps and text objects {{{
 
 " Comment/uncomment lines in nearly every language easily
 Plugin 'tpope/vim-commentary'
@@ -42,14 +42,14 @@ Plugin 'tpope/vim-unimpaired'
 " Move selections around in visual block mode
 Plugin 'zirrostig/vim-schlepp'
 
-" }}} Navigation {{{
+"" }}} Navigation {{{
 
 " Intelligent file opener
 Plugin 'ctrlpvim/ctrlp.vim'
 " Navigate between vim/tmux splits easily
 Plugin 'christoomey/vim-tmux-navigator'
 
-" }}} Visual {{{
+"" }}} Visual {{{
 
 " Solarized colorscheme in vim
 Plugin 'altercation/vim-colors-solarized'
@@ -64,7 +64,7 @@ Plugin 'bling/vim-bufferline'
 " Visualize the undo tree
 Plugin 'mbbill/undotree'
 
-" Language support {{{
+"" Language support {{{
 
 " Better LaTeX support, e.g. comtinuous compilation mode
 Plugin 'lervag/vimtex'
@@ -88,7 +88,7 @@ Plugin 'rust-lang/rust.vim'
 call vundle#end()
 filetype plugin indent on
 
-" }}} PLUGIN SETTINGS/MAPS {{{
+"" }}} PLUGIN SETTINGS/MAPS {{{
 
 let g:airline_powerline_fonts=1   " Use patched characters, not fallbacks
 
@@ -160,7 +160,7 @@ vmap Dj <Plug>SchleppDupDown
 vmap Dh <Plug>SchleppDupLeft
 vmap Dl <Plug>SchleppDupRight
 
-" }}} EDITOR BEHAVIOR {{{
+"" }}} EDITOR BEHAVIOR {{{
 
 set mouse=a        " Enable the mouse
 set encoding=utf-8
@@ -229,7 +229,7 @@ set expandtab      " Use spaces instead of tabs
 set shiftwidth=4   " Four spaces is one unit of indentation
 set softtabstop=4  " Backspace at BOL in insert mode deletes four spaces
 
-" }}} VISUAL SETTINGS {{{
+"" }}} VISUAL SETTINGS {{{
 
 syntax on
 set t_Co=256
@@ -253,7 +253,7 @@ set laststatus=2 " Always show the status bar
 
 set noshowmode   " Powerline plugin indicates modes already
 
-" }}} ASSORTED KEYMAPS {{{
+"" }}} ASSORTED KEYMAPS {{{
 
 " Turn off highlights for current search
 nnoremap <leader>h :nohls<Cr>

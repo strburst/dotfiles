@@ -1,6 +1,6 @@
 # Configuration for dfhack, based on example dfhack.init
 
-# PLUGINS {{{
+## PLUGINS {{{
 
 # Display DFHack version on title screen
 enable title-version
@@ -36,7 +36,7 @@ embark-tools enable sand mouse
 enable confirm
 confirm disable note-delete
 
-# }}} SCRIPTS {{{
+## }}} SCRIPTS {{{
 
 # write the correct season to gamelog on world load
 soundsense-season
@@ -49,7 +49,7 @@ view-item-info enable
 
 gui/load-screen enable
 
-# }}} TWEAKS {{{
+## }}} TWEAKS {{{
 
 tweak stable-cursor
 
@@ -89,7 +89,7 @@ tweak shift-8-scroll
 tweak title-start-rename
 tweak tradereq-pet-gender
 
-# }}} KEYMAPS {{{
+## }}} KEYMAPS {{{
 
 # Show an in-game dfhack prompt
 keybinding add Ctrl-Shift-P command-prompt
