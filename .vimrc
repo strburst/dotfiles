@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 
 let mapleader=" "
-let maplocalleader="\\"
+let maplocalleader="\\"  " Actually just a single backslash
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -104,9 +104,9 @@ let g:syntastic_aggregate_errors=1
 
 " Only check a file if :SyntasticCheck used
 let g:syntastic_mode_map = {
-            \ "mode": "passive",
-            \ "active_filetypes": [],
-            \ "passive_filetypes": [] }
+      \ "mode": "passive",
+      \ "active_filetypes": [],
+      \ "passive_filetypes": [] }
 
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
@@ -122,9 +122,6 @@ let g:UltiSnipsExpandTrigger="<C-p>"
 " Bring up the undo tree
 nnoremap <F4> :UndotreeToggle<Cr>
 
-" Directory to store vim-notes
-let g:notes_directories = ['~/.vim/notes']
-
 " EditorConfig doesn't manage git commit messages, etc
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 " EditorConfig sets colorcolumn based on max_line_length
@@ -139,7 +136,7 @@ let g:instant_markdown_autostart = 0
 " CtrlP indexes hidden files; ignores VCS/dependency directories
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$' }
+      \ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules)$' }
 
 nnoremap <leader>m :CtrlPMRUFiles<Cr>
 
@@ -176,16 +173,16 @@ set viewdir=/tmp/vim/view      " Code folding file location
 
 " Create the proper directories if they don't exist
 if !isdirectory("/tmp/vim/backup")
-    call mkdir("/tmp/vim/backup", "p")
+  call mkdir("/tmp/vim/backup", "p")
 endif
 if !isdirectory($HOME."/.vim/swap")
-    call mkdir($HOME."/.vim/swap", "p")
+  call mkdir($HOME."/.vim/swap", "p")
 endif
 if !isdirectory($HOME."/.vim/undo")
-    call mkdir($HOME."/.vim/undo", "p")
+  call mkdir($HOME."/.vim/undo", "p")
 endif
 if !isdirectory("/tmp/vim/view")
-    call mkdir("/tmp/vim/view", "p")
+  call mkdir("/tmp/vim/view", "p")
 endif
 
 set dictionary+=/usr/share/dict/words
@@ -261,9 +258,6 @@ nnoremap <leader>h :nohls<Cr>
 " Edit/source my vimrc
 nnoremap <F9> :edit $MYVIMRC<Cr>
 nnoremap <F10> :source $MYVIMRC<Cr>:echo "vimrc reloaded"<Cr>
-
-" Toggle dark/light colorscheme
-call togglebg#map("<F12>")
 
 " Open the current file with the default program
 nnoremap <leader>o :!xdg-open <C-r>%<Cr>

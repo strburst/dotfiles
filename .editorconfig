@@ -12,7 +12,7 @@ tab_width = 4
 
 max_line_length = 80
 
-[*.{alda,coffee,css,el,ex,exs,html,js,json,lisp}]
+[*.{alda,coffee,css,el,ex,exs,html,js,json,lisp,vim,vimrc}]
 # Filetypes that should use 2-space indentation
 indent_size = 2
 
