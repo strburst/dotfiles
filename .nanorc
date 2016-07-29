@@ -1,5 +1,5 @@
+# Make nano at least bearable for editing code
 set autoindent
-#set const
 set suspend
 set tabsize 4
 set tabstospaces
