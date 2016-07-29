@@ -315,8 +315,15 @@ nnoremap <leader>t ggdG"+pkdd
 " Switch to previously edited file
 nnoremap <leader>f <C-^>
 
+" Delete the buffer without closing the split
+nnoremap <leader>d :bp\|bd #<Cr>
+
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
 inoremap <C-r> <C-r><C-p>
 inoremap <C-r><C-p> <C-r>
+
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+end
 
 " }}}
