@@ -104,9 +104,10 @@ fi
 
 ## }}} ALIASES {{{
 
+alias grep='grep --color=auto'
 alias hist='history | less'
 alias ll='ls -l'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --human-readable'
 alias packeru='packer -Syu --auronly --noconfirm'
 alias ppp='ping 8.8.8.8'
 alias sl='ls'
