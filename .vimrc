@@ -1,92 +1,96 @@
 "" PLUGIN SETUP {{{
 
 set nocompatible
-filetype off
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  " Automatically install vim-plug if not present
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
 let mapleader=" "
-let maplocalleader="\\"  " Actually just a single backslash
+let maplocalleader="\\"  " Actually just a single \
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 "" Core functionality {{{
 
 " Vim plugin package manager
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 " Configure indentation and other editor settings on a per-project basis
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 " Syntax-checker support using the location list
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 " Track editor statistics via wakatime
-Plugin 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 " Awesome git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Github integration for vim-fugitive
-Plugin 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rhubarb'
 
 "" }}} Keymaps and text objects {{{
 
 " Comment/uncomment lines in nearly every language easily
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 " Change delimiters like ( and [ easily
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Use the . command to repeat vim-surround mappings
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 " Snippets/autocompletion plugin, default snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 " Mappings/text objects for C-style argument lists
-Plugin 'PeterRincker/vim-argumentative'
+Plug 'PeterRincker/vim-argumentative'
 " Convenient paired mappings for [ and ] for navigation
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 " Move selections around in visual block mode
-Plugin 'zirrostig/vim-schlepp'
+Plug 'zirrostig/vim-schlepp'
 
 "" }}} Navigation {{{
 
 " Intelligent file opener
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " Navigate between vim/tmux splits easily
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 "" }}} Visual {{{
 
 " Solarized colorscheme in vim
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 " Pretty statusline
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 " Yet another color scheme
-Plugin 'baskerville/bubblegum'
+Plug 'baskerville/bubblegum'
 " Solarized theme
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 " Display open buffers in the statusline
-Plugin 'bling/vim-bufferline'
+Plug 'bling/vim-bufferline'
 " Visualize the undo tree
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 
 "" Language support {{{
 
 " Better LaTeX support, e.g. comtinuous compilation mode
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 " Mediawiki syntax support
-Plugin 'chikamichi/mediawiki.vim'
+Plug 'chikamichi/mediawiki.vim'
 " Elixir language support
-Plugin 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir'
 " Markdown language support
-Plugin 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 " Markdown previewing
-Plugin 'suan/vim-instant-markdown'
+Plug 'suan/vim-instant-markdown'
 " Better JSON language support
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 " Alda language support
-Plugin 'daveyarwood/vim-alda'
+Plug 'daveyarwood/vim-alda'
 " Rust language support
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 
 " }}} }}}
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 "" }}} PLUGIN SETTINGS/MAPS {{{
 
