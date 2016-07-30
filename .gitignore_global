@@ -1,0 +1,26 @@
+# -*- mode: gitignore; -*-
+
+*.log
+
+# Vim/Emacs
+*~
+\#*\#
+*.swp
+
+# OSX
+*.DS_Store
+._*
+
+# Archives
+*.7z
+*.bz2
+*.bzip
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.xz
+*.zip
+
+# vim: ft=conf:

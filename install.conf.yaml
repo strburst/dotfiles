@@ -6,6 +6,7 @@
     ~/.editorconfig: .editorconfig
     ~/.emacs.d: .emacs.d
     ~/.gitconfig: .gitconfig
+    ~/.gitignore: .gitignore_global
     ~/.ideavimrc: .ideavimrc
     ~/.nanorc: .nanorc
     ~/.tmux.conf: .tmux.conf
