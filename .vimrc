@@ -16,8 +16,6 @@ call plug#begin('~/.vim/plugged')
 
 "" Core functionality {{{
 
-" Vim plugin package manager
-Plug 'gmarik/Vundle.vim'
 " Configure indentation and other editor settings on a per-project basis
 Plug 'editorconfig/editorconfig-vim'
 " Syntax-checker support using the location list
