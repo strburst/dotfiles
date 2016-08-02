@@ -1,12 +1,18 @@
 ;;; evil-use.el --- Load evil and related packages
 
+;; Workaround: evil-tabs breaks evil initial states if activated after evil
+(use-package evil-tabs
+  :config
+  (global-evil-tabs-mode 1))
+
 (use-package evil
   :init
   ;; Allow evil to override more Emacs keybindings
   (setq evil-search-module 'evil-search
+        evil-want-C-i-jump t
         evil-want-C-u-scroll t
         evil-want-C-w-in-emacs-state t
-        evil-want-C-i-jump t)
+        evil-want-Y-yank-to-eol t)  ; More consistent with C and D
 
   :config
   (evil-mode 1)
@@ -19,7 +25,11 @@
 
   ;; Swap ^ and 0 (^ is more useful)
   (evil-redirect-digit-argument evil-motion-state-map "0" 'evil-first-non-blank)
-  (define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line))
+  (define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line)
+
+  ;; K joins previous line (defined as a macro)
+  (fset 'evil-join-previous [?k ?J])
+  (define-key evil-normal-state-map (kbd "K") 'evil-join-previous))
 
 (use-package evil-commentary
   :config
