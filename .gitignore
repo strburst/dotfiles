@@ -3,6 +3,7 @@
 !/.emacs.d/custom.el
 !/.emacs.d/init.el
 !/.emacs.d/lisp
+!/.emacs.d/snippets
 
 # Ignore weechat logs and plugin directories
 /.weechat/logs

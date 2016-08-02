@@ -1,0 +1,6 @@
+# name: file-comment-header
+# key: ch
+# --
+;;; `(file-name-nondirectory (buffer-file-name))` --- $1
+$0
+;;; `(file-name-nondirectory (buffer-file-name))` ends here

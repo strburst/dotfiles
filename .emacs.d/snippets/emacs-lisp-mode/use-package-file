@@ -1,0 +1,10 @@
+# name: use-package-file
+# key: use
+# --
+;;; `(file-name-nondirectory (buffer-file-name))` --- $1
+
+(use-package `(replace-regexp-in-string "-use.el$" "" (file-name-nondirectory (buffer-file-name)))`$0)
+
+(provide '`(file-name-base (buffer-file-name))`)
+
+;;; `(file-name-nondirectory (buffer-file-name))` ends here

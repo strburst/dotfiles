@@ -26,6 +26,7 @@
                               nyan-mode
                               solarized-theme
                               undo-tree
+                              yasnippet
                               xkcd))
 
 (defun symbol-append-use (sym)
