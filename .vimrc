@@ -118,9 +118,6 @@ nnoremap <leader>w :SyntasticReset<Cr>
 
 let g:gundo_help=0   " Hide help message in Gundo window
 
-" <C-p> expands snippets, rather than <Tab>
-let g:UltiSnipsExpandTrigger="<C-p>"
-
 " Bring up the undo tree
 nnoremap <F4> :UndotreeToggle<Cr>
 
@@ -287,13 +284,8 @@ nnoremap Y y$
 noremap ^ 0
 noremap 0 ^
 
-" Tab/shift-tab for autocompletion
-inoremap <Tab> <C-n>
-inoremap <S-Tab> <C-p>
-inoremap <C-\> <Tab>
-
 " Open/close folds
-nnoremap \\ za
+nnoremap <leader><leader> za
 
 " Repeat the last macro
 nnoremap - @@
