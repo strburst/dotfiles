@@ -26,6 +26,7 @@
                               nyan-mode
                               solarized-theme
                               undo-tree
+                              winner
                               yasnippet
                               xkcd))
 

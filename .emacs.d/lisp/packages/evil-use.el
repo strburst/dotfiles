@@ -27,7 +27,7 @@
   (evil-redirect-digit-argument evil-motion-state-map "0" 'evil-first-non-blank)
   (define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line)
 
-  ;; K joins previous line (defined as a macro)
+  ;; K joins previous line (defined as a keyboard macro)
   (fset 'evil-join-previous [?k ?J])
   (define-key evil-normal-state-map (kbd "K") 'evil-join-previous))
 

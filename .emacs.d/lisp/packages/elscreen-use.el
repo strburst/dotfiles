@@ -11,11 +11,6 @@
   (elscreen-start)
   (setq elscreen-tab-display-control nil)  ; Don't display dummy control tab
 
-  (defun elscreen-toggle-tabs-full (&optional arg)
-    (interactive)
-    (elscreen-toggle-display-tab)
-    (elscreen-toggle-display-screen-number))
-
   (elscreen-toggle-display-tab))
 
 (provide 'elscreen-use)
