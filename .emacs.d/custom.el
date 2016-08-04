@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet elscreen xkcd nyan-mode evil-surround evil-org evil-numbers evil-commentary evil dash use-package))))
+    (ido-ubiquitous smex yasnippet elscreen xkcd nyan-mode evil-surround evil-org evil-numbers evil-commentary evil dash diminish use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

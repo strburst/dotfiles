@@ -23,6 +23,7 @@
 (defconst +packages-nice-1+ '(evil))
 (defconst +packages-nice-2+ '(alda-mode
                               elscreen
+                              ido
                               nyan-mode
                               solarized-theme
                               undo-tree
