@@ -8,8 +8,10 @@
 (defun config-relative-path (path)
   (concat user-emacs-directory path))
 
+;; Add ~/.emacs.d/lisp and all subdirectories to load-path
 (add-to-list 'load-path (config-relative-path "lisp"))
-(add-to-list 'load-path (config-relative-path "lisp/packages"))
+(let ((default-directory (config-relative-path "lisp")))
+  (normal-top-level-add-subdirs-to-load-path))
 
 (require 'base)
 (require 'package-setup)

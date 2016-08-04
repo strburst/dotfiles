@@ -25,6 +25,7 @@
                               elscreen
                               ido
                               nyan-mode
+                              org
                               solarized-theme
                               undo-tree
                               winner
