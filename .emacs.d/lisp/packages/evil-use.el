@@ -1,10 +1,5 @@
 ;;; evil-use.el --- Load evil and related packages
 
-;; Workaround: evil-tabs breaks evil initial states if activated after evil
-(use-package evil-tabs
-  :config
-  (global-evil-tabs-mode 1))
-
 (use-package evil
   :init
   ;; Allow evil to override more Emacs keybindings
@@ -15,6 +10,11 @@
         evil-want-Y-yank-to-eol t)  ; More consistent with C and D
 
   :config
+  ;; Workaround: evil-tabs breaks evil initial states if activated after evil
+  (use-package evil-tabs
+    :config
+    (global-evil-tabs-mode 1))
+
   (evil-mode 1)
 
   ;; Swap ; and : to enter ex commands faster
