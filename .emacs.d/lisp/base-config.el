@@ -1,4 +1,4 @@
-;;; base.el --- For basic configuration independent of external packages
+;;; base-config.el --- For configuration independent of external packages
 
 (setq gc-cons-threshold 20000000)  ; Garbage collection occurs every 20 MB
 
@@ -52,34 +52,15 @@
 (setq whitespace-style '(face tabs trailing lines-tail tab-mark))
 (global-whitespace-mode 1)
 
+(setq column-number-mode t)  ; Enable column number display
+
 ;; Make mousewheel scrolling less jumpy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
 
+(setq initial-scratch-message nil)  ; Scratch buffer is strictly empty
+
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Replace yes/no prompts with y/n
 
-(defun print-major-mode ()
-  "Print the name of the current major mode to the minibuffer."
-  (interactive)
-  (message "Current major mode is: %s" mode-name))
+(provide 'base-config)
 
-(global-set-key (kbd "<f2>") 'print-major-mode)
-
-(defun open-emacs-config ()
-  "Open ~/.emacs.d/init.el."
-  (interactive)
-  (find-file "~/.emacs.d/init.el"))
-
-(global-set-key (kbd "<f9>") 'open-emacs-config)
-
-(defun source-emacs-config ()
-  "Load ~/.emacs.d/init.el."
-  (interactive)
-  (load "~/.emacs.d/init.el"))
-
-(global-set-key (kbd "<f10>") 'source-emacs-config)
-
-(global-set-key (kbd "<f12>") 'list-packages)
-
-(provide 'base)
-
-;;; base.el ends here
+;;; base-config.el ends here

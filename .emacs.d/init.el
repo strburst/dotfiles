@@ -6,6 +6,7 @@
 (setq inhibit-startup-echo-area-message "allen")
 
 (defun config-relative-path (path)
+  "Take a path and prepend the Emacs config directory."
   (concat user-emacs-directory path))
 
 ;; Add ~/.emacs.d/lisp and all subdirectories to load-path
@@ -13,7 +14,9 @@
 (let ((default-directory (config-relative-path "lisp")))
   (normal-top-level-add-subdirs-to-load-path))
 
-(require 'base)
+(require 'base-config)
+(require 'base-lib)
+(require 'base-keybinds)
 (require 'package-setup)
 
 (if (file-exists-p (config-relative-path "local.el"))
