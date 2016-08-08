@@ -1,15 +1,15 @@
 ## ZPLUG CONFIGURATION {{{
 
 if [[ ! -d ~/.zplug ]]; then
-    echo "zplug is not installed; installing zplug..."
+    echo 'zplug is not installed; installing zplug...'
     git clone https://github.com/zplug/zplug ~/.zplug
     source ~/.zplug/init.zsh && zplug update --self
 fi
 
 source ~/.zplug/init.zsh
 
-zplug "Peeja/ctrl-zsh"               # ^z switches between current job and shell
-zplug "themes/bira", from:oh-my-zsh  # Fancy shell prompt
+zplug 'Peeja/ctrl-zsh'               # ^z switches between current job and shell
+zplug 'themes/bira', from:oh-my-zsh  # Fancy shell prompt
 
 # Install plugins if there are plugins that have not been installed
 zplug check --verbose || zplug install
@@ -41,7 +41,7 @@ setopt always_to_end     # Move to end when completion finishes
 setopt auto_menu         # Show zsh's trademark completion menu on tab
 setopt complete_in_word  # Don't move the cursor when completing
 
-## }}} Historu {{{
+## }}} History {{{
 setopt append_history          # Append to (not overwrite) history when exiting
 setopt extended_history        # Also save timestamp and execution time
 setopt hist_expire_dups_first  # Get rid of duplicate history entries first
