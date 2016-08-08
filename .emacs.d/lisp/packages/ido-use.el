@@ -23,6 +23,21 @@
   :config
   (ido-ubiquitous-mode 1))
 
+(use-package recentf
+  :config
+  (recentf-mode 1)
+
+  (defun ido-use/recentf-ido-find-file ()
+    "Open list of most recently used files with ido."
+    (interactive)
+    (let ((file (ido-completing-read "Recent file: " recentf-list nil t)))
+      (when file
+        (find-file file))))
+
+  (global-set-key (kbd "C-x C-r") 'ido-use/recentf-ido-find-file)
+
+  (setq recentf-max-saved-items 50))
+
 (provide 'ido-use)
 
 ;;; ido-use.el ends here
