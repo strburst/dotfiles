@@ -1,4 +1,4 @@
-;;; vimrc-mode-use.el --- Load vimrc mode for editing .vim files
+;;; vimrc-mode-use.el --- Major mode for editing vimscript
 
 (use-package vimrc-mode)
 

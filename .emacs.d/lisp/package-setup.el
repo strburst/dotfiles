@@ -31,7 +31,8 @@
                               undo-tree
                               winner
                               yasnippet
-                              xkcd))
+                              xkcd
+                              vimrc-mode))
 
 (defun symbol-append-use (sym)
   "Take a symbol and append \"-use\" to it."
