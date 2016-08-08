@@ -24,6 +24,7 @@
 (defconst +packages-nice-2+ '(alda-mode
                               elscreen
                               ido
+                              magit
                               nyan-mode
                               org
                               solarized-theme
