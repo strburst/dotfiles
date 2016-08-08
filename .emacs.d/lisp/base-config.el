@@ -49,7 +49,7 @@
 (setq show-paren-delay 0)  ; Do it immediately
 
 ;; Highlight tabs, trailing spaces, and long lines
-(setq whitespace-style '(face tabs trailing lines-tail tab-mark))
+(setq whitespace-style '(face trailing lines-tail tab-mark))
 (global-whitespace-mode 1)
 
 (setq column-number-mode t)  ; Enable column number display
