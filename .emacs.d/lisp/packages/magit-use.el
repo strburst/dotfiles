@@ -4,8 +4,7 @@
   :config
   (setq magit-completing-read-function 'magit-ido-completing-read)
 
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (global-set-key (kbd "C-x C-g") 'magit-status))
+  (leader-map "g" 'magit-status))
 
 (use-package evil-magit)
 

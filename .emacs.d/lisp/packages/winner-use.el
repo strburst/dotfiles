@@ -1,15 +1,12 @@
-;;; winner-use.el --- Revert to previous window states (bundled with Emacs)
+;;; winner-use.el --- Revert to previous window configurations (builtin package)
 
 (use-package winner
-  :bind
-  (:map winner-mode-map
-        ("C-w C-h" . winner-undo)
-        ("C-w C-l" . winner-redo))
-
   :config
   (winner-mode 1)
 
-  :demand)
+  (general-define-key :keymaps 'winner-mode-map
+                      "C-w C-h" 'winner-undo
+                      "C-w C-l" 'winner-redo))
 
 (provide 'winner-use)
 

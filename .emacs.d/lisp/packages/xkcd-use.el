@@ -1,13 +1,6 @@
 ;;; xkcd-use.el --- Load xkcd browser
 
 (use-package xkcd
-  :bind (([f8] . xkcd)
-         :map xkcd-mode-map
-         ("h" . xkcd-prev)
-         ("j" . xkcd-next)
-         ("k" . xkcd-prev)
-         ("l" . xkcd-next))
-
   :config
   (evil-set-initial-state 'xkcd-mode 'emacs)
   (add-hook 'xkcd-mode-hook  ; Clear visual distractions
@@ -15,6 +8,13 @@
               (linum-mode -1)
               (blink-cursor-mode -1)
               (setq cursor-type nil)))
+
+  (global-set-key (kbd "<f8>") 'xkcd)
+  (general-define-key :keymaps 'xkcd-mode-map
+                      "h" 'xkcd-prev
+                      "j" 'xkcd-next
+                      "k" 'xkcd-prev
+                      "l" 'xkcd-next)
 
   (define-key image-map (kbd "r") nil))
 
