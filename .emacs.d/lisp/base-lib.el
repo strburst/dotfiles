@@ -1,6 +1,10 @@
 ;;; base-lib.el --- For functions independent of external packages
 
-(defun base-lib/print-major-mode ()
+(defun base-lib/echo-init-time ()
+  "Print the value of emacs-init-time to the minibuffer."
+  (message "Init time: %s" (emacs-init-time)))
+
+(defun base-lib/echo-major-mode ()
   "Print the name of the current major mode to the minibuffer."
   (interactive)
   (message "Current major mode is: %s" mode-name))

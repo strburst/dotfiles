@@ -22,6 +22,7 @@
 (if (file-exists-p (config-relative-path "local.el"))
     (load (config-relative-path "local.el")))
 
-(message "Init time: %s" (emacs-init-time))
+;; Make sure init time is echoed after post-init messages
+(run-with-timer 1 nil 'base-lib/echo-init-time)
 
 ;;; init.el ends here

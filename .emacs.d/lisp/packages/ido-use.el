@@ -27,6 +27,8 @@
   :config
   (recentf-mode 1)
 
+  (setq recentf-max-saved-items 50)
+
   (defun ido-use/recentf-ido-find-file ()
     "Open list of most recently used files with ido."
     (interactive)
@@ -34,9 +36,7 @@
       (when file
         (find-file file))))
 
-  (global-set-key (kbd "C-x C-r") 'ido-use/recentf-ido-find-file)
-
-  (setq recentf-max-saved-items 50))
+  (global-set-key (kbd "C-x C-r") 'ido-use/recentf-ido-find-file))
 
 (provide 'ido-use)
 

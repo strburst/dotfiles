@@ -14,7 +14,9 @@
             (lambda ()
               (linum-mode -1)
               (blink-cursor-mode -1)
-              (setq cursor-type nil))))
+              (setq cursor-type nil)))
+
+  (define-key image-map (kbd "r") nil))
 
 (provide 'xkcd-use)
 
