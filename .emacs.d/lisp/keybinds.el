@@ -21,7 +21,7 @@ fallback-leader elsewhere."
 
 (global-set-key (kbd "<f2>") 'base-lib/echo-major-mode)
 (global-set-key (kbd "<f9>") 'base-lib/open-emacs-config)
-(global-set-key (kbd "<f12>") list-packages)
+(global-set-key (kbd "<f12>") 'list-packages)
 
 (provide 'keybinds)
 
