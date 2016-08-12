@@ -15,7 +15,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (require 'base-config)
-(require 'base-lib)
+(require 'lib)
 (require 'setup-packages)
 (require 'keybinds)
 (require 'require-packages)
