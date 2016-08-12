@@ -1,4 +1,4 @@
-;;; require-packages.el --- Load all packages
+;;; load-packages.el --- Load all packages
 
 (defconst +packages-nice-1+ '(evil))
 (defconst +packages-nice-2+ '(alda-mode
@@ -23,6 +23,6 @@
 
 (mapc 'require +package-require-list+)
 
-(provide 'require-packages)
+(provide 'load-packages)
 
-;;; require-packages.el ends here
+;;; load-packages.el ends here

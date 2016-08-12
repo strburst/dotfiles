@@ -15,10 +15,10 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (require 'base-config)
-(require 'base-lib)
+(require 'lib)
 (require 'setup-packages)
 (require 'keybinds)
-(require 'require-packages)
+(require 'load-packages)
 
 (if (file-exists-p (init/config-path "local.el"))
     (load (init/config-path "local.el")))

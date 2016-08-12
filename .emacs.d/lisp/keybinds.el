@@ -34,8 +34,8 @@ fallback-leader elsewhere."
 (leader-map "t h" 'evil-ex-nohighlight
             "t m" 'menu-bar-mode)
 
-(global-set-key (kbd "<f2>") 'base-lib/echo-major-mode)
-(global-set-key (kbd "<f9>") 'base-lib/open-emacs-config)
+(global-set-key (kbd "<f2>") 'lib/echo-major-mode)
+(global-set-key (kbd "<f9>") 'lib/open-emacs-config)
 (global-set-key (kbd "<f12>") 'list-packages)
 
 (provide 'keybinds)
