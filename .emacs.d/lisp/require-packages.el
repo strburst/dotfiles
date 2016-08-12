@@ -12,14 +12,13 @@
                               winner
                               yasnippet
                               xkcd
-                              vimrc-mode))
-
-(defun symbol-append-use (sym)
-  "Take a symbol and append \"-use\" to it."
-  (intern (concat (symbol-name sym) "-use")))
+                              vimrc-mode
+                              whitespace))
 
 (defconst +package-require-list+
-          (mapcar 'symbol-append-use
+          (mapcar (lambda (sym)
+                    "Take a symbol and append \"-use\" to it."
+                    (intern (concat (symbol-name sym) "-use")))
                   (-flatten (list +packages-nice-1+ +packages-nice-2+))))
 
 (mapc 'require +package-require-list+)

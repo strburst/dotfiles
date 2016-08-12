@@ -48,10 +48,6 @@
 (show-paren-mode 1)        ; Visually highlight matching parens
 (setq show-paren-delay 0)  ; Do it immediately
 
-;; Highlight tabs, trailing spaces, and long lines
-(setq whitespace-style '(face trailing lines-tail tab-mark))
-(global-whitespace-mode 1)
-
 (setq column-number-mode t)  ; Enable column number display
 
 ;; Make mousewheel scrolling less jumpy
