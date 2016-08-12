@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 #
 # Start panelupdate, the forked processes feeding it, and lemonbar
 
@@ -25,7 +25,7 @@ mydate() {
   date "+%a %d"
 }
 
-# Get the load average
+# Get the three load averages
 loadavg() {
   cat /proc/loadavg | cut -d' ' -f -3
 }
@@ -73,9 +73,9 @@ echo $$ > $PANEL_PID_LOC
 
 # Feed various pieces of information into panelupdate
 wraprepeat 3 'C%s\n' myclock > $PANEL_FIFO &
-wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > $PANEL_FIFO &
+# wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > $PANEL_FIFO &
 wraprepeat 5 'L%s\n' loadavg > $PANEL_FIFO &
-wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
+# wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
 wraprepeat 1800 'D%s\n' mydate > $PANEL_FIFO &
 
 xtitle -sf 'T%s' > $PANEL_FIFO &

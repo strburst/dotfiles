@@ -13,8 +13,8 @@ URxvt*scrollTtyKeypress: true
 
 ! Fonts and fallback fonts. By the way, this UTF-8 demo is pretty useful:
 ! https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
-URxvt.font: xft:Terminess Powerline:size=12:antialias=true:hinting=true, \
-            xft:Bistream Vera Sans Mono:size=12:antialias=true:hinting=true, \
+URxvt.font: xft:Terminus:size=12:antialias=true:hinting=true, \
+            xft:Bitstream Vera Sans Mono:size=12:antialias=true:hinting=true, \
             xft:Hack:size=12:antialias=true:hinting=true, \
             xft:Anonymice Powerline:size=12:antialias=true:hinting=true
 

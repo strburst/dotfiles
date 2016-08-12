@@ -5,8 +5,8 @@
 xrdb ~/.Xresources
 
 # Initialize gnome-keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# export SSH_AUTH_SOCK
 
 # Caps Lock acts as Esc when pressed by itself, and Ctrl with another key
 setxkbmap -option 'ctrl:nocaps' &
@@ -16,11 +16,11 @@ xcape -e 'Control_L=Escape' &
 xsetroot && feh --bg-center ~/Pictures/wallpaper.png
 
 # Start startup applications
-dropbox &
+# dropbox &
 dunst &
-gajim &
+# gajim &
 nm-applet &
 numlockx &
 redshift &
-rescuetime &
+# rescuetime &
 stalonetray &
