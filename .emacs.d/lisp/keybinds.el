@@ -2,22 +2,37 @@
 
 (setq leader "SPC"
       leader-double "SPC SPC"
-      fallback-leader "C-c C-d"  ; Fallback used when evil is inactive
-      fallback-leader-double "C-c C-d C-d")
+      fallback-leader "M-SPC"  ; Fallback used when evil is inactive
+      fallback-leader-double "M-SPC SPC")
+
+(setq general-default-states '(normal insert emacs))
 
 (defun leader-map (&rest maps)
   "Assign the given maps with prefix leader in evil normal mode and
 fallback-leader elsewhere."
   (apply 'general-define-key
-         :keymaps 'evil-normal-state-map
          :prefix leader
-         maps)
-  (apply 'general-define-key
-         :prefix fallback-leader
+         :non-normal-prefix fallback-leader
          maps))
 
-(leader-map "f" 'find-file
-            "d" 'switch-to-buffer)
+(defun leader-double-map (&rest maps)
+  "Assign the given maps with prefix leader in evil normal mode and
+fallback-leader elsewhere."
+  (apply 'general-define-key
+         :prefix leader-double
+         :non-normal-prefix fallback-leader-double
+         maps))
+
+;; Miscellaneous
+(leader-map "d" 'switch-to-buffer)
+
+;; File operations
+(leader-map "f f" 'find-file
+            "f w" 'save-buffer)
+
+;; Toggles
+(leader-map "t h" 'evil-ex-nohighlight
+            "t m" 'menu-bar-mode)
 
 (global-set-key (kbd "<f2>") 'base-lib/echo-major-mode)
 (global-set-key (kbd "<f9>") 'base-lib/open-emacs-config)
