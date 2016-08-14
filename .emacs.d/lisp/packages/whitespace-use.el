@@ -2,7 +2,8 @@
 
 (use-package whitespace
   :config
-  (setq whitespace-line-column nil)  ; Use value of fill-column instead
+  (setq whitespace-style (cons 'lines-tail (delete 'lines whitespace-style))
+        whitespace-line-column nil)  ; Use value of fill-column instead
 
   (leader-map "t w" 'whitespace-mode))
 
