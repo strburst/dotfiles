@@ -14,9 +14,7 @@
                       "h" 'xkcd-prev
                       "j" 'xkcd-next
                       "k" 'xkcd-prev
-                      "l" 'xkcd-next)
-
-  (define-key image-map (kbd "r") nil))
+                      "l" 'xkcd-next))
 
 (provide 'xkcd-use)
 

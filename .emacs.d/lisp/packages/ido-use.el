@@ -36,7 +36,7 @@
       (when file
         (find-file file))))
 
-  (key/leader-map "r" 'ido-use/recentf-ido-find-file))
+  (key/leader-map "f p" 'ido-use/recentf-ido-find-file))
 
 (provide 'ido-use)
 

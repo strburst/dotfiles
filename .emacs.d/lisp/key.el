@@ -27,8 +27,10 @@ fallback-leader elsewhere."
 (key/leader-map "d" 'switch-to-buffer)
 
 ;; File operations
-(key/leader-map "f f" 'find-file
-                "f w" 'save-buffer)
+(key/leader-map "f d" 'vc-delete-file
+                "f f" 'find-file
+                "f r" 'vc-rename-file
+                "f s" 'save-buffer)
 
 ;; Toggles
 (key/leader-map "t h" 'evil-ex-nohighlight
