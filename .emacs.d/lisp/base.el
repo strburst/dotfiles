@@ -1,4 +1,4 @@
-;;; base-config.el --- For configuration independent of external packages
+;;; base.el --- Miscellaneous  configuration independent of external packages
 
 (setq gc-cons-threshold 20000000)  ; Garbage collection occurs every 20 MB
 
@@ -26,12 +26,11 @@
       kept-old-versions 0
       version-control t)     ; Keep multiple numbered backups
 
-;; Stick to spaces for now
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)  ; Stick to spaces for now
+
+(setq-default fill-column 80)  ; Keep lines at 80 characters when autoformatting
 
 (set-face-font 'default "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*")
-
-(setq fill-column 80)  ; Keep lines at 80 characters when autoformatting
 
 ;; Configure version control settings
 (setq vc-follow-symlinks t     ; Don't prompt to follow symlinks to vc'd files
@@ -57,6 +56,6 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Replace yes/no prompts with y/n
 
-(provide 'base-config)
+(provide 'base)
 
-;;; base-config.el ends here
+;;; base.el ends here

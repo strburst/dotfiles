@@ -14,7 +14,7 @@
 (let ((default-directory (init/config-path "lisp")))
   (normal-top-level-add-subdirs-to-load-path))
 
-(require 'base-config)
+(require 'base)
 (require 'lib)
 (require 'setup-packages)
 (require 'key)
