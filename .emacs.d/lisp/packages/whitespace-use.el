@@ -5,7 +5,7 @@
   (setq whitespace-style (cons 'lines-tail (delete 'lines whitespace-style))
         whitespace-line-column nil)  ; Use value of fill-column instead
 
-  (leader-map "t w" 'whitespace-mode))
+  (key/leader-map "t w" 'whitespace-mode))
 
 (provide 'whitespace-use)
 

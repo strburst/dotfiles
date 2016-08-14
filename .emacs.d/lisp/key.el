@@ -1,4 +1,4 @@
-;;; keybinds.el --- For miscellaneous keybindings that don't fit elsewhere
+;;; key.el --- For miscellaneous keybindings that don't fit elsewhere
 
 (setq leader "SPC"
       leader-double "SPC SPC"
@@ -7,7 +7,7 @@
 
 (setq general-default-states '(normal insert emacs))
 
-(defun leader-map (&rest maps)
+(defun key/leader-map (&rest maps)
   "Assign the given maps with prefix leader in evil normal mode and
 fallback-leader elsewhere."
   (apply 'general-define-key
@@ -15,7 +15,7 @@ fallback-leader elsewhere."
          :non-normal-prefix fallback-leader
          maps))
 
-(defun leader-double-map (&rest maps)
+(defun key/leader-double-map (&rest maps)
   "Assign the given maps with prefix leader in evil normal mode and
 fallback-leader elsewhere."
   (apply 'general-define-key
@@ -24,20 +24,20 @@ fallback-leader elsewhere."
          maps))
 
 ;; Miscellaneous
-(leader-map "d" 'switch-to-buffer)
+(key/leader-map "d" 'switch-to-buffer)
 
 ;; File operations
-(leader-map "f f" 'find-file
-            "f w" 'save-buffer)
+(key/leader-map "f f" 'find-file
+                "f w" 'save-buffer)
 
 ;; Toggles
-(leader-map "t h" 'evil-ex-nohighlight
-            "t m" 'menu-bar-mode)
+(key/leader-map "t h" 'evil-ex-nohighlight
+                "t m" 'menu-bar-mode)
 
 (global-set-key (kbd "<f2>") 'lib/echo-major-mode)
 (global-set-key (kbd "<f9>") 'lib/open-emacs-config)
 (global-set-key (kbd "<f12>") 'list-packages)
 
-(provide 'keybinds)
+(provide 'key)
 
-;;; keybinds.el ends here
+;;; key.el ends here

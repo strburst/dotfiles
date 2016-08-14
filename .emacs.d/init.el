@@ -17,7 +17,7 @@
 (require 'base-config)
 (require 'lib)
 (require 'setup-packages)
-(require 'keybinds)
+(require 'key)
 (require 'load-packages)
 
 (if (file-exists-p (init/config-path "local.el"))
