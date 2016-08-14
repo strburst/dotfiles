@@ -3,7 +3,7 @@
 ;; (package-initialize)  ; prevent package.el from helpfully adding this
 
 ;; Disable startup message (must be in init.el)
-(setq inhibit-startup-echo-area-message "allen.zheng")
+(setq inhibit-startup-echo-area-message "allen")
 
 (defun init/config-path (path)
   "Take a path and prepend the Emacs config directory."
@@ -24,6 +24,6 @@
     (load (init/config-path "local.el")))
 
 ;; Make sure init time is echoed after post-init messages
-(run-with-timer 1 nil 'base-lib/echo-init-time)
+(run-with-timer 1 nil 'lib/echo-init-time)
 
 ;;; init.el ends here
