@@ -29,8 +29,13 @@ fallback-leader elsewhere."
 ;; File operations
 (key/leader-map "f d" 'vc-delete-file
                 "f f" 'find-file
+                "f k" 'kill-this-buffer
                 "f r" 'vc-rename-file
                 "f s" 'save-buffer)
+
+;; Emacs-Lisp-related
+(key/leader-map "l e" 'eval-last-sexp
+                "l i" 'eval-print-last-sexp)
 
 ;; Toggles
 (key/leader-map "t h" 'evil-ex-nohighlight
