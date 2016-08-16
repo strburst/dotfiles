@@ -11,6 +11,7 @@
                               magit
                               nyan-mode
                               org
+                              paradox
                               solarized-theme
                               undo-tree
                               winner
