@@ -23,11 +23,14 @@
 
 (use-package evil-magit)
 
-(use-package gitattributes-mode)
+(use-package gitattributes-mode
+  :defer t)
 
-(use-package gitconfig-mode)
+(use-package gitconfig-mode
+  :defer t)
 
-(use-package gitignore-mode)
+(use-package gitignore-mode
+  :defer t)
 
 (provide 'magit-use)
 
