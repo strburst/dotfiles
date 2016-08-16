@@ -2,6 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
+(defmacro lib/add-minor-mode-hooks (mode-hook-list minor-mode-fn)
+  "For hooks in MODE-HOOK-LIST, call MINOR-MODE-FN to load a minor mode."
+  `(dolist (hook ,mode-hook-list)
+     (add-hook hook (lambda ()
+                      (funcall ,minor-mode-fn 1)))))
+
 (defun lib/echo-init-time ()
   "Print the value of `emacs-init-time' to the minibuffer."
   (interactive)
@@ -13,7 +19,7 @@
   (message "Current major mode is: %s" mode-name))
 
 (defun lib/open-emacs-config ()
-  "Open the .emacs.d directory."
+  "Open the ~/.emacs.d directory."
   (interactive)
   (find-file user-emacs-directory))
 
