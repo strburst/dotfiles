@@ -1,4 +1,8 @@
 ;;; whitespace-use.el --- Show whitespace indicators (builtin package)
+;;; Commentary:
+;;; Code:
+
+(require 'key)
 
 (use-package whitespace
   :config

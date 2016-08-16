@@ -1,4 +1,8 @@
 ;;; load-packages.el --- Load all packages
+;;; Commentary:
+;;; Code:
+
+(require 'dash)
 
 (defconst +packages-nice-1+ '(evil))
 (defconst +packages-nice-2+ '(alda-mode

@@ -1,4 +1,6 @@
 ;;; init.el --- Set up the load path and invoke base config and package setup
+;;; Commentary:
+;;; Code:
 
 ;; (package-initialize)  ; prevent package.el from helpfully adding this
 
@@ -6,7 +8,7 @@
 (setq inhibit-startup-echo-area-message "allen")
 
 (defun init/config-path (path)
-  "Take a path and prepend the Emacs config directory."
+  "Take PATH and prepend the Emacs config directory."
   (concat user-emacs-directory path))
 
 ;; Add ~/.emacs.d/lisp and all subdirectories to load-path

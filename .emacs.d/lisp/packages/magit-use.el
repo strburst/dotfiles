@@ -1,4 +1,8 @@
 ;;; magit-use.el --- Git porcelain/interface
+;;; Commentary:
+;;; Code:
+
+(require 'key)
 
 (use-package magit
   :config

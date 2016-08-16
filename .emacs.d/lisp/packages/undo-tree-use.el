@@ -1,4 +1,6 @@
 ;;; undo-tree-use.el --- Load and enable solarized dark theme
+;;; Commentary:
+;;; Code:
 
 (use-package undo-tree
   :config

@@ -1,4 +1,6 @@
 ;;; base.el --- Miscellaneous  configuration independent of external packages
+;;; Commentary:
+;;; Code:
 
 (setq gc-cons-threshold 20000000)  ; Garbage collection occurs every 20 MB
 
@@ -15,6 +17,7 @@
     (load custom-file))
 
 ;; Set browser to chromium
+(require 'browse-url)
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium")
 
@@ -39,11 +42,10 @@
 
 (setq echo-keystrokes 0.1)  ; Show partially completed key sequences sooner
 
-(setq select-enable-clipboard t)  ; Allow copy/paste with the X clipboard
-
 (global-linum-mode 1)    ; Enable line numbers
 (global-hl-line-mode 1)  ; Subtly highlight the line the cursor is on
 
+(require 'paren)
 (show-paren-mode 1)        ; Visually highlight matching parens
 (setq show-paren-delay 0)  ; Do it immediately
 

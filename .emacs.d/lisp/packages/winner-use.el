@@ -1,4 +1,6 @@
 ;;; winner-use.el --- Revert to previous window configurations (builtin package)
+;;; Commentary:
+;;; Code:
 
 (use-package winner
   :config

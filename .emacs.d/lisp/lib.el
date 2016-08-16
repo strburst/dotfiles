@@ -1,7 +1,9 @@
 ;;; lib.el --- For functions independent of external packages
+;;; Commentary:
+;;; Code:
 
 (defun lib/echo-init-time ()
-  "Print the value of emacs-init-time to the minibuffer."
+  "Print the value of `emacs-init-time' to the minibuffer."
   (interactive)
   (message "Init time: %s" (emacs-init-time)))
 

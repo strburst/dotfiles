@@ -1,4 +1,6 @@
 ;;; evil-use.el --- Load evil and related packages
+;;; Commentary:
+;;; Code:
 
 (use-package evil
   :init

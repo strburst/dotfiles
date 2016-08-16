@@ -2,6 +2,8 @@
 # key: use
 # --
 ;;; `(file-name-nondirectory (buffer-file-name))` --- $1
+;;; Commentary:
+;;; Code:
 
 (use-package `(replace-regexp-in-string "-use.el$" "" (file-name-nondirectory (buffer-file-name)))`$0)
 

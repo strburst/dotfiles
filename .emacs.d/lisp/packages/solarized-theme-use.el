@@ -1,4 +1,6 @@
 ;;; solarized-theme-use.el --- Load and enable solarized dark theme
+;;; Commentary:
+;;; Code:
 
 (use-package solarized-theme
   :config

@@ -1,4 +1,6 @@
 ;;; xkcd-use.el --- Load xkcd browser
+;;; Commentary:
+;;; Code:
 
 (use-package xkcd
   :config

@@ -1,26 +1,26 @@
 ;;; key.el --- For miscellaneous keybindings that don't fit elsewhere
+;;; Commentary:
+;;; Code:
 
-(setq leader "SPC"
-      leader-double "SPC SPC"
-      fallback-leader "M-SPC"  ; Fallback used when evil is inactive
-      fallback-leader-double "M-SPC SPC")
+(defvar key/leader "SPC")
+(defvar key/leader-double "SPC SPC")
+(defvar key/fallback-leader "M-SPC") ; Fallback used when evil is inactive
+(defvar key/fallback-leader-double "M-SPC SPC")
 
 (setq general-default-states '(normal insert emacs))
 
 (defun key/leader-map (&rest maps)
-  "Assign the given maps with prefix leader in evil normal mode and
-fallback-leader elsewhere."
+  "Assign the given MAPS with prefix leader in evil normal mode and fallback-leader elsewhere."
   (apply 'general-define-key
-         :prefix leader
-         :non-normal-prefix fallback-leader
+         :prefix key/leader
+         :non-normal-prefix key/fallback-leader
          maps))
 
 (defun key/leader-double-map (&rest maps)
-  "Assign the given maps with prefix leader in evil normal mode and
-fallback-leader elsewhere."
+  "Assign the given MAPS with prefix leader in evil normal mode and fallback-leader elsewhere."
   (apply 'general-define-key
-         :prefix leader-double
-         :non-normal-prefix fallback-leader-double
+         :prefix key/leader-double
+         :non-normal-prefix key/fallback-leader-double
          maps))
 
 ;; Miscellaneous

@@ -1,4 +1,6 @@
 ;;; yasnippet-use.el --- Snippets engine, similar to Skeleton.el
+;;; Commentary:
+;;; Code:
 
 (use-package yasnippet
   :config

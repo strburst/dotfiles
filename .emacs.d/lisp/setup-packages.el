@@ -1,4 +1,6 @@
 ;;; setup-packages.el --- Set up package.el and load essential packages
+;;; Commentary:
+;;; Code:
 
 (require 'package)
 (setq package-enable-at-startup nil)

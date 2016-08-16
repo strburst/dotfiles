@@ -1,4 +1,6 @@
 ;;; nyan-mode-use.el --- Load nyan-mode
+;;; Commentary:
+;;; Code:
 
 (use-package nyan-mode
   :config

@@ -1,4 +1,6 @@
 ;;; org-use.el --- Note taking and todo list (builtin package)
+;;; Commentary:
+;;; Code:
 
 (use-package org
   :config

@@ -1,4 +1,6 @@
 ;;; elscreen-use.el --- Add tabs to Emacs, similar to GNU Screen
+;;; Commentary:
+;;; Code:
 
 (use-package elscreen
   :init

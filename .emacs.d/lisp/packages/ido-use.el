@@ -1,4 +1,6 @@
 ;;; ido-use.el --- Intelligent auto-completion (builtin package)
+;;; Commentary:
+;;; Code:
 
 (use-package ido
   :init
