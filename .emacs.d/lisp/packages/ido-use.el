@@ -11,13 +11,12 @@
 
   (setq ido-create-new-buffer 'always))  ; Let ido make new files
 
-(use-package smex
+(use-package ido-grid-mode
   :config
-  (smex-initialize)
+  (ido-grid-mode 1)
 
-  (global-set-key (kbd "M-x") 'smex)
-  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command))
+  (setq ido-grid-mode-prefix-scrolls t     ; Arrow points to selected column
+        ido-grid-mode-start-collapsed t))  ; Show one line only until tab used
 
 (use-package ido-ubiquitous
   :config
@@ -37,6 +36,14 @@
         (find-file file))))
 
   (key/leader-map "f p" 'ido-use/recentf-ido-find-file))
+
+(use-package smex
+  :config
+  (smex-initialize)
+
+  (global-set-key (kbd "M-x") 'smex)
+  (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+  (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command))
 
 (provide 'ido-use)
 
