@@ -10,6 +10,7 @@ source ~/.zplug/init.zsh
 
 zplug 'Peeja/ctrl-zsh'               # ^z switches between current job and shell
 zplug 'themes/bira', from:oh-my-zsh  # Fancy shell prompt
+zplug 'zlsun/solarized-man'          # Colors in man for headings/references
 
 # Install plugins if there are plugins that have not been installed
 zplug check --verbose || zplug install
