@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'evil)
+
 (use-package paradox
   :config
   (evil-set-initial-state 'paradox-menu-mode 'emacs)

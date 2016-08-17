@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'evil)
+
 (use-package alda-mode
   :config
   (define-key evil-motion-state-map "gp" 'alda-evil-play-region))

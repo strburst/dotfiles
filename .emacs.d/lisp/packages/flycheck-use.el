@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'lib)
 (require 'key)
 
 (use-package flycheck

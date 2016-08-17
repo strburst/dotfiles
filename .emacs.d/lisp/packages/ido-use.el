@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'key)
+
 (use-package ido
   :init
   (setq ido-enable-flex-matching t

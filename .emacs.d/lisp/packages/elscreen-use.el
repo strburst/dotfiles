@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'evil)
+
 (use-package elscreen
   :init
   ;; Change prefix key to C-f

@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'evil)
+
 (use-package xkcd
   :config
   (evil-set-initial-state 'xkcd-mode 'emacs)
