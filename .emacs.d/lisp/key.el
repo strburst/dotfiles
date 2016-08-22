@@ -34,7 +34,7 @@ These are `key/leader-double' in evil normal mode and
                 "f j" 'switch-to-buffer
                 "f k" 'kill-this-buffer
                 "f q" 'save-buffers-kill-terminal
-                "f r" 'vc-rename-file
+                "f m" 'vc-rename-file
                 "f s" 'save-buffer)
 
 ;; Emacs Lisp
@@ -44,6 +44,12 @@ These are `key/leader-double' in evil normal mode and
 ;; Toggles
 (key/leader-map "t h" 'evil-ex-nohighlight
                 "t m" 'menu-bar-mode)
+
+;; Miscellaneous
+(key/leader-map "u" 'universal-argument)
+
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "C-+") 'text-scale-increase)
 
 (global-set-key (kbd "<f2>") 'lib/echo-major-mode)
 (global-set-key (kbd "<f9>") 'lib/open-emacs-config)

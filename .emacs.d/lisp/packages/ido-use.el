@@ -39,7 +39,7 @@
       (when file
         (find-file file))))
 
-  (key/leader-map "f p" 'ido-use/recentf-ido-find-file))
+  (key/leader-map "f r" 'ido-use/recentf-ido-find-file))
 
 (use-package smex
   :config
