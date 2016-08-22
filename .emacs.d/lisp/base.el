@@ -54,6 +54,11 @@
 ;; Make mousewheel scrolling less jumpy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
 
+(setq scroll-margin 8
+      scroll-step 1
+      scroll-preserve-screen-position t
+      scroll-conservatively 10000)
+
 (setq initial-scratch-message nil)  ; Scratch buffer is strictly empty
 
 (defalias 'yes-or-no-p 'y-or-n-p)  ; Replace yes/no prompts with y/n
