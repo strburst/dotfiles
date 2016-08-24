@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'lib)
+
 (setq gc-cons-threshold 20000000)  ; Garbage collection occurs every 20 MB
 
 ;; Disable unecessary gui toolbars (must come early to avoid momentary display)
@@ -12,7 +14,7 @@
 (setq inhibit-startup-message t)  ; Disable splash screen
 
 ;; Don't clutter init.el with settings from custom
-(setq custom-file (init/config-path "custom.el"))
+(setq custom-file (lib/config-path "custom.el"))
 (if (file-exists-p custom-file)
     (load custom-file))
 
@@ -26,7 +28,7 @@
       browse-url-generic-program "chromium")
 
 ;; Configure backup settings
-(setq backup-directory-alist `(("." . ,(init/config-path "backup")))
+(setq backup-directory-alist `(("." . ,(lib/config-path "backup")))
       backup-by-copying t    ; Use copying (doesn't clobber symlinks)
       delete-old-versions t  ; Don't prompt to delete old versions
       kept-new-versions 5

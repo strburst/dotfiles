@@ -8,6 +8,10 @@
      (add-hook hook (lambda ()
                       (funcall ,minor-mode-fn 1)))))
 
+(defun lib/config-path (path)
+  "Take PATH and prepend the Emacs config directory."
+  (concat user-emacs-directory path))
+
 (defun lib/echo-init-time ()
   "Print the value of `emacs-init-time' to the minibuffer."
   (interactive)
