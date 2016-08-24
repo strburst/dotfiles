@@ -16,6 +16,10 @@
 (if (file-exists-p custom-file)
     (load custom-file))
 
+;; Set the window title
+(lib/setq-same '("%b, %m mode -- " invocation-name "@" system-name)
+               frame-title-format icon-title-format)
+
 ;; Set browser to chromium
 (require 'browse-url)
 (setq browse-url-browser-function 'browse-url-generic

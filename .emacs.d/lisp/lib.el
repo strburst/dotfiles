@@ -23,6 +23,14 @@
   (interactive)
   (find-file user-emacs-directory))
 
+(defmacro lib/setq-same (value &rest vars)
+  "Take VALUE and assign each VAR in VARS to VALUE."
+  (let ((eval-value value))
+    `(progn
+       ,@(mapcar (lambda (var)
+                   `(setq ,var ,eval-value))
+                 vars))))
+
 (provide 'lib)
 
 ;;; lib.el ends here
