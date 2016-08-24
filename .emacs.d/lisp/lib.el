@@ -23,6 +23,12 @@
   (interactive)
   (find-file user-emacs-directory))
 
+(defun lib/save-and-kill ()
+  "Save the current buffer if associated with a file and kill the buffer."
+  (interactive)
+  (save-buffer)
+  (kill-this-buffer))
+
 (defmacro lib/setq-same (value &rest vars)
   "Take VALUE and assign each VAR in VARS to VALUE."
   (let ((eval-value value))

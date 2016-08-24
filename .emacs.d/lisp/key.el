@@ -35,7 +35,8 @@ These are `key/leader-double' in evil normal mode and
                 "f k" 'kill-this-buffer
                 "f q" 'save-buffers-kill-terminal
                 "f m" 'vc-rename-file
-                "f s" 'save-buffer)
+                "f s" 'save-buffer
+                "f z" 'lib/save-and-kill)
 
 ;; Emacs Lisp
 (key/leader-map "l e" 'eval-last-sexp
