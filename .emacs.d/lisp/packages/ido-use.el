@@ -13,7 +13,8 @@
   (ido-mode 1)
   (ido-everywhere 1)
 
-  (setq ido-create-new-buffer 'always))  ; Let ido make new files
+  (setq ido-create-new-buffer 'always  ; Let ido make new files
+        ido-use-faces nil))            ; Show flx-ido highlights instead
 
 (use-package ido-grid-mode
   :config
@@ -25,6 +26,10 @@
 (use-package ido-ubiquitous
   :config
   (ido-ubiquitous-mode 1))
+
+(use-package flx-ido
+  :config
+  (flx-ido-mode 1))
 
 (use-package recentf
   :config
