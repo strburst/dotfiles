@@ -48,8 +48,6 @@
   (define-key evil-normal-state-map (kbd "+") 'evil-numbers/inc-at-pt)
   (define-key evil-normal-state-map (kbd "-") 'evil-numbers/dec-at-pt))
 
-(use-package evil-org)
-
 (use-package evil-surround
   :config
   (global-evil-surround-mode 1))

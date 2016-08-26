@@ -6,8 +6,13 @@
   :config
   (setq org-completion-use-ido t)
 
-  (setq org-startup-indented t       ; Display sections/outlines indented
+  (setq org-startup-folded nil       ; Headings are unfolded when file is opened
+        org-startup-indented t       ; Display sections/outlines indented
         org-startup-truncated nil))  ; Wrap long lines instead of truncating
+
+(use-package evil-org
+  :config
+  (evil-define-key 'normal evil-org-mode-map "O" nil))
 
 (provide 'org-use)
 
