@@ -14,6 +14,7 @@
                               org
                               paradox
                               solarized-theme
+                              smart-mode-line
                               undo-tree
                               winner
                               yasnippet
