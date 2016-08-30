@@ -28,6 +28,25 @@ These are `key/leader-double' in evil normal mode and
          :non-normal-prefix key/fallback-leader-double
          maps))
 
+(defun key/move-binding (keymap old-key new-key)
+  "Take KEYMAP and unbind OLD-KEY, then bind it to NEW-KEY instead.
+
+OLD-KEY and NEW-KEY are implicitly wrapped in kbd."
+  (let* ((old-key-kbd (kbd old-key))
+         (new-key-kbd (kbd new-key))
+         (func (lookup-key keymap old-key-kbd)))
+    (define-key keymap old-key-kbd nil)
+    (define-key keymap new-key-kbd func)))
+
+(defun key/swap-bindings (keymap key1 key2)
+  "In KEYMAP, swap the bindings for KEY1 and KEY2."
+  (let* ((key1-kbd (kbd key1))
+         (key2-kbd (kbd key2))
+         (func1 (lookup-key keymap key1-kbd))
+         (func2 (lookup-key keymap key2-kbd)))
+    (define-key keymap key1-kbd func2)
+    (define-key keymap key2-kbd func1)))
+
 ;; Files/buffers
 (key/leader-map "f d" 'vc-delete-file
                 "f f" 'find-file
