@@ -39,7 +39,7 @@
 
 (setq-default fill-column 80)  ; Keep lines at 80 characters when autoformatting
 
-(set-face-font 'default "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*")
+(set-frame-font "Source Code Pro-10")
 
 ;; Configure version control settings
 (setq vc-follow-symlinks t     ; Don't prompt to follow symlinks to vc'd files
