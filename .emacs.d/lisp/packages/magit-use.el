@@ -8,11 +8,18 @@
   :config
   (setq magit-completing-read-function 'magit-ido-completing-read)
 
-  (defun magit-use/magit-stage-after-save ()
+  (defun magit-use/magit-save-stage-buffer-file ()
     "Save the current file and stage it with `magit-stage-file'."
     (interactive)
     (save-buffer)
-    (magit-stage-file buffer-file-name))
+    (magit-stage-file buffer-file-name)
+    (message "Staged %s" buffer-file-name))
+
+  (defun magit-use/magit-unstage-buffer-file ()
+    "Save the current file and stage it with `magit-stage-file'."
+    (interactive)
+    (magit-unstage-file buffer-file-name)
+    (message "Unstaged %s" buffer-file-name))
 
   (key/leader-map "g b" 'magit-blame
                   "g c" 'magit-clone
@@ -23,7 +30,8 @@
                   "g i" 'magit-init
                   "g l" 'magit-log-buffer-file
                   "g p" 'magit-push-implicitly
-                  "g s" 'magit-use/magit-stage-after-save))
+                  "g s" 'magit-use/magit-save-stage-buffer-file
+                  "g u" 'magit-use/magit-unstage-buffer-file))
 
 (use-package evil-magit)
 
