@@ -12,7 +12,7 @@
   (defvar flycheck-use/flycheck-auto-hooks '(emacs-lisp-mode-hook)
     "Hooks to automatically call flycheck-mode in.")
 
-  (lib/add-minor-mode-hooks flycheck-use/flycheck-auto-hooks 'flycheck-mode)
+  (lib/add-mode-hooks flycheck-use/flycheck-auto-hooks 'flycheck-mode)
 
   (key/leader-map "t f" 'flycheck-mode))
 
