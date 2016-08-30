@@ -6,6 +6,7 @@
 
 (defconst +packages-nice-1+ '(evil))
 (defconst +packages-nice-2+ '(alda-mode
+                              auctex
                               elscreen
                               flycheck
                               ido
