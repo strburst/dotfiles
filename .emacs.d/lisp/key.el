@@ -55,15 +55,17 @@ OLD-KEY and NEW-KEY are implicitly wrapped in kbd."
                 "f q" 'save-buffers-kill-terminal
                 "f m" 'vc-rename-file
                 "f s" 'save-buffer
+                "f S" 'save-some-buffers
                 "f z" 'lib/save-and-kill)
 
 ;; Emacs Lisp
-(key/leader-map "l e" 'eval-last-sexp
-                "l i" 'eval-print-last-sexp)
+(key/leader-map "e e" 'eval-last-sexp
+                "e i" 'eval-print-last-sexp)
 
 ;; Toggles
 (key/leader-map "t h" 'evil-ex-nohighlight
-                "t m" 'menu-bar-mode)
+                "t m" 'menu-bar-mode
+                "t s" 'flyspell-mode)
 
 ;; Miscellaneous
 (key/leader-map "u" 'universal-argument)

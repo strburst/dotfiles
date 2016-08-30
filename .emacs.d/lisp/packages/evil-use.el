@@ -41,7 +41,7 @@
   :config
   (setq evil-leader/in-all-states 1)
   (global-evil-leader-mode 1)
-  (evil-leader/set-leader "SPC"))
+  (evil-leader/set-leader "SPC SPC"))
 
 (use-package evil-numbers
   :config
