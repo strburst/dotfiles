@@ -4,6 +4,7 @@
 
 (require 'dash)
 
+;; Note: files don't necessarily correspond to single packages
 (defconst +packages-nice-1+ '(evil))
 (defconst +packages-nice-2+ '(alda-mode
                               auctex
@@ -11,6 +12,7 @@
                               flycheck
                               ido
                               magit
+                              markdown
                               nyan-mode
                               org
                               paradox
