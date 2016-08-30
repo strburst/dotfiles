@@ -14,6 +14,7 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (require 'lib)
+(require 'ensure)
 (require 'base)
 (require 'setup-packages)
 (require 'key)
