@@ -16,14 +16,14 @@
                               nyan-mode
                               org
                               paradox
-                              solarized-theme
                               smart-mode-line
+                              solarized-theme
                               undo-tree
-                              winner
-                              yasnippet
-                              xkcd
                               vimrc-mode
-                              whitespace))
+                              whitespace
+                              winner
+                              xkcd
+                              yasnippet))
 
 (defconst +package-require-list+
           (mapcar (lambda (sym)

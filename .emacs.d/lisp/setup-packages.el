@@ -18,7 +18,6 @@
 (setq use-package-always-ensure t)  ; Always auto-install use-package packages
 
 ;; Essential packages
-(use-package bind-key)  ; Used by use-package to bind keys
 (use-package dash)      ; List-manipulation utility
 (use-package diminish)  ; Hide minor modes from the statusline
 (use-package general)   ; Keybinding package that is aware of evil states
