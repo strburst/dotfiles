@@ -19,6 +19,7 @@
                               smart-mode-line
                               solarized-theme
                               undo-tree
+                              uniquify
                               vimrc-mode
                               whitespace
                               winner
