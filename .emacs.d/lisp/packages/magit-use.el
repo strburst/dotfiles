@@ -21,6 +21,16 @@
     (magit-unstage-file buffer-file-name)
     (message "Unstaged %s" buffer-file-name))
 
+  (defun magit-use/magit-status-dotfiles ()
+    "Open a `magit-status' buffer for my dotfiles repo."
+    (interactive)
+    ;; Assume ~/.emacs.d is a symlink to a subdirectory in a git repo
+    (let* ((emacs-in-dotfiles (file-truename user-emacs-directory))
+           (dotfiles-root (file-name-directory (directory-file-name emacs-in-dotfiles))))
+      (magit-status-internal dotfiles-root)))
+
+  (global-set-key (kbd "S-<f9>") 'magit-use/magit-status-dotfiles)
+
   (key/leader-map "g b" 'magit-blame
                   "g c" 'magit-clone
                   "g d" 'magit-diff-buffer-file
