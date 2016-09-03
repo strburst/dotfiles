@@ -107,7 +107,7 @@ fi
 
 alias grep='grep --color=auto'
 alias hist='history | less'
-alias ll='ls -l'
+alias ll='ls -Al'
 alias ls='ls --color=auto --human-readable'
 alias packeru='packer -Syu --auronly --noconfirm'
 alias ppp='ping 8.8.8.8'
