@@ -4,7 +4,8 @@
 
 (use-package smart-mode-line
   :config
-  (sml/setup))
+  (sml/setup)
+  (display-battery-mode 1))
 
 (provide 'smart-mode-line-use)
 
