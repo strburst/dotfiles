@@ -10,9 +10,13 @@
         org-startup-indented t       ; Display sections/outlines indented
         org-startup-truncated nil))  ; Wrap long lines instead of truncating
 
+(require 'evil-core)
 (use-package evil-org
   :config
-  (evil-define-key 'normal evil-org-mode-map "O" nil))
+  ;; Unbind some evil keys that evil-org overrides
+  (evil-define-key 'normal evil-org-mode-map
+    "o" nil
+    "O" nil))
 
 (provide 'org-use)
 
