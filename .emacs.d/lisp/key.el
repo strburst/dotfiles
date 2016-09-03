@@ -2,11 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
-(defvar key/leader "SPC")
-(defvar key/leader-double "SPC SPC")
-(defvar key/fallback-leader "M-SPC")  ; Fallback used when evil is inactive
-(defvar key/fallback-leader-double "M-SPC SPC")
+(defvar key/leader "SPC"
+  "Leader key used in evil normal mode.")
+(defvar key/leader-double "SPC SPC"
+  "Leader key variant used in evil normal mode.")
+(defvar key/fallback-leader "C-SPC"
+  "Fallback leader key used in insert mode or Emacs state.")
+(defvar key/fallback-leader-double "C-SPC SPC"
+  "Fallback leader key variant used in insert mode or Emacs state.")
 
+(require 'general)
 (setq general-default-states '(normal insert emacs))
 
 (defun key/leader-map (&rest maps)
