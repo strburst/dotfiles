@@ -11,3 +11,7 @@
 /.weechat/python
 /.weechat/script
 /.weechat/weechat.log
+
+/qutebrowser/*
+!/qutebrowser/keys.conf
+!/qutebrowser/qutebrowser.conf
