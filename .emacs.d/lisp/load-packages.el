@@ -11,6 +11,7 @@
                               elscreen
                               flycheck
                               ido
+                              lorem-ipsum
                               magit
                               markdown
                               nyan-mode
