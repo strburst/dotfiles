@@ -5,35 +5,42 @@
 (require 'dash)
 
 ;; Note: files don't necessarily correspond to single packages
-(defconst +packages-nice-1+ '(evil))
-(defconst +packages-nice-2+ '(alda-mode
-                              auctex
-                              elscreen
-                              flycheck
-                              ido
-                              lorem-ipsum
-                              magit
-                              markdown
-                              nyan-mode
-                              org
-                              paradox
-                              smart-mode-line
-                              solarized-theme
-                              undo-tree
-                              uniquify
-                              vimrc-mode
-                              whitespace
-                              winner
-                              xkcd
-                              yasnippet))
+(defconst +configs-nice-1+ '(evil flycheck ido magit)
+  "Essential/base packages and/or dependency for other config bundles.")
+(defconst +configs-nice-2+ '(alda-mode
+                             auctex
+                             elscreen
+                             lorem-ipsum
+                             markdown
+                             nyan-mode
+                             org
+                             paradox
+                             smart-mode-line
+                             solarized-theme
+                             undo-tree
+                             uniquify
+                             vimrc-mode
+                             whitespace
+                             winner
+                             xkcd
+                             yasnippet)
+  "Other miscellaneous packages.")
 
-(defconst +package-require-list+
-          (mapcar (lambda (sym)
-                    "Take a symbol and append \"-use\" to it."
-                    (intern (concat (symbol-name sym) "-use")))
-                  (-flatten (list +packages-nice-1+ +packages-nice-2+))))
+(defconst +config-require-list+
+  (-flatten (list +configs-nice-1+ +configs-nice-2+))
+  "List of all configs to be loaded.")
 
-(mapc 'require +package-require-list+)
+(defun load-packages/load-use-config (sym)
+  "Load conventially-named configuration from SYM.
+
+Specifically, require SYM-use and handle any errors that occur by redirecting
+error messages to named *Init Errors*."
+  (condition-case err
+      (require (intern (concat (symbol-name sym) "-use")))
+    ('error (pop-to-buffer "*Init Errors*")
+            (insert (error-message-string err)))))
+
+(mapc #'load-packages/load-use-config +config-require-list+)
 
 (provide 'load-packages)
 
