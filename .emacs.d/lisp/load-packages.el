@@ -15,11 +15,13 @@
                              nyan-mode
                              org
                              paradox
+                             rust-mode
                              smart-mode-line
                              solarized-theme
                              undo-tree
                              uniquify
                              vimrc-mode
+                             which-key
                              whitespace
                              winner
                              xkcd
