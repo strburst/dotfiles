@@ -1,4 +1,4 @@
-;;; undo-tree-use.el --- Load and enable solarized dark theme
+;;; undo-tree-use.el --- Vim-like undo tree
 ;;; Commentary:
 ;;; Code:
 
