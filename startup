@@ -15,6 +15,9 @@ xcape -e 'Control_L=Escape' &
 # Place the wallpaper on a black background
 xsetroot && feh --bg-center ~/Pictures/wallpaper.png
 
+# Set up lock script
+xss-lock physlock &
+
 # Start startup applications
 dropbox &
 dunst &
