@@ -8,6 +8,8 @@
   :config
   (evil-set-initial-state 'paradox-menu-mode 'emacs)
 
+  (setq paradox-execute-asynchronously t)  ; Don't ask to use async execution
+
   (global-set-key (kbd "S-<f12>") 'paradox-list-packages))
 
 (provide 'paradox-use)

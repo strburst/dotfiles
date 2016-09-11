@@ -13,7 +13,8 @@
   (ido-mode 1)
   (ido-everywhere 1)
 
-  (setq ido-create-new-buffer 'always  ; Let ido make new files
+  (setq ido-auto-merge-work-directories-length -1  ; Don't autoswitch dirs
+        ido-create-new-buffer 'always  ; Let ido make new files
         ido-use-faces nil))            ; Show flx-ido highlights instead
 
 (use-package ido-grid-mode

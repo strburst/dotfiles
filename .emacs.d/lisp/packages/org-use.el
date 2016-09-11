@@ -16,7 +16,9 @@
   ;; Unbind some evil keys that evil-org overrides
   (evil-define-key 'normal evil-org-mode-map
     "o" nil
-    "O" nil))
+    "O" nil
+    "J" nil
+    "K" nil))
 
 (provide 'org-use)
 

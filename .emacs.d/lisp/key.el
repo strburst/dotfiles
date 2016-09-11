@@ -57,6 +57,7 @@ OLD-KEY and NEW-KEY are implicitly wrapped in kbd."
                 "f f" 'find-file
                 "f j" 'switch-to-buffer
                 "f k" 'kill-this-buffer
+                "f K" 'kill-some-buffers
                 "f q" 'save-buffers-kill-terminal
                 "f m" 'vc-rename-file
                 "f s" 'save-buffer

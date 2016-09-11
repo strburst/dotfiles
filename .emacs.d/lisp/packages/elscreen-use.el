@@ -13,9 +13,7 @@
 
   :config
   (elscreen-start)
-  (setq elscreen-tab-display-control nil)  ; Don't display dummy control tab
-
-  (elscreen-toggle-display-tab))
+  (setq elscreen-tab-display-control nil))  ; Don't display dummy control tab
 
 (provide 'elscreen-use)
 
