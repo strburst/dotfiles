@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'key)
+
 (use-package evil
   :init
   ;; Allow evil to override more Emacs keybindings
@@ -31,7 +33,14 @@
 
   ;; K joins previous line (defined as a keyboard macro)
   (fset 'evil-join-previous [?k ?J])
-  (define-key evil-normal-state-map (kbd "K") 'evil-join-previous))
+  (define-key evil-normal-state-map (kbd "K") 'evil-join-previous)
+
+  (defun evil-use/evil-read (insert-file)
+    "Interactively call evil-read interactively."
+    (interactive "fInsert file: ")
+    (evil-read nil insert-file))
+
+  (key/leader-map "f i" 'evil-use/evil-read))
 
 (use-package evil-commentary
   :config
