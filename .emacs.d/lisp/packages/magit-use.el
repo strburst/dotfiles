@@ -32,7 +32,8 @@
   (global-set-key (kbd "S-<f9>") 'magit-use/magit-status-dotfiles)
 
   (key/leader-map "g b" 'magit-blame
-                  "g c" 'magit-clone
+                  "g c" 'magit-commit
+                  "g C" 'magit-clone
                   "g d" 'magit-diff-buffer-file
                   "g f" 'magit-fetch-from-upstream
                   "g F" 'magit-pull-from-upstream
@@ -41,7 +42,8 @@
                   "g l" 'magit-log-buffer-file
                   "g p" 'magit-push-implicitly
                   "g s" 'magit-use/magit-save-stage-buffer-file
-                  "g u" 'magit-use/magit-unstage-buffer-file))
+                  "g u" 'magit-use/magit-unstage-buffer-file
+                  "g $" 'magit-process-buffer))
 
 (use-package evil-magit)
 
