@@ -22,4 +22,4 @@ URxvt.font: xft:Terminess Powerline:size=12:antialias=true:hinting=true, \
 URxvt.iso14755: false
 
 ! Source the colorscheme
-#include ".Xresources.dark"
+#include ".Xresources.light"

@@ -13,7 +13,7 @@
     ~/.vimrc: .vimrc
     ~/.weechat: .weechat/
     ~/.Xresources: .Xresources
-    ~/.Xresources.dark: xresources/Xresources.dark
+    ~/.Xresources.light: xresources/Xresources.light
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
 
