@@ -4,7 +4,8 @@
 
 (use-package which-key
   :config
-  (which-key-mode 1))
+  (which-key-mode 1)
+  :diminish which-key-mode)
 
 (provide 'which-key-use)
 

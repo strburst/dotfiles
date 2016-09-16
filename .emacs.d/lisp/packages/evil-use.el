@@ -35,7 +35,8 @@
 
 (use-package evil-commentary
   :config
-  (evil-commentary-mode))
+  (evil-commentary-mode)
+  :diminish evil-commentary-mode)
 
 (use-package evil-leader
   :config

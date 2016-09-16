@@ -22,6 +22,9 @@
 (use-package diminish)  ; Hide minor modes from the statusline
 (use-package general)   ; Keybinding package that is aware of evil states
 
+(require 'autorevert)
+(diminish 'auto-revert-mode)
+
 (provide 'setup-packages)
 
 ;;; setup-packages.el ends here
