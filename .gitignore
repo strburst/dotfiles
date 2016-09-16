@@ -1,9 +1,11 @@
-# Ignore emacs plugins and backups
 /.emacs.d/*
+# Whitelist important Emacs configuration
 !/.emacs.d/custom.el
 !/.emacs.d/init.el
 !/.emacs.d/lisp
 !/.emacs.d/snippets
+# Be sure to ignore compiled elisp
+/.emacs.d/**/*.elc
 
 # Ignore weechat logs and plugin directories
 /.weechat/logs
@@ -11,6 +13,7 @@
 /.weechat/python
 /.weechat/script
 /.weechat/weechat.log
+/.weechat/*.weechattmp
 
 /qutebrowser/*
 !/qutebrowser/keys.conf
