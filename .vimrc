@@ -26,6 +26,8 @@ Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-fugitive'
 " Github integration for vim-fugitive
 Plug 'tpope/vim-rhubarb'
+" Temporary scratch buffer
+Plug 'mtth/scratch.vim'
 
 "" }}} Keymaps and text objects {{{
 
@@ -311,6 +313,10 @@ nnoremap <leader>d :bp\|bd #<Cr>
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
 inoremap <C-r> <C-r><C-p>
 inoremap <C-r><C-p> <C-r>
+
+" Plus/minus also increment/decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
 
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
