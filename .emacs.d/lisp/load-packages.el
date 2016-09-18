@@ -11,6 +11,7 @@
                              auctex
                              elscreen
                              lorem-ipsum
+                             magit-annex
                              markdown
                              nyan-mode
                              org
