@@ -40,6 +40,14 @@ Useful for silencing byte-compiler warnings about undefined variables."
   (interactive)
   (message "Major mode name: %s, symbol: %s" mode-name major-mode))
 
+(defun lib/fringe-to-n-chars (&optional n)
+  "Set the fringe so that width of frame is N characters."
+  (interactive "NLimit fringe to how many chars? ")
+  (if fringe-mode
+      (fringe-mode nil)
+    (fringe-mode (/ (- (* (default-font-width) (frame-width))
+                       (* n (default-font-width))) 2))))
+
 (defun lib/macro-map (func list)
   "Take FUNC, apply to each element in LIST, and wrap result in a progn.
 
@@ -65,6 +73,13 @@ expands to one sexpr."
     (lib/macro-map (lambda (var)
                      `(setq ,var ,eval-value))
                    vars)))
+
+(defun lib/toggle-80-char-fringe ()
+  "Quick function to toggle an 80-character fringe."
+  (interactive)
+  (if fringe-mode
+      (fringe-mode nil)
+    (lib/fringe-to-n-chars 80)))
 
 (provide 'lib)
 

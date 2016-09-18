@@ -71,6 +71,7 @@ OLD-KEY and NEW-KEY are implicitly wrapped in kbd."
 ;; Toggles
 (key/leader-map "t h" 'evil-ex-nohighlight
                 "t m" 'menu-bar-mode
+                "t n" 'lib/toggle-80-char-fringe
                 "t s" 'flyspell-mode)
 
 ;; Miscellaneous
