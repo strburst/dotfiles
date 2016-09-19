@@ -15,10 +15,17 @@
   :config
   ;; Unbind some evil keys that evil-org overrides
   (evil-define-key 'normal evil-org-mode-map
+    "g j" nil
+    "g k" nil
     "o" nil
     "O" nil
     "J" nil
-    "K" nil))
+    "K" nil)
+
+  ;; Now bind our own keys
+  (evil-define-key 'normal evil-org-mode-map
+    "[" 'outline-previous-visible-heading
+    "]" 'outline-next-visible-heading))
 
 (provide 'org-use)
 
