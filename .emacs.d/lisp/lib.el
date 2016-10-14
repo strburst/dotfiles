@@ -40,7 +40,7 @@ Useful for silencing byte-compiler warnings about undefined variables."
   (interactive)
   (message "Major mode name: %s, symbol: %s" mode-name major-mode))
 
-(defun lib/fringe-to-n-chars (&optional n)
+(defun lib/fringe-to-n-chars (n)
   "Set the fringe so that width of frame is N characters."
   (interactive "NLimit fringe to how many chars? ")
   (if fringe-mode
@@ -79,7 +79,7 @@ expands to one sexpr."
   (interactive)
   (if fringe-mode
       (fringe-mode nil)
-    (lib/fringe-to-n-chars 80)))
+    (lib/fringe-to-n-chars 81)))
 
 (provide 'lib)
 

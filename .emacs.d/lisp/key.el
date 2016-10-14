@@ -52,6 +52,8 @@ OLD-KEY and NEW-KEY are implicitly wrapped in kbd."
     (define-key keymap key1-kbd func2)
     (define-key keymap key2-kbd func1)))
 
+(require 'lib)
+
 ;; Files/buffers
 (key/leader-map "f d" 'vc-delete-file
                 "f f" 'find-file

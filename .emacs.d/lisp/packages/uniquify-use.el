@@ -7,4 +7,4 @@
 
 (provide 'uniquify-use)
 
-;;; uniquify.el ends here
+;;; uniquify-use.el ends here
