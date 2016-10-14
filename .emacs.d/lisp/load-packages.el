@@ -16,6 +16,7 @@
                              nyan-mode
                              org
                              paradox
+                             ripgrep
                              rust-mode
                              smart-mode-line
                              solarized-theme
