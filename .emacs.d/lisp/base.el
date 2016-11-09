@@ -46,6 +46,10 @@
       vc-handled-backends '(Git Hg SVN) ; Only check for modern vcs's
       vc-make-backup-files t)  ; Backup files in version control too
 
+;; Separate Emacs/Evil clipboard and system clipboard, with primary as fallback
+(setq select-enable-primary t
+      select-enable-clipboard nil)
+
 (setq echo-keystrokes 0.1)  ; Show partially completed key sequences sooner
 
 (global-linum-mode 1)    ; Enable line numbers
@@ -55,7 +59,7 @@
 (show-paren-mode 1)        ; Visually highlight matching parens
 (setq show-paren-delay 0)  ; Do it immediately
 
-(setq column-number-mode t)  ; Enable column number display
+(setq column-number-mode t)  ; Enable column number display in modeline
 
 ;; Make mousewheel scrolling less jumpy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
