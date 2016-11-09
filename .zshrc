@@ -72,9 +72,18 @@ unsetopt flow_control  # Don't output flow control characters
 
 bindkey -v  # vi keybindings
 
-# Make home/end keys work like they're supposed to
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+function bindall() {
+    local termcode="${terminfo[$1]}"
+
+    bindkey -M emacs $termcode $2
+    bindkey -M vicmd $termcode $2
+    bindkey -M viins $termcode $2
+}
+
+# Make home/end/delete keys work like they're supposed to
+bindall khome beginning-of-line
+bindall kend end-of-line
+bindall kdch1 delete-char
 
 # Scroll up/down history
 bindkey '^p' up-history
