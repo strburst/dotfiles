@@ -82,7 +82,7 @@ bindkey '^n' down-history
 bindkey '^r' history-incremental-search-backward
 
 bindkey '^q' push-line         # Put the buffer into the buffer stack
-bindkey '^.' insert-last-word  # Insert last argument to the previous command
+bindkey '^f' insert-last-word  # Insert last argument to the previous command
 
 ## }}} OTHER STUFF {{{
 
@@ -111,7 +111,13 @@ alias ll='ls -Al'
 alias ls='ls --color=auto --human-readable'
 alias packeru='packer -Syu --auronly --noconfirm'
 alias ppp='ping 8.8.8.8'
+alias rm='trash'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 
 ## }}}
+
+# File for machine-specific settings
+if [ -f "$HOME/.zshrc.local" ]; then
+    source "$HOME/.zshrc.local"
+fi

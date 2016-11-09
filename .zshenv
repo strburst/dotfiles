@@ -16,3 +16,8 @@ PATH+=":/usr/bin/core_perl:$HOME/.gem/ruby/2.2.0/bin:$HOME/.gem/ruby/2.3.0/bin"
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# File for machine-specific settings
+if [ -f "$HOME/.zshenv.local" ]; then
+    source "$HOME/.zshenv.local"
+fi
