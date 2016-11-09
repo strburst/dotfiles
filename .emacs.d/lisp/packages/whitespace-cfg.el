@@ -1,4 +1,4 @@
-;;; whitespace-use.el --- Show whitespace indicators (builtin package)
+;;; whitespace-cfg.el --- Show whitespace indicators (builtin package)
 ;;; Commentary:
 ;;; Code:
 
@@ -11,6 +11,6 @@
 
   (key/leader-map "t w" 'whitespace-mode))
 
-(provide 'whitespace-use)
+(provide 'whitespace-cfg)
 
-;;; whitespace-use.el ends here
+;;; whitespace-cfg.el ends here

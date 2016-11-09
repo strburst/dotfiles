@@ -1,4 +1,4 @@
-;;; xkcd-use.el --- Load xkcd browser
+;;; xkcd-cfg.el --- Load xkcd browser
 ;;; Commentary:
 ;;; Code:
 
@@ -20,6 +20,6 @@
                       "k" 'xkcd-prev
                       "l" 'xkcd-next))
 
-(provide 'xkcd-use)
+(provide 'xkcd-cfg)
 
-;;; xkcd-use.el ends here
+;;; xkcd-cfg.el ends here

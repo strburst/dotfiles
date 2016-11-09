@@ -1,4 +1,4 @@
-;;; undo-tree-use.el --- Vim-like undo tree
+;;; undo-tree-cfg.el --- Vim-like undo tree
 ;;; Commentary:
 ;;; Code:
 
@@ -10,6 +10,6 @@
   (global-undo-tree-mode 1)
   :diminish undo-tree-mode)
 
-(provide 'undo-tree-use)
+(provide 'undo-tree-cfg)
 
-;;; undo-tree-use.el ends here
+;;; undo-tree-cfg.el ends here

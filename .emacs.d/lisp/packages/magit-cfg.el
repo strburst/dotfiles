@@ -1,4 +1,4 @@
-;;; magit-use.el --- Git porcelain/interface
+;;; magit-cfg.el --- Git porcelain/interface
 ;;; Commentary:
 ;;; Code:
 
@@ -56,6 +56,6 @@
 (use-package gitignore-mode
   :defer t)
 
-(provide 'magit-use)
+(provide 'magit-cfg)
 
-;;; magit-use.el ends here
+;;; magit-cfg.el ends here

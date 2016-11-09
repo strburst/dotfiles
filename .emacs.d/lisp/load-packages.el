@@ -37,10 +37,10 @@
 (defun load-packages/load-use-config (sym)
   "Load conventially-named configuration from SYM.
 
-Specifically, require SYM-use and handle any errors that occur by redirecting
-error messages to named *Init Errors*."
+Specifically, require the symbol SYM-cfg and handle any errors that occur by
+redirecting error messages to named *Init Errors*."
   (condition-case err
-      (require (intern (concat (symbol-name sym) "-use")))
+      (require (intern (concat (symbol-name sym) "-cfg")))
     ('error (pop-to-buffer "*Init Errors*")
             (insert (error-message-string err)))))
 

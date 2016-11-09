@@ -1,4 +1,4 @@
-;;; org-use.el --- Note taking and todo list (builtin package)
+;;; org-cfg.el --- Note taking and todo list (builtin package)
 ;;; Commentary:
 ;;; Code:
 
@@ -29,6 +29,6 @@
     "[" 'outline-previous-visible-heading
     "]" 'outline-next-visible-heading))
 
-(provide 'org-use)
+(provide 'org-cfg)
 
-;;; org-use.el ends here
+;;; org-cfg.el ends here

@@ -1,4 +1,4 @@
-;;; markdown-use.el --- Configuration for editing markdown files
+;;; markdown-cfg.el --- Configuration for editing markdown files
 ;;; Commentary:
 ;;; Code:
 
@@ -12,6 +12,6 @@
   :config
   (key/leader-map "j j" 'gh-md-render-buffer))
 
-(provide 'markdown-use)
+(provide 'markdown-cfg)
 
-;;; markdown-use.el ends here
+;;; markdown-cfg.el ends here
