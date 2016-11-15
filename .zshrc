@@ -73,25 +73,23 @@ unsetopt flow_control  # Don't output flow control characters
 bindkey -v  # vi keybindings
 
 function bindall() {
-    local termcode="${terminfo[$1]}"
-
-    bindkey -M emacs $termcode $2
-    bindkey -M vicmd $termcode $2
-    bindkey -M viins $termcode $2
+    bindkey -M emacs $1 $2
+    bindkey -M vicmd $1 $2
+    bindkey -M viins $1 $2
 }
 
 # Make home/end/delete keys work like they're supposed to
-bindall khome beginning-of-line
-bindall kend end-of-line
-bindall kdch1 delete-char
+bindall "${terminfo[khome]}" beginning-of-line
+bindall "${terminfo[kend]}" end-of-line
+bindall "${terminfo[kdch1]}" delete-char
+
+bindall '^q' push-line         # Put the buffer into the buffer stack
+bindall '^f' insert-last-word  # Insert last argument to the previous command
 
 # Scroll up/down history
 bindkey '^p' up-history
 bindkey '^n' down-history
 bindkey '^r' history-incremental-search-backward
-
-bindkey '^q' push-line         # Put the buffer into the buffer stack
-bindkey '^f' insert-last-word  # Insert last argument to the previous command
 
 ## }}} OTHER STUFF {{{
 
