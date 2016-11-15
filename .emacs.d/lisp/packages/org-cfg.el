@@ -8,9 +8,11 @@
 
   (setq org-todo-keywords '("TODO" "WAITING" "NEVER" "DONE"))
 
-  (setq org-startup-folded nil       ; Headings are unfolded when file is opened
-        org-startup-indented t       ; Display sections/outlines indented
-        org-startup-truncated nil))  ; Wrap long lines instead of truncating
+  (setq org-startup-folded nil      ; Headings are unfolded when file is opened
+        org-startup-indented t      ; Display sections/outlines indented
+        org-startup-truncated nil)  ; Wrap long lines instead of truncating
+
+  (setq org-M-RET-may-split-line nil))  ; Make new heading after current heading
 
 (require 'evil-core)
 (use-package evil-org
