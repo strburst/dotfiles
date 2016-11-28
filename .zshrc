@@ -83,6 +83,10 @@ bindall "${terminfo[khome]}" beginning-of-line
 bindall "${terminfo[kend]}" end-of-line
 bindall "${terminfo[kdch1]}" delete-char
 
+# Bind <C-left> and <C-right>
+bindall "^[Od" vi-backward-word
+bindall "^[Oc" vi-forward-word
+
 bindall '^q' push-line         # Put the buffer into the buffer stack
 bindall '^f' insert-last-word  # Insert last argument to the previous command
 
