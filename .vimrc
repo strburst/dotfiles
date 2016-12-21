@@ -20,8 +20,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'editorconfig/editorconfig-vim'
 " Syntax-checker support using the location list
 Plug 'scrooloose/syntastic'
-" Track editor statistics via wakatime
-Plug 'wakatime/vim-wakatime'
 " Awesome git integration
 Plug 'tpope/vim-fugitive'
 " Github integration for vim-fugitive
@@ -170,7 +168,6 @@ set ttimeoutlen=25
 set backupdir=/tmp/vim/backup  " Backup file location
 set directory=~/.vim/swap      " Swap file location
 set undodir=~/.vim/undo        " Undo file location
-set viewdir=/tmp/vim/view      " Code folding file location
 
 " Create the proper directories if they don't exist
 if !isdirectory("/tmp/vim/backup")
@@ -181,9 +178,6 @@ if !isdirectory($HOME."/.vim/swap")
 endif
 if !isdirectory($HOME."/.vim/undo")
   call mkdir($HOME."/.vim/undo", "p")
-endif
-if !isdirectory("/tmp/vim/view")
-  call mkdir("/tmp/vim/view", "p")
 endif
 
 set dictionary+=/usr/share/dict/words
@@ -209,10 +203,6 @@ set undofile           " Save undo tree between sessions
 
 set foldmethod=syntax   " Code folding by language
 set foldlevel=1         " Start with one fold opened
-
-" Automatically save and restore folds
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
 
 set scrolloff=8   " Scroll up/down if cursor is 8 lines from the top/bottom
 
@@ -269,12 +259,6 @@ vnoremap <leader>a !sort<Cr>
 
 " Insert the current ISO-formatted date on a new line
 nnoremap <leader>; "=system("date --iso-8601")<Cr>p
-
-" Swap : and ; to enter Ex commands faster
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
 
 " K joins previous line
 nnoremap K kJ

@@ -28,12 +28,6 @@ nnoremap <leader>o :!xdg-open <C-r>%<Cr>
 nnoremap <leader>a !ipsort<Cr>
 vnoremap <leader>a !sort<Cr>
 
-" Enter Ex commands faster
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-
 " K joins previous line
 nnoremap K kJ
 
