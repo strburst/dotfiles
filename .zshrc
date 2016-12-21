@@ -8,7 +8,6 @@ fi
 
 source ~/.zplug/init.zsh
 
-zplug 'Peeja/ctrl-zsh'               # ^z switches between current job and shell
 zplug 'themes/bira', from:oh-my-zsh  # Fancy shell prompt
 zplug 'zlsun/solarized-man'          # Colors in man for headings/references
 
@@ -83,6 +82,11 @@ bindkey '^r' history-incremental-search-backward
 
 bindkey '^q' push-line         # Put the buffer into the buffer stack
 bindkey '^f' insert-last-word  # Insert last argument to the previous command
+
+# ^Z to foreground the last suspended job
+foreground-current-job() { fg; }
+zle -N foreground-current-job
+bindkey '^z' foreground-current-job
 
 ## }}} OTHER STUFF {{{
 
