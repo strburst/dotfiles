@@ -20,25 +20,13 @@
     ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
     ~/.tmuxcolors-256.conf: tmux-colors-solarized/tmuxcolors-256.conf
 
-    ~/.config/bspwm/bspwmrc:
-        create: true
-        path: bspwmrc
-    ~/.config/bspwm/panelinit:
-        create: true
-        path: panel/panelinit
-    ~/.config/bspwm/panelopts:
-        create: true
-        path: panel/panelopts
-    ~/.config/bspwm/panelout:
-        create: true
-        path: panel/panelout
-    ~/.config/bspwm/startup:
-        create: true
-        path: startup
-
     ~/.config/dunst/dunstrc:
         create: true
         path: dunstrc
+
+    ~/.config/bspwm:
+        create: true
+        path: bspwm
 
     ~/.config/sxhkd/sxhkdrc:
         create: true
