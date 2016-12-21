@@ -111,7 +111,6 @@ alias ll='ls -Al'
 alias ls='ls --color=auto --human-readable'
 alias packeru='packer -Syu --auronly --noconfirm'
 alias ppp='ping 8.8.8.8'
-alias rm='trash'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 
