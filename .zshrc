@@ -120,12 +120,12 @@ fi
 
 ## }}} ALIASES {{{
 
+alias duck='links www.duckduckgo.com'
 alias grep='grep --color=auto'
-alias hist='history | less'
+alias hist='history 0 | less'
 alias ll='ls -Al'
 alias ls='ls --color=auto --human-readable'
-alias packeru='packer -Syu --auronly --noconfirm'
-alias ppp='ping 8.8.8.8'
+alias ppp='ping -c 3 8.8.8.8'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 
