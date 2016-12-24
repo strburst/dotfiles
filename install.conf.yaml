@@ -1,5 +1,5 @@
-# Check ~ for dead symlinks
-- clean: ['~']
+# Check for dead symlinks
+- clean: ['~', '~/.config']
 
 # Create the following symlinks
 - link:
@@ -7,38 +7,14 @@
     ~/.emacs.d: .emacs.d
     ~/.gitconfig: .gitconfig
     ~/.gitignore: .gitignore_global
-    ~/.ideavimrc: .ideavimrc
-    ~/.nanorc: .nanorc
     ~/.tmux.conf: .tmux.conf
     ~/.vimrc: .vimrc
-    ~/.weechat: .weechat/
-    ~/.Xresources: .Xresources
-    ~/.Xresources.light: xresources/Xresources.light
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
 
-    ~/.dircolors.ansi-universal: dircolors-solarized/dircolors.ansi-universal
-    ~/.tmuxcolors-256.conf: tmux-colors-solarized/tmuxcolors-256.conf
-
-    ~/.config/bspwm/bspwmrc:
+    ~/.config/bspwm:
         create: true
-        path: bspwmrc
-    ~/.config/bspwm/panelinit:
-        create: true
-        path: panel/panelinit
-    ~/.config/bspwm/panelopts:
-        create: true
-        path: panel/panelopts
-    ~/.config/bspwm/panelout:
-        create: true
-        path: panel/panelout
-    ~/.config/bspwm/startup:
-        create: true
-        path: startup
-
-    ~/.config/dunst/dunstrc:
-        create: true
-        path: dunstrc
+        path: bspwm
 
     ~/.config/sxhkd/sxhkdrc:
         create: true

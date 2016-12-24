@@ -8,7 +8,6 @@ fi
 
 source ~/.zplug/init.zsh
 
-zplug 'Peeja/ctrl-zsh'               # ^z switches between current job and shell
 zplug 'themes/bira', from:oh-my-zsh  # Fancy shell prompt
 zplug 'zlsun/solarized-man'          # Colors in man for headings/references
 
@@ -95,6 +94,11 @@ bindkey '^p' up-history
 bindkey '^n' down-history
 bindkey '^r' history-incremental-search-backward
 
+# ^Z to foreground the last suspended job
+foreground-current-job() { fg; }
+zle -N foreground-current-job
+bindall '^z' foreground-current-job
+
 ## }}} OTHER STUFF {{{
 
 # Solarized ls colors; see https://github.com/seebi/dircolors-solarized
@@ -122,7 +126,6 @@ alias ll='ls -Al'
 alias ls='ls --color=auto --human-readable'
 alias packeru='packer -Syu --auronly --noconfirm'
 alias ppp='ping 8.8.8.8'
-alias rm='trash'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 
