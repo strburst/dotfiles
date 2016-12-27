@@ -1,4 +1,4 @@
-;;; paradox-use.el --- Improved list-packages interface
+;;; paradox-cfg.el --- Improved list-packages interface
 ;;; Commentary:
 ;;; Code:
 
@@ -12,6 +12,6 @@
 
   (global-set-key (kbd "S-<f12>") 'paradox-list-packages))
 
-(provide 'paradox-use)
+(provide 'paradox-cfg)
 
-;;; paradox-use.el ends here
+;;; paradox-cfg.el ends here

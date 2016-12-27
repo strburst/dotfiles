@@ -1,4 +1,4 @@
-;;; auctex-use.el --- Environment for LaTeX editing
+;;; auctex-cfg.el --- Environment for LaTeX editing
 ;;; Commentary:
 ;;; Code:
 
@@ -16,6 +16,6 @@
                         (TeX-command-run-all nil))
                       nil t)))
 
-(provide 'auctex-use)
+(provide 'auctex-cfg)
 
-;;; auctex-use.el ends here
+;;; auctex-cfg.el ends here

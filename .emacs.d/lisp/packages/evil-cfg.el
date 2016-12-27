@@ -1,4 +1,4 @@
-;;; evil-use.el --- Load evil and related packages
+;;; evil-cfg.el --- Load evil and related packages
 ;;; Commentary:
 ;;; Code:
 
@@ -62,6 +62,6 @@
   :config
   (global-evil-surround-mode 1))
 
-(provide 'evil-use)
+(provide 'evil-cfg)
 
-;;; evil-use.el ends here
+;;; evil-cfg.el ends here

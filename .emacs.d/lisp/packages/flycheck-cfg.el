@@ -1,4 +1,4 @@
-;;; flycheck-use.el --- Integrated syntax checker/linter
+;;; flycheck-cfg.el --- Integrated syntax checker/linter
 ;;; Commentary:
 ;;; Code:
 
@@ -33,6 +33,6 @@
                   "c v" 'flycheck-verify-setup
                   "c x" 'flycheck-disable-checker))
 
-(provide 'flycheck-use)
+(provide 'flycheck-cfg)
 
-;;; flycheck-use.el ends here
+;;; flycheck-cfg.el ends here

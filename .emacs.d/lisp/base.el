@@ -4,6 +4,8 @@
 
 (require 'lib)
 
+;;;; Essential
+
 (setq gc-cons-threshold 20000000)  ; Garbage collection occurs every 20 MB
 
 ;; Disable unecessary gui toolbars (must come early to avoid momentary display)
@@ -18,9 +20,7 @@
 (if (file-exists-p custom-file)
     (load custom-file))
 
-;; Set the window title
-(lib/setq-same '("%b, %m mode -- " invocation-name "@" system-name)
-               frame-title-format icon-title-format)
+;;;; Miescellaneous
 
 ;; Set browser to chromium
 (require 'browse-url)
@@ -37,18 +37,37 @@
 
 (setq-default indent-tabs-mode nil)  ; Stick to spaces for now
 
-(setq-default fill-column 80)  ; Keep lines at 80 characters when autoformatting
-
-(set-frame-font "Source Code Pro-10")
-
 ;; Configure version control settings
 (setq vc-follow-symlinks t     ; Don't prompt to follow symlinks to vc'd files
       vc-handled-backends '(Git Hg SVN) ; Only check for modern vcs's
       vc-make-backup-files t)  ; Backup files in version control too
 
 ;; Separate Emacs/Evil clipboard and system clipboard, with primary as fallback
-(setq select-enable-primary t
-      select-enable-clipboard nil)
+(setq select-enable-primary nil
+      select-enable-clipboard t)
+
+;; Make mousewheel scrolling less jumpy
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
+
+;; Partially functional attempt to replicate vim's scrolloff option
+(setq scroll-margin 8
+      scroll-step 1
+      scroll-preserve-screen-position t
+      scroll-conservatively 10000)
+
+(setq initial-scratch-message nil)  ; Scratch buffer is strictly empty
+
+(defalias 'yes-or-no-p 'y-or-n-p)  ; Replace yes/no prompts with y/n
+
+;;;; Aesthetics
+
+;; Set the window title
+(lib/setq-same '("%b, %m mode -- " invocation-name "@" system-name)
+               frame-title-format icon-title-format)
+
+(setq-default fill-column 80)  ; Keep lines at 80 characters when autoformatting
+
+(set-frame-font "Source Code Pro-10")
 
 (setq echo-keystrokes 0.1)  ; Show partially completed key sequences sooner
 
@@ -61,17 +80,7 @@
 
 (setq column-number-mode t)  ; Enable column number display in modeline
 
-;; Make mousewheel scrolling less jumpy
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
-
-(setq scroll-margin 8
-      scroll-step 1
-      scroll-preserve-screen-position t
-      scroll-conservatively 10000)
-
-(setq initial-scratch-message nil)  ; Scratch buffer is strictly empty
-
-(defalias 'yes-or-no-p 'y-or-n-p)  ; Replace yes/no prompts with y/n
+(setq use-dialog-box nil)  ; Don't use GUI dialog boxes
 
 (provide 'base)
 

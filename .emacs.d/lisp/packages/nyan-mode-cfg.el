@@ -1,4 +1,4 @@
-;;; nyan-mode-use.el --- Load nyan-mode
+;;; nyan-mode-cfg.el --- Load nyan-mode
 ;;; Commentary:
 ;;; Code:
 
@@ -18,6 +18,6 @@
       (nyan-start-animation)
       (nyan-start-music))))
 
-(provide 'nyan-mode-use)
+(provide 'nyan-mode-cfg)
 
-;;; nyan-mode-use.el ends here
+;;; nyan-mode-cfg.el ends here

@@ -5,6 +5,6 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-(provide 'uniquify-use)
+(provide 'uniquify-cfg)
 
-;;; uniquify-use.el ends here
+;;; uniquify-cfg.el ends here

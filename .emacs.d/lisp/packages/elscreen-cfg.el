@@ -1,4 +1,4 @@
-;;; elscreen-use.el --- Add tabs to Emacs, similar to GNU Screen
+;;; elscreen-cfg.el --- Add tabs to Emacs, similar to GNU Screen
 ;;; Commentary:
 ;;; Code:
 
@@ -15,6 +15,6 @@
   (elscreen-start)
   (setq elscreen-tab-display-control nil))  ; Don't display dummy control tab
 
-(provide 'elscreen-use)
+(provide 'elscreen-cfg)
 
-;;; elscreen-use.el ends here
+;;; elscreen-cfg.el ends here

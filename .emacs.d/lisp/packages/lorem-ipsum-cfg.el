@@ -1,4 +1,4 @@
-;;; lorem-ipsum-use.el --- Functions to insert lorem ipsum text
+;;; lorem-ipsum-cfg.el --- Functions to insert lorem ipsum text
 ;;; Commentary:
 ;;; Code:
 
@@ -13,6 +13,6 @@
                   "e p" 'lorem-ipsum-insert-paragraphs
                   "e s" 'lorem-ipsum-insert-sentences))
 
-(provide 'lorem-ipsum-use)
+(provide 'lorem-ipsum-cfg)
 
-;;; lorem-ipsum-use.el ends here
+;;; lorem-ipsum-cfg.el ends here

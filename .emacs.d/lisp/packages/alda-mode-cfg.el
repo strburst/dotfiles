@@ -1,4 +1,4 @@
-;;; alda-mode-use.el --- Load and enable solarized dark theme
+;;; alda-mode-cfg.el --- Load and enable solarized dark theme
 ;;; Commentary:
 ;;; Code:
 
@@ -8,6 +8,6 @@
   :config
   (define-key evil-motion-state-map "gp" 'alda-evil-play-region))
 
-(provide 'alda-mode-use)
+(provide 'alda-mode-cfg)
 
-;;; alda-mode-use.el ends here
+;;; alda-mode-cfg.el ends here

@@ -1,4 +1,4 @@
-;;; winner-use.el --- Revert to previous window configurations (builtin package)
+;;; winner-cfg.el --- Revert to previous window configurations (builtin package)
 ;;; Commentary:
 ;;; Code:
 
@@ -10,6 +10,6 @@
                       "C-w C-h" 'winner-undo
                       "C-w C-l" 'winner-redo))
 
-(provide 'winner-use)
+(provide 'winner-cfg)
 
-;;; winner-use.el ends here
+;;; winner-cfg.el ends here

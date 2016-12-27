@@ -71,23 +71,33 @@ unsetopt flow_control  # Don't output flow control characters
 
 bindkey -v  # vi keybindings
 
-# Make sure basic keys work like they're supposed to
-bindkey "${terminfo[kdch1]}" delete-char
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+function bindall() {
+    bindkey -M emacs $1 $2
+    bindkey -M vicmd $1 $2
+    bindkey -M viins $1 $2
+}
+
+# Make home/end/delete keys work like they're supposed to
+bindall "${terminfo[khome]}" beginning-of-line
+bindall "${terminfo[kend]}" end-of-line
+bindall "${terminfo[kdch1]}" delete-char
+
+# Bind <C-left> and <C-right>
+bindall "^[Od" vi-backward-word
+bindall "^[Oc" vi-forward-word
+
+bindall '^q' push-line         # Put the buffer into the buffer stack
+bindall '^f' insert-last-word  # Insert last argument to the previous command
 
 # Scroll up/down history
 bindkey '^p' up-history
 bindkey '^n' down-history
 bindkey '^r' history-incremental-search-backward
 
-bindkey '^q' push-line         # Put the buffer into the buffer stack
-bindkey '^f' insert-last-word  # Insert last argument to the previous command
-
 # ^Z to foreground the last suspended job
 foreground-current-job() { fg; }
 zle -N foreground-current-job
-bindkey '^z' foreground-current-job
+bindall '^z' foreground-current-job
 
 ## }}} OTHER STUFF {{{
 

@@ -23,4 +23,11 @@
 *.xz
 *.zip
 
+# LaTeX-related files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+
 # vim: ft=conf:

@@ -112,7 +112,7 @@ super + {Left,Down,Up,Right}
 
 # focus
 ~button1
-	bspc pointer -g focus
+	bspc node pointed -f
 
 # start move/resize
 super + button{1-3}

@@ -1,4 +1,4 @@
-;;; ido-use.el --- Intelligent auto-completion (builtin package)
+;;; ido-cfg.el --- Intelligent auto-completion (builtin package)
 ;;; Commentary:
 ;;; Code:
 
@@ -55,6 +55,6 @@
   (global-set-key (kbd "M-X") 'smex-major-mode-commands)
   (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command))
 
-(provide 'ido-use)
+(provide 'ido-cfg)
 
-;;; ido-use.el ends here
+;;; ido-cfg.el ends here
