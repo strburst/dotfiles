@@ -92,7 +92,7 @@ call plug#end()
 
 "" }}} PLUGIN SETTINGS/MAPS {{{
 
-let g:airline_powerline_fonts=1   " Use patched characters, not fallbacks
+let g:airline_powerline_fonts=0   " Use fallback characters
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
@@ -225,13 +225,10 @@ set background=light
 colorscheme solarized
 
 set number         " Show line numbers
-set relativenumber " Show distance from the current line
 
 set hlsearch     " Highlight search matches
 set incsearch    " Begin showing search matches while typing
 nohls            " Don't highlight everything again when sourcing vimrc
-
-set cursorline       " Highlight the line the cursor is on
 
 set visualbell t_vb=""   " Disable bells
 set showcmd      " Shows partially completed key combinations
