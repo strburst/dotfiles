@@ -122,7 +122,7 @@ let g:gundo_help=0   " Hide help message in Gundo window
 nnoremap <F4> :UndotreeToggle<Cr>
 
 " EditorConfig doesn't manage git commit messages, etc
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', '.git/COMMIT_EDITMSG']
 " EditorConfig sets colorcolumn based on max_line_length
 let g:EditorConfig_max_line_indicator = 'line'
 
