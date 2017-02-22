@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 #
 # Launch initial applications, and do non-DM tweaks
 
@@ -21,9 +21,8 @@ xss-lock physlock &
 # Start startup applications
 dropbox &
 dunst &
-gajim &
+(sleep 5 && gajim) &
 nm-applet &
 numlockx &
 redshift &
-rescuetime &
 stalonetray &
