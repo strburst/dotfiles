@@ -222,7 +222,6 @@ set softtabstop=4  " Backspace at BOL in insert mode deletes four spaces
 syntax on
 set t_Co=256
 set background=light
-colorscheme solarized
 
 set number         " Show line numbers
 
