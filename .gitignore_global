@@ -30,4 +30,7 @@
 *.log
 *.out
 
+" Cloud9 IDE settings
+.c9/
+
 # vim: ft=conf:
