@@ -1,4 +1,5 @@
 [alias]
+	ami = commit -a --amend --no-edit
 	co = checkout
 	cp = cherry-pick
 	last = log -1 HEAD
