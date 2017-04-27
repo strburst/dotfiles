@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Various options read by panelinit and panelupdate
 
@@ -13,4 +13,4 @@ DESKTOP_FREE_COLOR=#AAAAAA
 DESKTOP_URGENT_COLOR=#00AAAA
 SEPARATOR_COLOR=$DESKTOP_FREE_COLOR
 
-BAT_SYS_PATH=/sys/class/power_supply/BAT1/
+BAT_SYS_PATH=/sys/class/power_supply/BAT0/

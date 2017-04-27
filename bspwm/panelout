@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Build a statusline from stdin; output should be piped to lemonbar
 

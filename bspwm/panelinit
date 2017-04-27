@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 #
 # Start panelupdate, the forked processes feeding it, and lemonbar
 

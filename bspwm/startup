@@ -1,12 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Launch initial applications, and do non-DM tweaks
 
 xrdb ~/.Xresources
-
-# Initialize gnome-keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
 
 # Caps Lock acts as Esc when pressed by itself, and Ctrl with another key
 setxkbmap -option 'ctrl:nocaps' &
