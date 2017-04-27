@@ -1,25 +1,8 @@
-## ZPLUG CONFIGURATION {{{
+## ZSH OPTIONS {{{
 
-if [[ ! -d ~/.zplug ]]; then
-    echo 'zplug is not installed; installing zplug...'
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update --self
-fi
-
-source ~/.zplug/init.zsh
-
-zplug 'themes/bira', from:oh-my-zsh  # Fancy shell prompt
-zplug 'zlsun/solarized-man'          # Colors in man for headings/references
-
-# Install plugins if there are plugins that have not been installed
-zplug check --verbose || zplug install
-
-zplug load
-
-## }}} ZSH OPTIONS {{{
-
-autoload -U colors && colors      # Enable built-in colors
-autoload -U compinit && compinit  # Enable more advanced completions
+autoload -U colors && colors      # Built-in colors
+autoload -U compinit && compinit  # Built-in completions
+autoload -U promptinit && promptinit && prompt gentoo  # Gentoo prompt
 
 # Save 1000 lines of history
 export HISTSIZE=1000
