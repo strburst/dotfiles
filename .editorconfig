@@ -12,8 +12,12 @@ tab_width = 4
 
 max_line_length = 80
 
-[*.{alda,coffee,css,el,ex,exs,html,js,json,lisp,vim,vimrc}]
+[*.{alda,bash,coffee,css,el,ex,exs,html,js,json,lisp,sh,vim,vimrc,zsh}]
 # Filetypes that should use 2-space indentation
+indent_size = 2
+
+[*[^.]*]
+# Extensionless files are probably shell scripts
 indent_size = 2
 
 [{.gitconfig,sxhkdrc,Makefile}]
