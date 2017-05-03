@@ -21,12 +21,6 @@
 
   (evil-mode 1)
 
-  ;; Swap ; and : to enter ex commands faster
-  (define-key evil-normal-state-map (kbd ";") 'evil-ex)
-  (define-key evil-visual-state-map (kbd ";") 'evil-ex)
-  (define-key evil-normal-state-map (kbd ":") 'evil-repeat-find-char)
-  (define-key evil-visual-state-map (kbd ":") 'evil-repeat-find-char)
-
   ;; Swap ^ and 0 (^ is more useful)
   (evil-redirect-digit-argument evil-motion-state-map "0" 'evil-first-non-blank)
   (define-key evil-normal-state-map (kbd "^") 'evil-beginning-of-line)
