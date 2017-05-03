@@ -14,10 +14,6 @@ set relativenumber " Show distance from the current line
 " Toggle highlights for current search
 nnoremap <F5> :set invhlsearch<Cr>
 
-" Open my vimrc in a new window/tab
-nnoremap <F9> :vsplit ~/.ideavimrc<Cr>
-nnoremap <F10> :edit ~/.ideavimrc<Cr>
-
 " Reload vimrc without restarting
 nnoremap <leader>r :source ~/.ideavimrc<Cr>:echo "ideavimrc reloaded"<Cr>
 
