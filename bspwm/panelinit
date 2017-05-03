@@ -78,7 +78,7 @@ wraprepeat 5 'L%s\n' loadavg > $PANEL_FIFO &
 wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
 wraprepeat 1800 'D%s\n' mydate > $PANEL_FIFO &
 
-xtitle -sf 'T%s' > $PANEL_FIFO &
+xtitle -sf 'T%s\n' > $PANEL_FIFO &
 bspc subscribe > $PANEL_FIFO &
 
 # Make way for the panel!
