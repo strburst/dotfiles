@@ -201,8 +201,9 @@ set splitright   " vsplit right by default
 
 set undofile           " Save undo tree between sessions
 
+set nofoldenable        " Start with folding disabled
 set foldmethod=syntax   " Code folding by language
-set foldlevel=1         " Start with one fold opened
+set foldlevel=1         " Expand one fold by default
 
 set scrolloff=8   " Scroll up/down if cursor is 8 lines from the top/bottom
 
