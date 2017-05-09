@@ -2,7 +2,7 @@
 
 autoload -U colors && colors      # Built-in colors
 autoload -U compinit && compinit  # Built-in completions
-autoload -U promptinit && promptinit && prompt gentoo  # Gentoo prompt
+autoload -U promptinit && promptinit && prompt walters
 
 # Save 1000 lines of history
 export HISTSIZE=1000
@@ -83,9 +83,6 @@ zle -N foreground-current-job
 bindall '^z' foreground-current-job
 
 ## }}} OTHER STUFF {{{
-
-# Solarized ls colors; see https://github.com/seebi/dircolors-solarized
-eval `dircolors ~/.dircolors.ansi-universal`
 
 zstyle ':completion:*' menu select  # Enable select-box on current completion
 # Completion menu uses ls colors when selecting files
