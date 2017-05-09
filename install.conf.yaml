@@ -1,5 +1,7 @@
+# Base install
+
 # Check for dead symlinks
-- clean: ['~', '~/.config']
+- clean: ['~']
 
 # Create the following symlinks
 - link:
@@ -11,11 +13,3 @@
     ~/.vimrc: .vimrc
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
-
-    ~/.config/bspwm:
-        create: true
-        path: bspwm
-
-    ~/.config/sxhkd/sxhkdrc:
-        create: true
-        path: sxhkdrc

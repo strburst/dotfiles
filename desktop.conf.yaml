@@ -1,0 +1,18 @@
+# Desktop-related files
+
+# Check ~ for dead symlinks
+- clean: ['~', '~/.config']
+
+# Create the following symlinks
+- link:
+    ~/.config/dunst/dunstrc:
+        create: true
+        path: dunstrc
+
+    ~/.config/bspwm:
+        create: true
+        path: bspwm
+
+    ~/.config/sxhkd/sxhkdrc:
+        create: true
+        path: sxhkdrc
