@@ -1,7 +1,7 @@
 # Copied from the example at /usr/share/dunst/dunstrc
 
 [global]
-    font = Terminess Powerline 8
+    font = Sans 8
 
     # Allow <b>bold</b>, <i>italic</i>, <s>strikethrough</s>, <u>underline</u>
     allow_markup = yes
@@ -13,7 +13,7 @@
     #   %i  iconname (including its path)
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s - %a</b>\n%b"
 
     # Sort messages by urgency.
     sort = yes
@@ -105,7 +105,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/sbin/google-chrome-stable
+    browser = /usr/bin/chromium
 
     # Align icons left/right/off
     icon_position = off
