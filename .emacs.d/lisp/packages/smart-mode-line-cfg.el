@@ -4,6 +4,7 @@
 
 (use-package smart-mode-line
   :config
+  (setq sml/theme 'respectful)
   (sml/setup)
   (display-battery-mode 1))
 

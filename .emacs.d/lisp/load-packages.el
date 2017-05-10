@@ -10,6 +10,7 @@
 (defconst +configs-nice-2+ '(alda-mode
                              auctex
                              elscreen
+                             leuven-theme
                              lorem-ipsum
                              magit-annex
                              markdown
@@ -19,7 +20,6 @@
                              ripgrep
                              rust-mode
                              smart-mode-line
-                             solarized-theme
                              undo-tree
                              uniquify
                              vimrc-mode
