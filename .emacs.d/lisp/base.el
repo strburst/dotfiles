@@ -67,7 +67,7 @@
 
 (setq-default fill-column 80)  ; Keep lines at 80 characters when autoformatting
 
-(set-frame-font "Source Code Pro-10")
+(set-frame-font "Monospace-10")
 
 (setq echo-keystrokes 0.1)  ; Show partially completed key sequences sooner
 

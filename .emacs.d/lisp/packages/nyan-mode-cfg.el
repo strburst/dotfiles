@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'nyan-mode)
-
 (use-package nyan-mode
   :config
   (nyan-mode 1)
