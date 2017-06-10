@@ -6,7 +6,7 @@ cleanup() {
   # The \r hides the ^C that appears
   echo -e '\rPerforming cleanup...'
 
-  rm $PANEL_PID_LOC
+  rm "$PANEL_PID_LOC" "$PANEL_IN_FIFO" "$PANEL_OUT_FIFO"
   bspc config top_padding 0
 
   # Avoid executing cleanup() again when this process kills itself
@@ -46,7 +46,7 @@ wraprepeat() {
     result=$($docmd)
 
     # Only send output if the output changed from the last invocation
-    if [ "$last" != "$result" ]; then
+    if [[ "$last" != "$result" ]]; then
       printf "$format" "$result"
       last=$result
     fi
@@ -62,29 +62,31 @@ set -euo pipefail
 # This will let us exit when the X session closes without needing to be killed
 trap cleanup INT TERM QUIT EXIT ERR PIPE
 
-. panelopts
+. ./panelopts
 
 # Initialize the fifo, removing it first if it already exists
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
+[[ -e "$PANEL_IN_FIFO" ]] && rm "$PANEL_IN_FIFO"
+mkfifo "$PANEL_IN_FIFO"
+[[ -e "$PANEL_OUT_FIFO" ]] && rm "$PANEL_OUT_FIFO"
+mkfifo "$PANEL_OUT_FIFO"
 
 # Write the pid somewhere so other processes can kill this process
-echo $$ > $PANEL_PID_LOC
+echo $$ > "$PANEL_PID_LOC"
 
 # Feed various pieces of information into panelupdate
-wraprepeat 3 'C%s\n' myclock > $PANEL_FIFO &
-wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > $PANEL_FIFO &
-wraprepeat 5 'L%s\n' loadavg > $PANEL_FIFO &
-wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > $PANEL_FIFO &
-wraprepeat 1800 'D%s\n' mydate > $PANEL_FIFO &
+wraprepeat 3 'C%s\n' myclock > "$PANEL_IN_FIFO" &
+wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > "$PANEL_IN_FIFO" &
+wraprepeat 5 'L%s\n' loadavg > "$PANEL_IN_FIFO" &
+wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > "$PANEL_IN_FIFO" &
+wraprepeat 1800 'D%s\n' mydate > "$PANEL_IN_FIFO" &
 
-xtitle -sf 'T%s\n' > $PANEL_FIFO &
-bspc subscribe > $PANEL_FIFO &
+xtitle -sf 'T%s\n' > "$PANEL_IN_FIFO" &
+bspc subscribe > "$PANEL_IN_FIFO" &
 
 # Make way for the panel!
 bspc config top_padding $PANEL_HEIGHT
 
-./panelout < $PANEL_FIFO | lemonbar -p -g "$PANEL_GEOMETRY" -f "$PANEL_FONT" |\
-  sh &
+./panelout < "$PANEL_IN_FIFO" > "$PANEL_OUT_FIFO" &
+lemonbar -p -g "$PANEL_GEOMETRY" -f "$PANEL_FONT" < "$PANEL_OUT_FIFO" | sh &
 
 wait

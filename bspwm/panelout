@@ -10,7 +10,7 @@ dottruncate() {
   len=${#string}
 
   if [ $len -ge $maxlen ]; then
-    echo -n $(echo $string | head -c $(expr $maxlen - 3))
+    echo -n $(echo $string | head -c (($maxlen - 3)))
     echo -n '...'
   else
     echo -n $string
@@ -45,6 +45,9 @@ while read -r line; do
       ;;
     BP*)
       batpercent=${line#??}
+      if [[ "$batpercent" -gt 100 ]]; then
+        batpercent=100
+      fi
       ;;
     C*)
       clock=${line#?}
