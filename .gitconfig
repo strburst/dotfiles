@@ -22,6 +22,8 @@
 	tool = vimdiff
 [push]
 	default = simple
+[remote]
+	pushDefault = origin
 [user]
 	email = strburst@users.noreply.github.com
 	name = Allen Zheng
