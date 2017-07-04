@@ -14,13 +14,19 @@ URxvt*scrollTtyKeypress: true
 ! Fonts and fallback fonts. By the way, this UTF-8 demo is pretty useful:
 ! https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
 ! Tip: printf '\e]710;%s\007' "<font declaration>" changes the font instantly
-URxvt.font: xft:Terminess Powerline:size=12:antialias=true:hinting=true, \
-            xft:Bistream Vera Sans Mono:size=12:antialias=true:hinting=true, \
-            xft:Hack:size=12:antialias=true:hinting=true, \
-            xft:Anonymice Powerline:size=12:antialias=true:hinting=true
+URxvt.font: xft:Liberation Mono:size=10:antialias=true:hinting=true, \
+            xft:Droid Sans Mono:size=10:antialias=true:hinting=true
 
 ! Disable keycap picture insert mode
 URxvt.iso14755: false
 
-! Source the colorscheme
-#include ".Xresources.light"
+URxvt.perl-ext-common: font-size
+
+! Mappings to increase/decrease font size
+! "perl:" prefix is required if installed via x11-misc/urxvt-font-size
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  perl:font-size:reset
+URxvt.keysym.C-slash:  perl:font-size:show
