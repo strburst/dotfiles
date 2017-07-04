@@ -85,6 +85,8 @@ Plug 'elzr/vim-json'
 Plug 'daveyarwood/vim-alda'
 " Rust language support
 Plug 'rust-lang/rust.vim'
+" Pug language support
+Plug 'digitaltoad/vim-pug'
 
 " }}} }}}
 
@@ -155,6 +157,8 @@ vmap Dk <Plug>SchleppDupUp
 vmap Dj <Plug>SchleppDupDown
 vmap Dh <Plug>SchleppDupLeft
 vmap Dl <Plug>SchleppDupRight
+
+nnoremap <leader>j :Scratch<Cr>
 
 "" }}} EDITOR BEHAVIOR {{{
 
