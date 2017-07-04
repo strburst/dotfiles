@@ -10,7 +10,7 @@ dottruncate() {
   len=${#string}
 
   if [ $len -ge $maxlen ]; then
-    echo -n $(echo $string | head -c (($maxlen - 3)))
+    echo -n $(echo $string | head -c $(($maxlen - 3)))
     echo -n '...'
   else
     echo -n $string
@@ -59,7 +59,8 @@ while read -r line; do
       loadavg=${line#?}
       ;;
     T*)
-      curwindow=${line#?}
+      windowtitlefull=${line#?}
+      windowtitle="$(dottruncate 120 "$windowtitlefull")"
       ;;
     WM*)
       IFS=:
@@ -89,8 +90,8 @@ while read -r line; do
       ;;
   esac
 
-  echo -n "%{l}$desktopinfo"
-  echo -n "%{c}$(dottruncate 120 $curwindow)"
+  echo -n "%{l}$desktopinfo" && sep
+  echo -n "${windowtitle:-?}"
   echo -n "%{r}Load: $loadavg" && sep
   echo -n "Batt: $batstatus$batpercent%" && sep
   echo -n "$date" && sep

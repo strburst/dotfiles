@@ -86,7 +86,7 @@ bspc subscribe > "$PANEL_IN_FIFO" &
 # Make way for the panel!
 bspc config top_padding $PANEL_HEIGHT
 
-./panelout < "$PANEL_IN_FIFO" > "$PANEL_OUT_FIFO" &
+./panelout < "$PANEL_IN_FIFO" > "$PANEL_OUT_FIFO" 2> "$PANEL_LOG_LOC" &
 lemonbar -p -g "$PANEL_GEOMETRY" -f "$PANEL_FONT" < "$PANEL_OUT_FIFO" | sh &
 
 wait
