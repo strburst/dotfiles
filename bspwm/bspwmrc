@@ -17,6 +17,9 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 # Make Java Swing applications spawn windows properly
 wmname LG3D
 
+bspc rule -a Emacs state=tiled
+bspc rule -a copyq state=floating
+
 sxhkd &
 
 # Start the panel!

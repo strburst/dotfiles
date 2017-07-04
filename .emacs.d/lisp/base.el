@@ -80,7 +80,7 @@
 
 (setq column-number-mode t)  ; Enable column number display in modeline
 
-(setq use-dialog-box nil)  ; Don't use GUI dialog boxes
+(setq use-dialog-box nil)  ; Use minibuffer y/n questions instead of dialog boxes
 
 (provide 'base)
 
