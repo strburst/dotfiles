@@ -2,23 +2,23 @@
 #
 # Launch initial applications, and do non-DM tweaks
 
+xmodmap ~/.Xmodmap
 xrdb ~/.Xresources
 
 # Caps Lock acts as Esc when pressed by itself, and Ctrl with another key
-setxkbmap -option 'ctrl:nocaps' &
-xcape -e 'Control_L=Escape' &
+xcape -e 'Control_R=Escape' &
 
 # Place the wallpaper on a black background
-xsetroot && feh --bg-center ~/Pictures/wallpaper.png
+xsetroot && feh --bg-center ~/cloud/wallpaper.png
 
 # Set up lock script
 xss-lock physlock &
 
 # Start startup applications
-dropbox &
-dunst &
-(sleep 5 && gajim) &
-nm-applet &
+copyq &
+(sleep 10 && gajim) &
+megasync &
 numlockx &
 redshift &
 stalonetray &
+wpa_gui -t &
