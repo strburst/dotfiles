@@ -101,6 +101,7 @@ fi
 ## }}} ALIASES {{{
 
 alias duck='links www.duckduckgo.com'
+alias feh='feh --scale-down'
 alias grep='grep --color=auto'
 alias hist='history 0 | less'
 alias ll='ls -Al'
