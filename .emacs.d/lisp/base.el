@@ -22,10 +22,10 @@
 
 ;;;; Miescellaneous
 
-;; Set browser to chromium
+;; Set browser to Google Chrome
 (require 'browse-url)
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium")
+      browse-url-generic-program "google-chrome-stable")
 
 ;; Configure backup settings
 (setq backup-directory-alist `(("." . ,(lib/config-path "backup")))
