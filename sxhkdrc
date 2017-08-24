@@ -130,7 +130,7 @@ super + Return
 	urxvt
 
 super + space
-	dmenu_run
+	rofi -show run
 
 # Make sxhkd reload its configuration files:
 super + Escape
@@ -140,24 +140,18 @@ super + bar
 	systemctl suspend || gksudo pm-suspend
 
 super + z
-	chromium || chromium-browser
+	google-chrome-stable
 
 # Get dmenu to pull up a list of frequently used commands
 super + semicolon
-	dmenu -l 999 < ~/noninteractives | sh
+	rofi -dmenu < ~/.quickcmds | sh
 
+# Show rofi window switcher
 super + apostrophe
-	thunar || xdg-open ~
+	rofi -show window
 
-# Toggle the panel
 super + quotedbl
-	cd ~/.config/bspwm; \
-	. panelopts; \
-	if [ -e /tmp/panel_pid ]; then; \
-		kill $(cat /tmp/panel_pid); \
-	else; \
-		./panelinit; \
-	fi;
+	thunar || xdg-open ~
 
 XF86MonBrightnessDown
 	xbacklight -dec 1
@@ -166,13 +160,13 @@ XF86MonBrightnessUp
 	xbacklight -inc 1
 
 XF86AudioLowerVolume
-	amixer set Master 1.50db-
+	amixer -D pulse sset Master 5%-
 
 XF86AudioRaiseVolume
-	amixer set Master 1.50db+
+	amixer -D pulse sset Master 5%+
 
 XF86AudioMute
-	amixer set Master toggle
+	amixer -D pulse sset Master toggle
 
 Print
-	scrot 'Pictures/Screenshots/Screenshot %F %H.%M.%S.png'
+	scrot 'Downloads/Screenshot %F %H.%M.%S.png'
