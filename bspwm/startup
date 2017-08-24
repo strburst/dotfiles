@@ -2,6 +2,12 @@
 #
 # Launch initial applications, and do non-DM tweaks
 
+wait_for_net() {
+  while [[ ! $(ping -c 1 8.8.8.8) ]]; do
+    sleep 1
+  done
+}
+
 xmodmap ~/.Xmodmap
 xrdb ~/.Xresources
 
@@ -16,7 +22,7 @@ xss-lock physlock &
 
 # Start startup applications
 copyq &
-(sleep 10 && gajim) &
+(wait_for_net && gajim) &
 megasync &
 numlockx &
 redshift &
