@@ -42,9 +42,9 @@
       vc-handled-backends '(Git Hg SVN) ; Only check for modern vcs's
       vc-make-backup-files t)  ; Backup files in version control too
 
-;; Separate Emacs/Evil clipboard and system clipboard, with primary as fallback
-(setq select-enable-primary nil
-      select-enable-clipboard t)
+;; Emacs/Evil clipboard writes to primary selection
+(setq select-enable-primary t
+      select-enable-clipboard nil)
 
 ;; Make mousewheel scrolling less jumpy
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control))))
