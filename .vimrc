@@ -186,24 +186,13 @@ endif
 
 set dictionary+=/usr/share/dict/words
 
-set autoread   " Reread when files are changed outside of Vim
-
 set shiftround   " Round indents to multiples of shiftwidth
 set backspace=indent,eol,start " Backspace over newlines
 
 set ignorecase   " Searches ignore case by default
 set smartcase    " Case sensitive search if search has uppercase characters
 
-set showmatch   " Briefly jump back to the ( when a ) is typed
-
 set wildmode=longest,list:longest   " Autocomplete by longest match first
-
-set hidden   " Can switch out of buffers that have unsaved changes
-
-set splitbelow   " split below by default
-set splitright   " vsplit right by default
-
-set undofile           " Save undo tree between sessions
 
 set nofoldenable        " Start with folding disabled
 set foldmethod=syntax   " Code folding by language
@@ -221,6 +210,15 @@ set autoindent     " Copy indent from previous line when making a new line
 set expandtab      " Use spaces instead of tabs
 set shiftwidth=4   " Four spaces is one unit of indentation
 set softtabstop=4  " Backspace at BOL in insert mode deletes four spaces
+
+" Miscellaneous options
+set autochdir   " Current directory is automatically the current file
+set autoread    " Reread when files are changed outside of Vim
+set showmatch   " Briefly jump back to the ( when a ) is typed
+set hidden      " Can switch out of buffers that have unsaved changes
+set splitbelow  " split below by default
+set splitright  " vsplit right by default
+set undofile    " Save undo tree between sessions
 
 "" }}} VISUAL SETTINGS {{{
 
