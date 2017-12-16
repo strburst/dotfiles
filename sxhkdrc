@@ -119,7 +119,8 @@ super + space
 
 # Make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; \
+	notify-send -a 'sxhkd' 'Config update' 'Keybindings reloaded'
 
 super + bar
 	systemctl suspend || gksudo pm-suspend
