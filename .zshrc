@@ -107,6 +107,7 @@ alias hist='history 0 | less'
 alias ll='ls -Al'
 alias ls='ls --color=auto --human-readable'
 alias ppp='ping -c 3 8.8.8.8'
+alias sbcl='rlwrap sbcl'
 alias sl='ls'
 alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 
