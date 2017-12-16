@@ -49,8 +49,6 @@ Plug 'zirrostig/vim-schlepp'
 
 " Intelligent file opener
 Plug 'ctrlpvim/ctrlp.vim'
-" Navigate between vim/tmux splits easily
-Plug 'christoomey/vim-tmux-navigator'
 
 "" }}} Visual {{{
 
