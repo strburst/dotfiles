@@ -222,7 +222,8 @@ set undofile    " Save undo tree between sessions
 
 syntax on
 set t_Co=256
-set background=light
+set background=dark
+colorscheme solarized
 
 set number         " Show line numbers
 
