@@ -11,5 +11,5 @@
     ~/.gitignore: .gitignore_global
     ~/.tmux.conf: .tmux.conf
     ~/.vimrc: .vimrc
-    ~/.zshenv: .zshenv
+    ~/.zprofile: .zprofile
     ~/.zshrc: .zshrc
