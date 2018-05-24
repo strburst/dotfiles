@@ -62,10 +62,10 @@ while read -r line; do
       windowtitlefull=${line#?}
       windowtitle="$(dottruncate 120 "$windowtitlefull")"
       ;;
-    WM*)
-      IFS=:
+    W*)
       desktopinfo=""
-      for desktop in {$line#??}; do
+      IFS=:
+      for desktop in ${line#?}; do
         case $desktop in
           f*|F*|o*|O*|u*|U*)
             desktopinfo+="%{A:bspc desktop -f ${desktop#?}:} "
@@ -84,6 +84,13 @@ while read -r line; do
                 desktopinfo+="[%{F$DESKTOP_URGENT_COLOR}${desktop#?}%{F-}]" ;;
             esac
             desktopinfo+="%{A}" ;;
+          m*|M*)
+            case $desktop in
+              m*) # Unfocused monitor
+                desktopinfo+=" %{F$DESKTOP_FREE_COLOR}{${desktop#?}}%{F-}" ;;
+              M*) # Focused monitor
+                desktopinfo+=" {${desktop#?}}" ;;
+            esac
         esac
       done
       unset IFS
