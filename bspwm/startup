@@ -22,9 +22,11 @@ xss-lock physlock &
 
 # Start startup applications
 copyq &
-(wait_for_net && gajim) &
-megasync &
 numlockx &
 redshift &
 stalonetray &
-wpa_gui -t &
+nm-applet &
+
+(wait_for_net && gajim) &
+(wait_for_net && megasync) &
+(wait_for_net && riot-web) &
