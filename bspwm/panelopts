@@ -7,7 +7,7 @@ PANEL_OUT_FIFO=/tmp/panel_out_fifo
 PANEL_PID_LOC=/tmp/panel_pid
 PANEL_LOG_LOC=/tmp/panel_log
 
-PANEL_FONT="Droid Sans Mono:size=10:antialias=true:hinting=true"
+PANEL_FONT="xos4 Terminus:size=10:antialias=true:hinting=true"
 PANEL_GEOMETRY=+80  # 16x5
 PANEL_HEIGHT=18
 
