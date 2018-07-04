@@ -4,9 +4,8 @@ autoload -U colors && colors      # Built-in colors
 autoload -U compinit && compinit  # Built-in completions
 autoload -U promptinit && promptinit && prompt walters
 
-# Save 1000 lines of history
-export HISTSIZE=1000
-export SAVEHIST=1000
+export HISTSIZE=11000  # Max history length before trimming
+export SAVEHIST=10000  # Trim history to this length
 
 export HISTFILE=~/.zsh_history
 
@@ -117,3 +116,5 @@ alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 if [ -f "$HOME/.zshrc.local" ]; then
     source "$HOME/.zshrc.local"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
