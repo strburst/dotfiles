@@ -19,6 +19,7 @@
                              paradox
                              ripgrep
                              rust-mode
+                             slime
                              smart-mode-line
                              undo-tree
                              uniquify
@@ -38,7 +39,7 @@
   "Load conventially-named configuration from SYM.
 
 Specifically, require the symbol SYM-cfg and handle any errors that occur by
-redirecting error messages to named *Init Errors*."
+redirecting error messages to the buffer *Init Errors*."
   (condition-case err
       (require (intern (concat (symbol-name sym) "-cfg")))
     ('error (pop-to-buffer "*Init Errors*")
