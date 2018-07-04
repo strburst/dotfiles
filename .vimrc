@@ -209,6 +209,9 @@ set expandtab      " Use spaces instead of tabs
 set shiftwidth=4   " Four spaces is one unit of indentation
 set softtabstop=4  " Backspace at BOL in insert mode deletes four spaces
 
+" Prefer inline comments in C++
+autocmd FileType cpp setlocal commentstring=//\ %s
+
 " Miscellaneous options
 set autochdir   " Current directory is automatically the current file
 set autoread    " Reread when files are changed outside of Vim
