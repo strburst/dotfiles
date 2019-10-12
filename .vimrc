@@ -26,6 +26,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 " Temporary scratch buffer
 Plug 'mtth/scratch.vim'
+" File operation commands
+Plug 'tpope/vim-eunuch'
 
 "" }}} Keymaps and text objects {{{
 
