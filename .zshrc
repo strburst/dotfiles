@@ -88,9 +88,9 @@ zstyle ':completion:*' menu select  # Enable select-box on current completion
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Search repos for a command if not installed (both Arch and Ubuntu)
-if [ -f "/usr/share/doc/pkgfile/command-not-found.zsh" ]; then
+if [[ -f "/usr/share/doc/pkgfile/command-not-found.zsh" ]]; then
     source /usr/share/doc/pkgfile/command-not-found.zsh
-elif [ -x /usr/lib/command-not-found ]; then
+elif [[ -x /usr/lib/command-not-found ]]; then
     function command_not_found_handler {
         /usr/lib/command-not-found -- "$1"
         return $?
@@ -113,8 +113,11 @@ alias sqlite3='sqlite3 -column -header -nullvalue "<NULL>"'
 ## }}}
 
 # File for machine-specific settings
-if [ -f "$HOME/.zshrc.local" ]; then
+if [[ -f "$HOME/.zshrc.local" ]]; then
     source "$HOME/.zshrc.local"
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh || true
+# Config file for ripgrep (if present)
+export RIPGREP_CONFIG_PATH="${XDG_CONFIG_HOME:-$HOME/.config}/ripgrep"
+
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh || true
