@@ -1,5 +1,9 @@
 # Base install
 
+- defaults:
+    link:
+      relink: true  # Overwrite if it's a symlink
+
 # Check for dead symlinks
 - clean: ['~']
 
