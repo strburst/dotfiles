@@ -30,6 +30,11 @@ loadavg() {
   cat /proc/loadavg | cut -d' ' -f -3
 }
 
+# Get the cpu temperature
+cputemp() {
+  echo "$(( $(cat /sys/class/thermal/thermal_zone1/temp) / 1000 )) C"
+}
+
 # Repeatedly invoke the given command with the given frequency
 wraprepeat() {
   # Number of seconds to wait between invocations
@@ -77,6 +82,7 @@ echo $$ > "$PANEL_PID_LOC"
 wraprepeat 3 'C%s\n' myclock > "$PANEL_IN_FIFO" &
 wraprepeat 4 'BS%s\n' "cat $BAT_SYS_PATH/status" > "$PANEL_IN_FIFO" &
 wraprepeat 5 'L%s\n' loadavg > "$PANEL_IN_FIFO" &
+wraprepeat 2 'M%s\n' cputemp > "$PANEL_IN_FIFO" &
 wraprepeat 9 'BP%s\n' "cat $BAT_SYS_PATH/capacity" > "$PANEL_IN_FIFO" &
 wraprepeat 1800 'D%s\n' mydate > "$PANEL_IN_FIFO" &
 
