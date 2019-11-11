@@ -8,7 +8,7 @@ PANEL_PID_LOC=/tmp/panel_pid
 PANEL_LOG_LOC=/tmp/panel_log
 
 PANEL_FONT="xos4 Terminus:size=10:antialias=true:hinting=true"
-PANEL_GEOMETRY=+80  # 16x5
+PANEL_GEOMETRY=+96  # 16x6
 PANEL_HEIGHT=18
 
 DESKTOP_FREE_COLOR=#AAAAAA
