@@ -21,8 +21,9 @@ bspc monitor eDP-1 -d 6 7 8 9 0
 wmname LG3D
 
 bspc rule -a Emacs state=tiled
-bspc rule -a SpeedCrunch state=floating
-bspc rule -a copyq state=floating
+for app in SpeedCrunch copyq antimicro; do
+  bspc rule -a "$app" state=floating
+done
 
 sxhkd &
 
