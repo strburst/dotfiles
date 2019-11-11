@@ -24,6 +24,6 @@ indent_size = 2
 # Filetypes that should use tab indentation
 indent_style = tab
 
-[*.{html,md,org}]
+[*.{ejs,erb,html,md,org}]
 # Unlimited line length
 max_line_length = 0
