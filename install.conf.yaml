@@ -9,6 +9,7 @@
 
 # Create the following symlinks
 - link:
+    ~/.config/ripgrep: ripgrep
     ~/.editorconfig: .editorconfig
     ~/.emacs.d: .emacs.d
     ~/.gitconfig: .gitconfig

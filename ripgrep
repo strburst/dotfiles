@@ -1,0 +1,4 @@
+--type-add
+gcl:*.{gcl,bcl,borg}
+
+--smart-case
