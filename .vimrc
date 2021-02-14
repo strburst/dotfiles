@@ -37,9 +37,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 " Use the . command to repeat vim-surround mappings
 Plug 'tpope/vim-repeat'
-" Snippets/autocompletion plugin, default snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 " Mappings/text objects for C-style argument lists
 Plug 'PeterRincker/vim-argumentative'
 " Convenient paired mappings for [ and ] for navigation
@@ -69,24 +66,18 @@ Plug 'mbbill/undotree'
 
 "" Language support {{{
 
-" Better LaTeX support, e.g. comtinuous compilation mode
-Plug 'lervag/vimtex'
-" Mediawiki syntax support
-Plug 'chikamichi/mediawiki.vim'
 " Elixir language support
 Plug 'elixir-lang/vim-elixir'
 " Markdown language support
 Plug 'tpope/vim-markdown'
 " Markdown previewing
-Plug 'suan/vim-instant-markdown'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown'}
 " Better JSON language support
 Plug 'elzr/vim-json'
 " Alda language support
 Plug 'daveyarwood/vim-alda'
 " Rust language support
 Plug 'rust-lang/rust.vim'
-" Pug language support
-Plug 'digitaltoad/vim-pug'
 
 " }}} }}}
 
@@ -228,7 +219,6 @@ set undofile    " Save undo tree between sessions
 syntax on
 set t_Co=256
 set background=dark
-colorscheme solarized
 
 set number         " Show line numbers
 
