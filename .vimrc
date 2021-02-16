@@ -18,8 +18,6 @@ call plug#begin('~/.vim/plugged')
 
 " Configure indentation and other editor settings on a per-project basis
 Plug 'editorconfig/editorconfig-vim'
-" Syntax-checker support using the location list
-Plug 'scrooloose/syntastic'
 " Awesome git integration
 Plug 'tpope/vim-fugitive'
 " Github integration for vim-fugitive
@@ -28,6 +26,8 @@ Plug 'tpope/vim-rhubarb'
 Plug 'mtth/scratch.vim'
 " File operation commands
 Plug 'tpope/vim-eunuch'
+" Completion engine
+Plug 'ycm-core/YouCompleteMe'
 
 "" }}} Keymaps and text objects {{{
 
@@ -87,27 +87,13 @@ call plug#end()
 
 let g:airline_powerline_fonts=0   " Use fallback characters
 
-" Syntastic recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_check_on_wq=0
-let g:syntastic_aggregate_errors=1
-
-" Only check a file if :SyntasticCheck used
-let g:syntastic_mode_map = {
-      \ "mode": "passive",
-      \ "active_filetypes": [],
-      \ "passive_filetypes": [] }
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
-
-nnoremap <leader>s :w<Cr>:SyntasticCheck<Cr>
-nnoremap <leader>w :SyntasticReset<Cr>
+let g:ycm_language_server =
+  \ [{
+  \   'name': 'ccls',
+  \   'cmdline': [ 'ccls' ],
+  \   'filetypes': [ 'c', 'cpp', 'cuda', 'objc', 'objcpp' ],
+  \   'project_root_files': [ '.ccls-root', 'compile_commands.json' ]
+  \ }]
 
 let g:gundo_help=0   " Hide help message in Gundo window
 
