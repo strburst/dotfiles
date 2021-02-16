@@ -2,6 +2,9 @@
 
 *.log
 
+# ccls
+.ccls-cache
+
 # Vim/Emacs
 *~
 \#*\#
