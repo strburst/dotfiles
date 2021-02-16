@@ -13,6 +13,7 @@
 [core]
 	excludesfile = ~/.gitignore
 [credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 	helper = cache --timeout=1800
 [diff]
 	tool = vimdiff
