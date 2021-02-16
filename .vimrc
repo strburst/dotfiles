@@ -252,9 +252,6 @@ noremap 0 ^
 " Open/close folds
 nnoremap <leader><leader> za
 
-" Repeat the last macro
-nnoremap - @@
-
 " Show man pages for commands
 nnoremap <leader>k K
 
@@ -265,7 +262,7 @@ nnoremap <leader>u :set ff=unix<Cr>:%s/<C-v><C-m>//g<Cr>
 nnoremap <leader>y :%y +<Cr>
 
 " Replace the entire file with the contents of the system clipboard
-nnoremap <leader>t ggdG"+pkdd
+nnoremap <leader>p ggdG"+pkdd
 
 " Switch to previously edited file
 nnoremap <leader>f <C-^>
@@ -276,10 +273,6 @@ nnoremap <leader>d :bp\|bd #<Cr>
 " Swap <C-r> and <C-r><C-p>; <C-r> inserts text literally instead of as typed
 inoremap <C-r> <C-r><C-p>
 inoremap <C-r><C-p> <C-r>
-
-" Plus/minus also increment/decrement
-nnoremap + <C-a>
-nnoremap - <C-x>
 
 if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
